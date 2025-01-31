@@ -1,0 +1,114 @@
+---
+import Tecnos_icons from "./Tecnos_icons.astro";
+import Tecno_icon from "../icons/Titulos/Tecno_icon.astro";
+
+// Importation des icônes
+import Html from '../icons/Tecnologias/Lenguajes/Html.astro';
+import Css from '../icons/Tecnologias/Lenguajes/Css.astro';
+import Js from '../icons/Tecnologias/Lenguajes/Js.astro';
+import Php from '../icons/Tecnologias/Lenguajes/Php.astro';
+import Csharp from '../icons/Tecnologias/Lenguajes/Csharp.astro';
+
+import AstroIcon from '../icons/Tecnologias/Frameworks_Librerias/Ast.astro';
+import Bootstrap from '../icons/Tecnologias/Frameworks_Librerias/Bootstrap.astro';
+import Express from '../icons/Tecnologias/Frameworks_Librerias/Express.astro';
+import Node from '../icons/Tecnologias/Frameworks_Librerias/Node.astro';
+import React from '../icons/Tecnologias/Frameworks_Librerias/React.astro';
+import Tailwind from '../icons/Tecnologias/Frameworks_Librerias/Tailwind.astro';
+
+import Mongo from '../icons/Tecnologias/Bases_de_datos/Mongo.astro';
+import Mysql from '../icons/Tecnologias/Bases_de_datos/Mysql.astro';
+
+import Figma from '../icons/Tecnologias/Herramientas_Adicionales/Figma.astro';
+import Git from '../icons/Tecnologias/Herramientas_Adicionales/Git.astro';
+import Netlify from '../icons/Tecnologias/Herramientas_Adicionales/Netlify.astro';
+import Vercel from '../icons/Tecnologias/Herramientas_Adicionales/Vercel.astro';
+import Notion from '../icons/Tecnologias/Herramientas_Adicionales/Notion.astro';
+
+// Définition des technologies avec leurs composants associés
+const LANGAGES = [
+    { title: "HTML", icon: Html },
+    { title: "CSS", icon: Css },
+    { title: "JavaScript", icon: Js },
+    { title: "PHP", icon: Php },
+    { title: "C#", icon: Csharp }
+];
+
+const FRAMEWORKS_LIBRARIES = [
+    { title: "Astro", icon: AstroIcon },
+    { title: "Bootstrap", icon: Bootstrap },
+    { title: "Express", icon: Express },
+    { title: "Node.js", icon: Node },
+    { title: "React", icon: React },
+    { title: "Tailwind CSS", icon: Tailwind }
+];
+
+const BASES_DE_DONNEES = [
+    { title: "MongoDB", icon: Mongo },
+    { title: "MySQL", icon: Mysql }
+];
+
+const OUTILS_ADDITIONNELS = [
+    { title: "Figma", icon: Figma },
+    { title: "Git", icon: Git },
+    { title: "Netlify", icon: Netlify },
+    { title: "Vercel", icon: Vercel },
+    { title: "Notion", icon: Notion }
+];
+---
+
+<div class="flex flex-col items-center">
+  <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4">
+    <Tecno_icon class="w-12 h-12" /> Technologies
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 p-4">
+    <!-- Langages -->
+    <div>
+      <h2 class="text-2xl opacity-80 mb-6 text-center">Langages</h2>
+      <nav class="flex flex-wrap justify-center gap-4">
+        {LANGAGES.map(({ title, icon: Icon }) => (
+          <Tecnos_icons title={title}>
+            <Icon class="w-12 h-12" /> {title}
+          </Tecnos_icons>
+        ))}
+      </nav>
+    </div>
+
+    <!-- Frameworks et Librairies -->
+    <div>
+      <h2 class="text-2xl opacity-80 mb-6 text-center">Frameworks et Librairies</h2>
+      <nav class="flex flex-wrap justify-center gap-4">
+        {FRAMEWORKS_LIBRARIES.map(({ title, icon: Icon }) => (
+          <Tecnos_icons title={title}>
+            <Icon class="w-12 h-12" /> {title}
+          </Tecnos_icons>
+        ))}
+      </nav>
+    </div>
+
+    <!-- Bases de Données -->
+    <div>
+      <h2 class="text-2xl opacity-80 mb-6 text-center">Bases de Données</h2>
+      <nav class="flex flex-wrap justify-center gap-4">
+        {BASES_DE_DONNEES.map(({ title, icon: Icon }) => (
+          <Tecnos_icons title={title}>
+            <Icon class="w-12 h-12" /> {title}
+          </Tecnos_icons>
+        ))}
+      </nav>
+    </div>
+
+    <!-- Outils Additionnels -->
+    <div>
+      <h2 class="text-2xl opacity-80 mb-6 text-center">Outils Additionnels</h2>
+      <nav class="flex flex-wrap justify-center gap-4">
+        {OUTILS_ADDITIONNELS.map(({ title, icon: Icon }) => (
+          <Tecnos_icons title={title}>
+            <Icon class="w-12 h-12" /> {title}
+          </Tecnos_icons>
+        ))}
+      </nav>
+    </div>
+  </div>
+</div>

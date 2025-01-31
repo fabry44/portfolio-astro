@@ -1,0 +1,89 @@
+---
+const EXPERIENCES = [
+    {
+        name: "Tech Startup",
+        startDate: "2024",
+        endDate: null,
+        position: "Développeur Backend Junior",
+        summary: "Développement et maintenance d’API et de services backend en Node.js et Express. Collaboration avec l'équipe pour implémenter de nouvelles fonctionnalités et optimiser les performances.",
+        responsibilities: [
+            "Conception et implémentation d’API RESTful en utilisant Node.js et Express.",
+            "Optimisation des requêtes de base de données pour améliorer les performances.",
+            "Participation aux revues de code et amélioration des standards de codage de l’équipe."
+        ],
+        achievements: [
+            "Développement et maintenance d’API robustes et évolutives.",
+            "Implémentation de nouvelles fonctionnalités backend en collaboration avec l’équipe."
+        ],
+        skills: ["Node.js", "Express", "MongoDB", "GitHub"],
+        location: "Auckland, Nouvelle-Zélande",
+        location_type: "Sur site"
+        },
+        {
+        name: "Innovative Solutions",
+        startDate: "2022",
+        endDate: "2023",
+        position: "Développeur Backend Junior",
+        summary: "Développement et maintenance de services backend en Python et Django. Collaboration avec des équipes interfonctionnelles pour garantir la qualité et la livraison des solutions logicielles.",
+        responsibilities: [
+            "Développement et maintenance des services backend en Python et Django.",
+            "Travail en étroite collaboration avec les développeurs frontend pour intégrer les éléments orientés utilisateur.",
+            "Participation aux réunions quotidiennes et aux sprints bihebdomadaires pour aligner les objectifs du projet."
+        ],
+        achievements: [
+            "Mise en œuvre d’une fonctionnalité améliorant l’authentification utilisateur et la sécurité."
+        ],
+        skills: ["Python", "Django", "SQL", "Git"],
+        location: "Wellington, Nouvelle-Zélande",
+        location_type: "Hybride"
+        },
+        {
+        name: "Web Agency",
+        startDate: "2022",
+        endDate: "2022",
+        position: "Développeur Backend Stagiaire",
+        summary: "Participation au développement de services backend et d’API. Expérience pratique avec les technologies backend.",
+        skills: ["Node.js", "Express", "MongoDB"],
+        location: "Sydney, Australie",
+        location_type: "Remote"
+        }
+    ];
+---
+
+<section class="container px-5 py-6 mx-auto space-y-12">
+    <div class="relative border-l border-gray-800 pl-6">
+        {EXPERIENCES.map(({ startDate, endDate, position, name, summary, responsibilities, achievements, skills, location, location_type }) => {
+            const startYear = startDate;
+            const endYear = endDate ? endDate : "Présent";
+            return (
+                <div class="mb-10">
+                    <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 mt-2"></div>
+                    <h2 class="text-white text-2xl font-bold">{startYear} - {endYear}</h2>
+                    <p class="text-xl font-semibold">{position} @ {name}</p>
+                    <p class="leading-relaxed text-base">{summary}</p>
+                    {responsibilities && (
+                        <ul class="list-disc ml-4 text-skin-muted">
+                            {responsibilities.map(responsibility => (
+                                <li>{responsibility}</li>
+                            ))}
+                        </ul>
+                    )}
+                    {achievements && (
+                        <ul class="list-disc ml-4 text-skin-muted">
+                            {achievements.map(achievement => (
+                                <li>{achievement}</li>
+                            ))}
+                        </ul>
+                    )}
+                    <ul class="flex flex-wrap gap-2 mt-2">
+                        {skills && skills.map(skill => (
+                            <li class="bg-skin-button-accent/20 border-skin-hue/20 text-skin-hue border rounded-md px-2 py-0.5 text-xs">
+                                {skill}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        })}
+    </div>
+</section>

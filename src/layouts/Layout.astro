@@ -1,0 +1,90 @@
+---
+import Header from '../components/Header.astro';
+import '@fontsource-variable/source-code-pro';
+interface Props {
+    title: string;
+	description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+
+    <body>
+        
+        <div class="background"></div>
+    <Header />
+    <slot /> 
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        color-scheme: dark;
+    }
+    
+    html {
+        font-family: 'Source Code Pro Variable', monospace;
+        scroll-behavior: smooth;
+        
+    }
+    body {
+		
+        /* background: #171717; */
+        color: #fff;
+        display: flex;
+		flex-direction: column;
+        min-height: 100vh;
+        
+    }
+
+    header {
+        background: transparent;
+        transition: linear 0.3s;
+    }
+    
+    header.scrolled {
+        background: #171717f5;
+        filter: drop-shadow(2px 4px 6px black);
+    }
+
+    .background {
+    position: fixed; /* Cambié de absolute a fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+
+    background: radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent);
+
+    filter: blur(100px); /* Aplica el desenfoque */
+
+}
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("scroll", function() {
+        let header = document.querySelector("header");
+        if (!header) return;
+        if (window.scrollY > 100) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
+</script>
