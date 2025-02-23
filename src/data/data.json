@@ -3,11 +3,13 @@
         "email": "fabienroy2@gmail.com",
         "name": "Roy Fabien",
         "phone": "0650262098",
+        "birth": "1984-09-16T14:22:49+00:00",
         "address": "22 rue des Renardi\u00e8res 44100 Nantes",
         "linkedin": null,
         "github": null,
         "status": null,
-        "bio": null
+        "function": null,
+        "age": 40
     },
     "formations": [
         {
@@ -141,5 +143,5 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
-    "updated_at": "2025-02-23 12:19:33"
+    "updated_at": "2025-02-23 13:26:05"
 }
