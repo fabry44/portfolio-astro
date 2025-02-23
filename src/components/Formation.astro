@@ -3,12 +3,13 @@ const { formations } = Astro.props;
 ---
 <section class="container px-5 py-6 mx-auto space-y-12">
     <div class="relative border-l border-gray-800 pl-6">
-        {formations.map(({ year, title, description }) => (
+        {formations.map(({ date, degree, institution, description }) => (
             <div class="mb-10">
-                <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 mt-2"></div>
-                <h2 class="text-white text-2xl font-bold">{year}</h2>
-                <p class="text-xl font-semibold">{title}</p>
-                <p class="leading-relaxed text-base">{description}</p>
+            <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 mt-2"></div>
+            <h2 class="text-white text-2xl font-bold">{new Date(date).getFullYear()}</h2>
+            <p class="text-xl font-semibold">{degree}</p>
+            <p class="text-lg">{institution}</p>
+            <p class="leading-relaxed text-base">{description}</p>
             </div>
         ))}
     </div>
