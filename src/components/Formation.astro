@@ -1,38 +1,9 @@
 ---
-const FORMATIONS = [
-    {
-        year: "2025",
-        title: "Certificat d'État niveau 5 - Développement Web et Web Mobile",
-        description: "Formation suivie en candidat libre à l'école Studi, spécialisée en développement backend avec Symfony."
-    },
-    {
-        year: "2010",
-        title: "BTS Optique option Photonique",
-        description: "Spécialisation en optique et photonique."
-    },
-    {
-        year: "2008",
-        title: "Bac Scientifique",
-        description: "Spécialité Mathématiques."
-    }
-];
+const { formations } = Astro.props;
 ---
-
-<script>
-    document.addEventListener("scroll", function() {
-        let header = document.querySelector("header");
-        if (!header) return;
-        if (window.scrollY > 100) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
-</script>
-
 <section class="container px-5 py-6 mx-auto space-y-12">
     <div class="relative border-l border-gray-800 pl-6">
-        {FORMATIONS.map(({ year, title, description }) => (
+        {formations.map(({ year, title, description }) => (
             <div class="mb-10">
                 <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 mt-2"></div>
                 <h2 class="text-white text-2xl font-bold">{year}</h2>

@@ -1,140 +1,147 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
-import Linkedin from '../icons/Social/Linkedin.astro'
-import Github from '../icons/Social/Github.astro'
-import Social_icons from '../components/Social_icons.astro'
-import Gmail from '../icons/Social/Gmail.astro'
+import Linkedin from '../icons/Social/Linkedin.astro';
+import Github from '../icons/Social/Github.astro';
+import Social_icons from '../components/Social_icons.astro';
+import Gmail from '../icons/Social/Gmail.astro';
 import Section from '../components/Section.astro';
 import Section_techno from '../components/Section_techno.astro';
 import Technology from '../components/Technology.astro';
-import Code from '../icons/Titulos/Code.astro'
-import Project from '../components/Project.astro'
-import Experience from '../components/Experience.astro'
-import Formation from '../components/Formation.astro'
-import About from '../components/About.astro'
-import Cert_icon from '../icons/Titulos/Cert_icon.astro'
-import Exp_icon from '../icons/Titulos/Exp_icon.astro'
-import My_icons from '../icons/Titulos/My_icon.astro'
-import Section_about from '../components/Section_about.astro'
-import Footer from '../components/Footer.astro'
-import Discord from '../icons/Social/Discord.astro'
+import Code from '../icons/Titulos/Code.astro';
+import Project from '../components/Project.astro';
+import Experience from '../components/Experience.astro';
+import Formation from '../components/Formation.astro';
+import About from '../components/About.astro';
+import Cert_icon from '../icons/Titulos/Cert_icon.astro';
+import Exp_icon from '../icons/Titulos/Exp_icon.astro';
+import My_icons from '../icons/Titulos/My_icon.astro';
+import Section_about from '../components/Section_about.astro';
+import Footer from '../components/Footer.astro';
 import Section_formation from '../components/Section_formation.astro';
 import Section_experience from '../components/Section_experience.astro';
 
-const PERSONAL_INFO = {
-    name: "Fabien Roy",
-		function: "Développeur Backend",
-    age: 40, // Ajuste si nécessaire
-    email: "fabienroy2@gmail.com",
-    phone: "+33 X XX XX XX XX", // Remplace par ton vrai numéro
-    address: "Nantes, France",
-    status: "Open to Work",
-    linkedin: "https://www.linkedin.com/in/roy-fabien-13982a157",
-    github: "https://github.com/fabry44",
-    about: "Après 15 ans d’expérience dans les réseaux fibre optique, dont 6 ans en tant que conducteur de travaux, j’ai décidé de relever un nouveau défi en me reconvertissant dans le développement web et mobile. Passionné par la programmation depuis toujours, je me spécialise aujourd’hui en Symfony tout en explorant Node.js et Python."
-};
+// Importation des données JSON générées par le back-end symfony et pushées dans le repository main
+import data from '../data/data.json';
+
+// Déstructuration des données du Json pour les distribuer dans les composants
+// const {
+// //   user = { name: "Nom inconnu", function: "Fonction non définie", age: "-", email: "-", phone: "-", address: "-", status: "Statut inconnu", linkedin: "#", github: "#", about: "À propos non défini" },
+//   formations = [],
+//   projects = [],
+//   experiences = [],
+//   technologies = []
+// } = data;
 ---
 
-<Layout title="Portfolio Fabien Roy - Développeur Backend"
+
+<Layout title={`Portfolio ${data.user.name} - Développeur Backend`}
     description="Développeur backend spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité.">
     <main class="px-4">
         <Section>
-						<div class="flex flex-col md:flex-row items-center md:items-start gap-10">
-								
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+                <div class="flex flex-col">
+                    <!-- Titre et Badge -->
+                    <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
+                        Bonjour, je suis {data.user.name}
+                        <a href={data.user.linkedin} target="_blank" rel="noopener">
+                            <div class="flex justify-center items-center hover:scale-110 transition">
+                                <Badge> {data.user.status} </Badge>
+                            </div>
+                        </a>
+                    </h1>
 
-								<div class="flex flex-col">
-										<!-- Titre et Badge -->
-										<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
-												Bonjour, je suis {PERSONAL_INFO.name}
-												<a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener">
-														<div class="flex justify-center items-center hover:scale-110 transition">
-																<Badge> {PERSONAL_INFO.status} </Badge>
-														</div>
-												</a>
-										</h1>
+                    <!-- Présentation avec informations personnelles -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Texte de présentation -->
+                        <div>
+                            <h2 class="text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">
+                                <span class="text-blue-300">{data.user.function}.</span><br>
+                                {data.user.about}
+                            </h2>
+                        </div>
 
-										<!-- Présentation avec informations personnelles -->
-										<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-												<!-- Texte de présentation -->
-												<div>
-														<h2 class="text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">
-																<span class="text-blue-300">{PERSONAL_INFO.function}.</span><br>
-																{PERSONAL_INFO.about}
-														</h2>
-												</div>
+                        <!-- Informations personnelles -->
+                        <div class="text-white text-lg space-y-3 m-auto">
+                            <p><strong>Nom :</strong> {data.user.name}</p>
+                            <p><strong>Âge :</strong> {data.user.age} ans</p>
+                            <p><strong>Téléphone :</strong> {data.user.phone}</p>
+                            <p><strong>Email :</strong> <a href={"mailto:" + data.user.email} class="text-blue-400 hover:underline">{data.user.email}</a></p>
+                            <p><strong>Adresse :</strong> {data.user.address}</p>
+                            <!-- Image -->
+                            <div class="flex justify-center mt-3">
+                                <img class="rounded-full w-24 h-24 md:w-48 md:h-48" 
+                                    src="/developpeur.webp" 
+                                    alt={data.user.name} 
+                                /> 
+                            </div>
+                        </div>
+                    </div>
 
-												<!-- Informations personnelles -->
-												
-												<div class="text-white text-lg space-y-3 m-auto">
-														<p><strong>Nom :</strong> {PERSONAL_INFO.name}</p>
-														<p><strong>Âge :</strong> {PERSONAL_INFO.age} ans</p>
-														<p><strong>Téléphone :</strong> {PERSONAL_INFO.phone}</p>
-														<p><strong>Email :</strong> <a href={"mailto:" + PERSONAL_INFO.email} class="text-blue-400 hover:underline">{PERSONAL_INFO.email}</a></p>
-														<p><strong>Adresse :</strong> {PERSONAL_INFO.address}</p>
-														<!-- Image -->
-														<div class="flex justify-center mt-3">
-																<img class="rounded-full w-24 h-24 md:w-48 md:h-48" 
-																		src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHY5M3prNjdmdXV0YmVtMmlxNGNtc3pwNXplOGViMXl0cGFuc3JuNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fc4CgGnZOktRm/giphy.gif" 
-																		alt={PERSONAL_INFO.name} 
-																/> 
-														</div>
-												</div>
-										</div>
-
-										<!-- Liens sociaux -->
-										<nav class="flex gap-x-5 mt-6 flex-wrap">
-												<Social_icons href={PERSONAL_INFO.linkedin}>
-														<Linkedin class="size-4 md:size-6"/>
-														LinkedIn
-												</Social_icons>
-												<Social_icons href={PERSONAL_INFO.github}>
-														<Github class="size-4 md:size-6"/>
-														GitHub
-												</Social_icons>
-												<Social_icons href={"mailto:" + PERSONAL_INFO.email}>
-														<Gmail class="size-4 md:size-6"/>
-														{PERSONAL_INFO.email}
-												</Social_icons>
-										</nav>
-								</div>
-						</div>
-				</Section>
+                    <!-- Liens sociaux -->
+                    <nav class="flex gap-x-5 mt-6 flex-wrap">
+                        <Social_icons href={data.user.linkedin}>
+                            <Linkedin class="size-4 md:size-6"/>
+                            LinkedIn
+                        </Social_icons>
+                        <Social_icons href={data.user.github}>
+                            <Github class="size-4 md:size-6"/>
+                            GitHub
+                        </Social_icons>
+                        <Social_icons href={"mailto:" + data.user.email}>
+                            <Gmail class="size-4 md:size-6"/>
+                            {data.user.email}
+                        </Social_icons>
+                    </nav>
+                </div>
+            </div>
+        </Section>
+        
+        <!-- Technologies -->
         <Section_techno id="technology">
-            <Technology/>
+            <Technology technologies={data.technologies} />
         </Section_techno>
+
+        <!-- Projets -->
         <Section id="project">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
                     <Code class="size-8 "/>Mes Projets 
                 </h2>
             </div>
-            <Project/>
+            <Project projects={data.projects} />
         </Section>
-				<Section_experience id="experience">
-					<div class="flex justify-center">
-							<h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
-									<Exp_icon class="size-8 "/>Expérience
-							</h2>
-					</div>
-					<Experience/>
+
+        <!-- Expériences -->
+        <Section_experience id="experience">
+            <div class="flex justify-center">
+                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
+                    <Exp_icon class="size-8 "/>Expérience
+                </h2>
+            </div>
+            <Experience experiences={data.experiences} />
         </Section_experience>
+
+        <!-- Formations -->
         <Section_formation id="formation">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
                     <Cert_icon class="size-8 "/>Parcours de formation
                 </h2>
             </div>
-            <Formation/>
+            <Formation formations={data.formations} />
         </Section_formation>
+
+        <!-- À propos -->
         <Section_about id="about">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
                     <My_icons class="size-8 "/>À propos de moi 
                 </h2>
             </div>
-            <About/>
+            <About about={data.user.about} />
         </Section_about>
+
         <Footer/>
     </main>
 </Layout>
