@@ -1,50 +1,63 @@
 {
     "user": {
-        "email": "fabienroy2@gmail.com",
-        "name": "Roy Fabien",
-        "age":,
-        "phone": "0650262098",
-        "address": "22 rue des Renardi\u00e8res 44100 Nantes",
-        "linkedin": null,
-        "github": null,
-        "status": null,
-        "bio": null,
-        "about": "...",
-        "function": "...",
+        "name": "?",
+        "function": "-",
+        "age": 40,
+        "email": "-@-.com",
+        "phone": "+33 X XX XX XX XX",
+        "address": "-, -",
+        "status": "Open to Work",
+        "linkedin": "https://www.linkedin.com/in/roy-fabien-13982a157",
+        "github": "https://github.com/fabry44",
+        "about": "..."
     },
     "formations": [
         {
-            "degree": "Certificat d'\u00c9tat niveau 5 - D\u00e9veloppement Web et Web Mobile",
-            "institution": "\u00c9cole Studi",
-            "date": "2025-01-01T00:00:00+00:00",
-            "description": "Formation suivie en candidat libre \u00e0 l'\u00e9cole Studi, sp\u00e9cialis\u00e9e en d\u00e9veloppement backend avec Symfony."
-        },
+            "year": "1900",
+            "title": "-",
+            "description": "..."
+        }
+    ],
+    "experiences": [
         {
-            "degree": "BTS G\u00e9nie Optique option Photonique",
-            "institution": "Lyc\u00e9e F\u00e9lix le Dantec \u00e0 Lannion",
-            "date": "2010-06-01T00:00:00+00:00",
-            "description": "Sp\u00e9cialisation en optique physique, g\u00e9om\u00e9trique et photonique."
-        },
-        {
-            "degree": "Bac Scientifique",
-            "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
-            "date": "2008-06-01T00:00:00+00:00",
-            "description": "Sp\u00e9cialit\u00e9 Math\u00e9matiques."
+            "startDate": "1900",
+            "endDate": "1900",
+            "position": "-",
+            "name": "-",
+            "summary": "-",
+            "responsibilities": [
+                "-",
+                "-"
+            ],
+            "achievements": [
+                "-",
+                "-"
+            ],
+            "skills": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React"
+            ],
+            "location": "-",
+            "location_type": "-"
         }
     ],
     "projects": [
         {
-            "title": "Site web pour un zoo (Arcadia)",
-            "description": "Projet d'\u00e9tude Studi (ECF) : conception d'un site web Zoo-Arcadia",
+            "title": "project 1",
+            "description": "-",
             "link": "#",
-            "technology": []
-        },
-        {
-            "title": "SOS PRO, Site vitrine pour une auto-entreprise",
-            "description": "Site vitrine pour une auto-entreprise de services \u00e0 la personne avec Symfony 7.2, Bootstrap 5, JQuery et MariaDB",
-            "link": "#",
-            "technology": []
+            "github": "-",
+            "image": "-",
+            "tags": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React"
+            ]
         }
+       
     ],
     "technologies": [
         {
@@ -144,5 +157,5 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
-    "updated_at": "2025-02-23 12:19:33"
+    "updated_at": "2025-02-20 18:00:00"
 }

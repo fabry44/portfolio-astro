@@ -24,14 +24,6 @@ import Section_experience from '../components/Section_experience.astro';
 // Importation des données JSON générées par le back-end symfony et pushées dans le repository main
 import data from '../data/data.json';
 
-// Déstructuration des données du Json pour les distribuer dans les composants
-// const {
-// //   user = { name: "Nom inconnu", function: "Fonction non définie", age: "-", email: "-", phone: "-", address: "-", status: "Statut inconnu", linkedin: "#", github: "#", about: "À propos non défini" },
-//   formations = [],
-//   projects = [],
-//   experiences = [],
-//   technologies = []
-// } = data;
 ---
 
 
@@ -113,14 +105,14 @@ import data from '../data/data.json';
         </Section>
 
         <!-- Expériences -->
-        <Section_experience id="experience">
+        <!-- <Section_experience id="experience">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
                     <Exp_icon class="size-8 "/>Expérience
                 </h2>
             </div>
             <Experience experiences={data.experiences} />
-        </Section_experience>
+        </Section_experience> -->
 
         <!-- Formations -->
         <Section_formation id="formation">
