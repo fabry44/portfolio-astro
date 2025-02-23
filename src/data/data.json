@@ -2,15 +2,25 @@
     "user": {
         "email": "fabienroy2@gmail.com",
         "name": "Roy Fabien",
+<<<<<<< HEAD
         "age":,
         "phone": "0650262098",
+=======
+        "phone": "0650262098",
+        "birth": "1984-09-16T14:22:49+00:00",
+>>>>>>> e4d56bc4e350ec651356cef305f64eb971a3bb2b
         "address": "22 rue des Renardi\u00e8res 44100 Nantes",
         "linkedin": null,
         "github": null,
         "status": null,
+<<<<<<< HEAD
         "bio": null,
         "about": "...",
         "function": "...",
+=======
+        "function": null,
+        "age": 40
+>>>>>>> e4d56bc4e350ec651356cef305f64eb971a3bb2b
     },
     "formations": [
         {
@@ -144,5 +154,9 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
+<<<<<<< HEAD
     "updated_at": "2025-02-23 12:19:33"
+=======
+    "updated_at": "2025-02-23 13:26:05"
+>>>>>>> e4d56bc4e350ec651356cef305f64eb971a3bb2b
 }
