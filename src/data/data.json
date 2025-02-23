@@ -8,6 +8,7 @@
         "linkedin": null,
         "github": null,
         "status": null,
+        "about": "Apr\u00e8s 15 ans d\u2019exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ans en tant que conducteur de travaux, j\u2019ai d\u00e9cid\u00e9 de relever un nouveau d\u00e9fi en me reconvertissant dans le d\u00e9veloppement web et mobile. Passionn\u00e9 par la programmation depuis toujours, je me sp\u00e9cialise aujourd\u2019hui en Symfony tout en explorant Node.js et Python.",
         "function": null,
         "age": 40
     },
@@ -143,5 +144,5 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
-    "updated_at": "2025-02-23 15:13:34"
+    "updated_at": "2025-02-23 15:15:44"
 }
