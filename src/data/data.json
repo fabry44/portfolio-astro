@@ -35,15 +35,97 @@
     "projects": [
         {
             "title": "Site web pour un zoo (Arcadia)",
-            "description": "Projet d'\u00e9tude Studi (ECF) : conception d'un site web Zoo-Arcadia",
+            "description": "<div>Projet d'\u00e9tude Studi (ECF) : conception d'un site web Zoo-Arcadia<\/div>",
             "link": "#",
-            "technology": []
+            "github": null,
+            "technology": [
+                {
+                    "name": "HTML",
+                    "icon": "Html",
+                    "class": "bg-[#963419] text-white",
+                    "style": "background-color: #963419; color: #fff;"
+                },
+                {
+                    "name": "CSS",
+                    "icon": "Css",
+                    "class": "bg-[#07436b] text-white",
+                    "style": "background-color: #07436b; color: #fff;"
+                },
+                {
+                    "name": "JavaScript",
+                    "icon": "Js",
+                    "class": "bg-[#a39535] text-white",
+                    "style": "background-color: #a39535; color: #fff;"
+                },
+                {
+                    "name": "PHP",
+                    "icon": "Php",
+                    "class": "bg-[#4F5D95] text-white",
+                    "style": "background-color: #4F5D95; color: #fff;"
+                },
+                {
+                    "name": "Symfony",
+                    "icon": "Symfony",
+                    "class": "bg-[#000000] text-white",
+                    "style": "background-color: #000000; color: #fff;"
+                },
+                {
+                    "name": "Bootstrap",
+                    "icon": "Bootstrap",
+                    "class": "bg-[#563D7C] text-white",
+                    "style": "background-color: #563D7C; color: #fff;"
+                }
+            ]
         },
         {
             "title": "SOS PRO, Site vitrine pour une auto-entreprise",
-            "description": "Site vitrine pour une auto-entreprise de services \u00e0 la personne avec Symfony 7.2, Bootstrap 5, JQuery et MariaDB",
+            "description": "<div>Site vitrine pour une auto-entreprise de services \u00e0 la personne avec Symfony 7.2, Bootstrap 5, JQuery et MariaDB<\/div>",
             "link": "#",
-            "technology": []
+            "github": null,
+            "technology": [
+                {
+                    "name": "HTML",
+                    "icon": "Html",
+                    "class": "bg-[#963419] text-white",
+                    "style": "background-color: #963419; color: #fff;"
+                },
+                {
+                    "name": "CSS",
+                    "icon": "Css",
+                    "class": "bg-[#07436b] text-white",
+                    "style": "background-color: #07436b; color: #fff;"
+                },
+                {
+                    "name": "JavaScript",
+                    "icon": "Js",
+                    "class": "bg-[#a39535] text-white",
+                    "style": "background-color: #a39535; color: #fff;"
+                },
+                {
+                    "name": "PHP",
+                    "icon": "Php",
+                    "class": "bg-[#4F5D95] text-white",
+                    "style": "background-color: #4F5D95; color: #fff;"
+                },
+                {
+                    "name": "Symfony",
+                    "icon": "Symfony",
+                    "class": "bg-[#000000] text-white",
+                    "style": "background-color: #000000; color: #fff;"
+                },
+                {
+                    "name": "Bootstrap",
+                    "icon": "Bootstrap",
+                    "class": "bg-[#563D7C] text-white",
+                    "style": "background-color: #563D7C; color: #fff;"
+                },
+                {
+                    "name": "MariaDB",
+                    "icon": "Maria",
+                    "class": "bg-[#003545] text-white",
+                    "style": "background-color: #003545; color: #fff;"
+                }
+            ]
         }
     ],
     "technologies": [
@@ -144,5 +226,5 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
-    "updated_at": "2025-02-23 15:15:44"
+    "updated_at": "2025-02-23 16:34:37"
 }
