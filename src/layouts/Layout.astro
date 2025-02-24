@@ -1,16 +1,16 @@
 ---
-import Header from '../components/Header.astro';
-import '@fontsource-variable/source-code-pro';
+import Header from "../components/Header.astro";
+import "@fontsource-variable/source-code-pro";
 interface Props {
     title: string;
-	description: string;
+    description: string;
 }
 
 const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="light">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
@@ -19,72 +19,155 @@ const { description, title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-
-    <body>
-        
+    <body
+        class="bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text"
+    >
         <div class="background"></div>
-    <Header />
-    <slot /> 
+        <Header />
+        <slot />
     </body>
 </html>
 
 <style is:global>
-    :root {
-        color-scheme: dark;
-    }
-    
-    html {
-        font-family: 'Source Code Pro Variable', monospace;
-        scroll-behavior: smooth;
-        
-    }
-    body {
-		
-        /* background: #171717; */
-        color: #fff;
-        display: flex;
-		flex-direction: column;
-        min-height: 100vh;
-        
+    @import url("https://fonts.googleapis.com/css?family=Crimson%20Pro:700|Scada:400");
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Crimson Pro";
+        font-weight: 700;
     }
 
+    html {
+        font-size: 100%; /* 16px */
+        font-family: "Scada";
+        font-weight: 400;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+
+    /* :root {
+        color-scheme: light;
+        --text: #041514;
+        --background: #f7fdfd;
+        --primary: #34d5d3;
+        --secondary: #8db0e8;
+        --accent: #5579dd;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            color-scheme: dark;
+            --text: #eafbfa;
+            --background: #020808;
+            --primary: #2acbc8;
+            --secondary: #173a72;
+            --accent: #2246aa;
+        }
+    } */
+    /* :root {
+            --text: #182707;
+            --background: #effae0;
+            --primary: #416e12;
+            --secondary: #73e8c9;
+            --accent: #20aac5;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+            color-scheme: dark;
+            --text: #e9f8d8;
+            --background: #141f05;
+            --primary: #c1ed91;
+            --secondary: #178c6d;
+            --accent: #3ac3df;
+            }
+        }, */
+
+    :root {
+        --text: #101c01;
+        --background: #effae0;
+        --primary: #374151;
+        --secondary: #78fddb;
+        --accent: #4ad4fc;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            color-scheme: dark;
+            --text: #f1fee1;
+            --background: #141f05;
+            --primary: #adb7c7;
+            --secondary: #028866;
+            --accent: #038eb5;
+        }
+    }
+
+    
     header {
         background: transparent;
-        transition: linear 0.3s;
+        transition: linear 1.3s;
     }
-    
+
     header.scrolled {
-        background: #171717f5;
+        background: var(--primary);
         filter: drop-shadow(2px 4px 6px black);
+        width: 50%;
+        color: white;
+        border-radius: 15px;
+        opacity: 0.9;
     }
 
     .background {
-    position: fixed; /* Cambié de absolute a fixed */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        background: radial-gradient(
+            circle 200px at 50% 200px,
+            #e3effd,
+            transparent
+        );
+        filter: blur(100px);
+    }
 
-    background: radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent);
+    .sectionFormation {
+        max-width: 800px;
+    }
+    .divFormation {
+        margin-left: 45%;
+    }
 
-    filter: blur(100px); /* Aplica el desenfoque */
+    /* .classPair {
+        width: 50%;
+    } */
+    .classImpair {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+        padding-right: 50px;
+        margin-left: -100%;
+        width: 100%;
+    }
+    .sectionFooter {
+        background: var(--primary);
+        color: white;
+        height: 80px;
+        display: flex;
+    }
 
-}
     @media (prefers-reduced-motion: reduce) {
         html {
             scroll-behavior: auto;
         }
     }
 </style>
-<script>
-    document.addEventListener("scroll", function() {
-        let header = document.querySelector("header");
-        if (!header) return;
-        if (window.scrollY > 100) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
-</script>

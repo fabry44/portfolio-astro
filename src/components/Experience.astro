@@ -9,7 +9,7 @@ const { experiences } = Astro.props; // Récupère les expériences passées en 
             return (
                 <div class="mb-10">
                     <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 mt-2"></div>
-                    <h2 class="text-white text-2xl font-bold">{startYear} - {endYear}</h2>
+                    <h2 class="text-2xl font-bold">{startYear} - {endYear}</h2>
                     <p class="text-xl font-semibold">{position} @ {name}</p>
                     <p class="leading-relaxed text-base">{summary}</p>
                     {responsibilities && (

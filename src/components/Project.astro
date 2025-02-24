@@ -7,7 +7,7 @@ const { projects } = Astro.props;
     <article class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
         <div class="w-full md:w-1/2 flex items-center group">
         <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl lg:border lg:border-gray-800 group-hover:shadow-2xl">
-            {/* <img alt="Captura del Proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} /> */}
+            <img alt="Captura del Proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/developpeur.webp" /> */
         </div>
         </div>
 
@@ -18,7 +18,7 @@ const { projects } = Astro.props;
             {technology.map(({ name, icon, class: className, style }) => (
                 <li>
                 <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${className}`} style={style}>
-                    {icon} {name}
+                    {icon} 
                 </span>
                 </li>
             ))}

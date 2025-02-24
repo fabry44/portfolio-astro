@@ -21,11 +21,8 @@ import Footer from '../components/Footer.astro';
 import Section_formation from '../components/Section_formation.astro';
 import Section_experience from '../components/Section_experience.astro';
 
-// Importation des données JSON générées par le back-end symfony et pushées dans le repository main
 import data from '../data/data.json';
-
 ---
-
 
 <Layout title={`Portfolio ${data.user.name} - Développeur Backend`}
     description="Développeur backend spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité.">
@@ -33,44 +30,35 @@ import data from '../data/data.json';
         <Section>
             <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
                 <div class="flex flex-col">
-                    <!-- Titre et Badge -->
-                    <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
-                        Bonjour, je suis {data.user.name}
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
+                        Bonjour, je m'appelle {data.user.name}
                         <a href={data.user.linkedin} target="_blank" rel="noopener">
                             <div class="flex justify-center items-center hover:scale-110 transition">
                                 <Badge> {data.user.status} </Badge>
                             </div>
                         </a>
                     </h1>
-
-                    <!-- Présentation avec informations personnelles -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Texte de présentation -->
                         <div>
-                            <h2 class="text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">
-                                <span class="text-blue-300">{data.user.function}.</span><br>
+                            <h2 class="text-xl lg:text-2xl text-pretty max-w-{700px} text-light-text dark:text-dark-primary">
+                                <span class="text-accent ">{data.user.function}.</span><br>
                                 {data.user.about}
                             </h2>
                         </div>
-
-                        <!-- Informations personnelles -->
-                        <div class="text-white text-lg space-y-3 m-auto">
+                        <div class=" bg-light-secondary text-lg space-y-3 m-auto text-light-text dark:text-dark-text">
                             <p><strong>Nom :</strong> {data.user.name}</p>
                             <p><strong>Âge :</strong> {data.user.age} ans</p>
                             <p><strong>Téléphone :</strong> {data.user.phone}</p>
-                            <p><strong>Email :</strong> <a href={"mailto:" + data.user.email} class="text-blue-400 hover:underline">{data.user.email}</a></p>
+                            <p><strong>Email :</strong> <a href={"mailto:" + data.user.email} class="text-light-primary dark:text-dark-primary hover:underline">{data.user.email}</a></p>
                             <p><strong>Adresse :</strong> {data.user.address}</p>
-                            <!-- Image -->
                             <div class="flex justify-center mt-3">
-                                <img class="rounded-full w-24 h-24 md:w-48 md:h-48" 
-                                    src="/developpeur.webp" 
-                                    alt={data.user.name} 
-                                /> 
+                                <img class="rounded-full w-24 h-24 md:w-48 md:h-48"
+                                    src="/developpeur.webp"
+                                    alt={data.user.name}
+                                />
                             </div>
                         </div>
                     </div>
-
-                    <!-- Liens sociaux -->
                     <nav class="flex gap-x-5 mt-6 flex-wrap">
                         <Social_icons href={data.user.linkedin}>
                             <Linkedin class="size-4 md:size-6"/>
@@ -88,52 +76,33 @@ import data from '../data/data.json';
                 </div>
             </div>
         </Section>
-        
-        <!-- Technologies -->
         <Section_techno id="technology">
             <Technology technologies={data.technologies} />
         </Section_techno>
-
-        <!-- Projets -->
         <Section id="project">
             <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
-                    <Code class="size-8 "/>Mes Projets 
+                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
+                    <Code class="size-8 "/>Mes Projets
                 </h2>
             </div>
             <Project projects={data.projects} />
         </Section>
-
-        <!-- Expériences -->
-        <!-- <Section_experience id="experience">
-            <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
-                    <Exp_icon class="size-8 "/>Expérience
-                </h2>
-            </div>
-            <Experience experiences={data.experiences} />
-        </Section_experience> -->
-
-        <!-- Formations -->
         <Section_formation id="formation">
             <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
+                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
                     <Cert_icon class="size-8 "/>Parcours de formation
                 </h2>
             </div>
             <Formation formations={data.formations} />
         </Section_formation>
-
-        <!-- À propos -->
         <Section_about id="about">
             <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"> 
-                    <My_icons class="size-8 "/>À propos de moi 
+                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
+                    <My_icons class="size-8 "/>À propos de moi
                 </h2>
             </div>
             <About about={data.user.about} />
         </Section_about>
-
         <Footer/>
     </main>
 </Layout>

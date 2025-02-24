@@ -6,16 +6,34 @@
         <a class="hover:bg-white/10 rounded-full px-3 py-1 transition text-base md:text-sm" href="#project">Projets</a>
         <!-- <a class="hover:bg-white/10 rounded-full px-3 py-1 transition text-base md:text-sm" href="#certificados">Certificados</a> -->
         <a class="hover:bg-white/10 rounded-full px-3 py-1 transition text-base md:text-sm" href="#about">A propos</a>
+        <button id="toggle-dark-mode">Toggle Dark Mode</button>
     </nav>
     <script>
-    document.addEventListener("scroll", function() {
-        let header = document.querySelector("header");
-        if (!header) return;
-        if (window.scrollY > 100) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
+        // Toggle dark mode
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggle-dark-mode');
+            const root = document.documentElement;
+
+            toggleButton.addEventListener('click', () => {
+                if (root.style.colorScheme === 'dark') {
+                    root.style.colorScheme = 'light';
+                    
+                } else {
+                    root.style.colorScheme = 'dark';
+                
+                }
+            });
+        });
+
+        // Change le header en fonction du scroll 
+        document.addEventListener("scroll", function() {
+            let header = document.querySelector("header");
+            if (!header) return;
+            if (window.scrollY > 100) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
 </script>
 </header>
