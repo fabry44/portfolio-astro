@@ -20,6 +20,9 @@ import Section_about from '../components/Section_about.astro';
 import Footer from '../components/Footer.astro';
 import Section_formation from '../components/Section_formation.astro';
 import Section_experience from '../components/Section_experience.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+import ContactForm from '../components/ContactForm.jsx';
+
 
 import data from '../data/data.json';
 ---
@@ -103,6 +106,16 @@ import data from '../data/data.json';
             </div>
             <About about={data.user.about} />
         </Section_about>
+        <div class="flex justify-center items-center bg-section relative overflow-hidden">
+            <div class="flex flex-wrap -mx-3 mb-6 contactsection">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 ">
+                    <ContactForm client:only="react" />
+                </div>
+                <div class="w-full md:w-1/2 px-6 mb-6 md:mb-0">
+                    <ContactInfo user={data.user} />
+                </div>
+            </div> 
+        </div>       
         <Footer/>
     </main>
 </Layout>

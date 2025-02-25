@@ -14,7 +14,7 @@ const { projects } = Astro.props;
         <div class="w-full md:w-1/2 flex flex-col justify-center">
         <h3 class="text-2xl font-bold mb-2">{title}</h3>
         <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-wrap mb-2 gap-x-2">
             {technology.map(({ name, icon, class: className, style }) => (
                 <li>
                 <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${className}`} style={style}>

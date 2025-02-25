@@ -1,0 +1,25 @@
+---
+import Linkedin from '../icons/Social/Linkedin.astro';
+import Github from '../icons/Social/Github.astro';
+import Social_icons from '../components/Social_icons.astro';
+import Gmail from '../icons/Social/Gmail.astro';
+
+const { user } = Astro.props; // Récupère les expériences passées en props
+---
+
+<div class=" bg-light-secondary text-lg space-y-3 m-auto text-light-text dark:text-dark-text flex flex-col items-start">
+    <h2 class="text-2xl font-bold">Me contacter</h2>
+    <p><strong>Téléphone :</strong> {user.phone}</p>
+    <p><strong>Email :</strong> <a href={"mailto:" + user.email} class="text-light-primary dark:text-dark-primary hover:underline">{user.email}</a></p> 
+    <p><strong>Adresse :</strong> {user.address}</p>     
+    <nav class=" flex-auto flex-wrap gap-5 mt-6 ">
+        <Social_icons href={user.linkedin}>
+            <Linkedin class="size-4 md:size-6"/>
+            LinkedIn
+        </Social_icons>
+        <Social_icons href={"mailto:" + user.email}>
+            <Gmail class="size-4 md:size-6"/>
+            {user.email}
+        </Social_icons>
+    </nav>                   
+</div>

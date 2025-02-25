@@ -118,10 +118,34 @@ const { description, title } = Astro.props;
     header.scrolled {
         background: var(--primary);
         filter: drop-shadow(2px 4px 6px black);
+        width: 100%;
+        color: white;
+        border-radius: 15px;
+        opacity: 0.9;
+    }
+
+    @media screen and (min-width: 576px) {
+        header.scrolled {
+        background: var(--primary);
+        filter: drop-shadow(2px 4px 6px black);
+        width: 80%;
+        color: white;
+        border-radius: 15px;
+        opacity: 0.9;
+        }
+        
+    }
+
+    @media screen and (min-width: 768px) {
+        header.scrolled {
+        background: var(--primary);
+        filter: drop-shadow(2px 4px 6px black);
         width: 50%;
         color: white;
         border-radius: 15px;
         opacity: 0.9;
+        }
+        
     }
 
     .background {
@@ -138,6 +162,57 @@ const { description, title } = Astro.props;
         );
         filter: blur(100px);
     }
+
+    
+    .bg-section {
+        background-image: url(/contact.webp);
+        position: relative;
+        background-attachment: fixed; /* Conserve l'effet de parallaxe */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top; /* Modifiez cette ligne pour ajuster la position */
+        max-height: 1500px;
+        padding: 3rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        .bg-section {
+            background-image: url(/contact.webp);
+            position: relative;
+            background-attachment: fixed; /* Conserve l'effet de parallaxe */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top; /* Modifiez cette ligne pour ajuster la position */
+            /* max-height: 1500px; */
+            padding: 6rem;
+        }        
+    }
+
+
+
+    .bg-section::before {
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    }
+
+    .bg-section > .flex {
+        position: relative;
+        z-index: 1; 
+    }
+
+    .contactsection {
+        background: #374151ba;
+        border-radius: 15px;
+        padding: 30px;
+    }
+
 
     .sectionFormation {
         max-width: 800px;

@@ -1,14 +1,9 @@
 import { defineConfig } from 'astro/config';
 
 import tailwind from "@astrojs/tailwind";
-import solidPlugin from 'vite-plugin-solid';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(),solidPlugin()],
-  build: {
-    rollupOptions: {
-      external: ['solid-js'],
-    },
-  },
+  integrations: [tailwind(), react()],
 });
