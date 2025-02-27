@@ -1,3 +1,7 @@
+---
+import RollsPortrait from '../components/RollsPortrait';
+---
+
 <section class="flex flex-col md:flex-row gap-x-8 justify-center items-center">
     <div class="[&>p]:mb-4 [&>p>strong]:text-accent [&>p>strong]:font-semibold text-pretty">
         <p>
@@ -16,5 +20,5 @@
             Je me spécialise en <strong>développement backend avec Symfony</strong> et continue d'explorer d'autres technologies comme Node.js et Python. Chaque jour, je cherche à améliorer mes compétences, à travailler sur des projets concrets et à approfondir mes connaissances.
         </p>
     </div>
-    <img src="/developpeur.webp" alt="Fabien Roy" class="rounded-full size-64">
+    <RollsPortrait client:load></RollsPortrait> 
 </section>

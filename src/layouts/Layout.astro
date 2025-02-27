@@ -44,7 +44,8 @@ const { description, title } = Astro.props;
         font-size: 100%; /* 16px */
         font-family: "Scada";
         font-weight: 400;
-        scroll-behavior: smooth;
+        /* scroll-behavior: smooth; */
+        scroll-snap-type: y mandatory;
     }
 
     body {
@@ -165,45 +166,40 @@ const { description, title } = Astro.props;
 
     
     .bg-section {
-        background-image: url(/contact.webp);
-        position: relative;
-        background-attachment: fixed; /* Conserve l'effet de parallaxe */
+        background-image: url("/contact.webp");
         background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center top; /* Modifiez cette ligne pour ajuster la position */
-        max-height: 1500px;
+        background-position: center;
+        /* background-attachment: fixed; */
+        position: relative;
+        z-index: -1;
+        max-height: 1200px;
         padding: 3rem;
     }
 
     @media screen and (min-width: 768px) {
         .bg-section {
-            background-image: url(/contact.webp);
-            position: relative;
-            background-attachment: fixed; /* Conserve l'effet de parallaxe */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center top; /* Modifiez cette ligne pour ajuster la position */
-            /* max-height: 1500px; */
+            
+            height: 800px;
             padding: 6rem;
         }        
     }
 
 
 
-    .bg-section::before {
+    /* .bg-section::before {
         content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 1;
-    backdrop-filter: blur(5px);
-    }
+    backdrop-filter: blur(1px);
+    } */
 
     .bg-section > .flex {
-        position: relative;
+        
         z-index: 1; 
     }
 
@@ -211,6 +207,7 @@ const { description, title } = Astro.props;
         background: #374151ba;
         border-radius: 15px;
         padding: 30px;
+        margin: 30px;
     }
 
 
@@ -237,6 +234,7 @@ const { description, title } = Astro.props;
         background: var(--primary);
         color: white;
         height: 80px;
+        width: 100vw;
         display: flex;
     }
 
@@ -245,4 +243,27 @@ const { description, title } = Astro.props;
             scroll-behavior: auto;
         }
     }
+
+    /* arcticle > div {
+            width: 100%;
+            height: 800px;
+            margin: 20px;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+
+        arcticle img {
+            width: 300px;
+            height: 400px;
+        }
+
+        .progress {
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: #4ff0b7;
+            bottom: 50px;
+            transform: scaleX(0);
+        } */
 </style>

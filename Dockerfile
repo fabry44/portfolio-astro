@@ -1,22 +1,23 @@
+# Utilisation d'une image Node.js légère
 FROM node:18-alpine
 
+# Définir le répertoire de travail
 WORKDIR /app
 
-# # Copier seulement ce qui est nécessaire pour installer les dépendances
-# COPY package.json package-lock.json ./
+# Copier uniquement les fichiers nécessaires pour l’installation des dépendances
+COPY package.json package-lock.json ./
 
+# Installer les dépendances
+RUN npm install --production
 
-
-# Copier le reste du code
+# Copier le reste du projet après installation des dépendances
 COPY . .
 
-RUN npm install 
+# Construire le projet (uniquement en mode production)
+RUN npm run build
 
-# Build du projet
-# RUN npm run build
-
-# Le port de "npm run preview"
+# Exposer le port utilisé par Astro
 EXPOSE 4321
 
-# Lancement du serveur Astro
+# Démarrer le serveur en mode preview (production)
 CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
