@@ -10,7 +10,7 @@ const resumeJsonPath = path.join(__dirname, 'resume.json');
 const outputDir = path.join(__dirname, 'public');
 
 // Commande pour générer le CV en HTML
-const generateHtmlCommand = `npx resume-cli export --theme ./themes/jsonresume-theme-macchiato --format html ${resumeJsonPath} ${path.join(outputDir, 'resume.html')}`;
+const generateHtmlCommand = `npx resumed render --theme ./themes/jsonresume-theme-macchiato --format html ${resumeJsonPath} ${path.join(outputDir, 'resume.html')}`;
 
 // Exécuter la commande pour générer le CV en HTML
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
