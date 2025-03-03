@@ -1,10 +1,11 @@
-const { exec } = require('child_process');
-const puppeteer = require('puppeteer');
-const path = require('path');
-const fs = require('fs');
+import { exec } from 'child_process';
+import puppeteer from 'puppeteer';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
 
-// Chemins vers votre fichier JSON et dossier de sortie
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// Obtenir le chemin du répertoire courant
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const resumeJsonPath = path.join(__dirname, 'resume.json');
 const outputDir = path.join(__dirname, 'public');
 
