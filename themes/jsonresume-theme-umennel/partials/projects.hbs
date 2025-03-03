@@ -1,0 +1,47 @@
+{{#if resume.projects.length}}
+<div id="projects" class="box">
+    <h2><i class= "fa fa-tools ico"></i> Projects</h2>
+    {{#each resume.projects}}
+    <div class="achievement">
+        <div class="header">
+            {{#if name}}
+            <h3>{{name}}</h3>
+            {{/if}}
+            {{#if url}}
+            <p class="address">
+                <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+            </p>
+            {{/if}}
+            {{#if startDate}}
+            <p class="date">{{getMonth startDate}} {{getYear startDate}} – {{#if endDate}}{{getMonth endDate}} {{getYear endDate}}{{else}}present{{/if}}</p>
+            {{/if}}   
+        </div>
+        <div class="details">
+            {{#if entity}}
+            <p><i class= "fa fa-bookmark ico"></i> {{entity}}</p>
+            {{/if}}
+            {{#if roles}}
+            <p><i class= "fa fa-user-cog ico"></i> {{join roles ', '}}</p>
+            {{/if}}
+            {{#if description}}
+            <p>{{description}}</p>
+            {{/if}}
+            {{#if highlights.length}}
+            <ul class="list-group">
+            {{#each highlights}}
+                <li class="list-group-item">{{this}}</li>
+            {{/each}}
+            </ul>
+            {{/if}} 
+        </div>
+        {{#if keywords.length}}
+        <div class="details">
+            {{#each keywords}}
+            <span class="keyword badge">{{this}}</span>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>
+{{/if}}

@@ -21,7 +21,7 @@ import Footer from '../components/Footer.astro';
 import Section_formation from '../components/Section_formation.astro';
 import Section_experience from '../components/Section_experience.astro';
 import ContactComponent from '../components/ContactComponent.jsx';
-
+import ResumeViewer from '../components/ResumeViewer.jsx';
 
 // import ProjectMotion from "../components/ProjectMotion.astro";
 
@@ -79,6 +79,7 @@ import data from '../data/data.json';
                             {data.user.email}
                         </Social_icons>
                     </nav>
+                    <ResumeViewer client:only="react" />
                 </div>
             </div>
         </Section>

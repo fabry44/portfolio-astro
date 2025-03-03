@@ -1,0 +1,19 @@
+{{#if resume.interests.length}}
+<div id="interests" class="box">
+<h2><i class="fa fa-heart ico"></i> Interests</h2>
+{{#each resume.interests}}
+<div class="achievement">
+	<div class="skill">
+		<h3>{{name}}</h3>
+	</div>
+	{{#if keywords.length}}
+    <div class="details">
+        {{#each keywords}}
+        <span class="keyword badge">{{this}}</span>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+{{/each}}
+</div>
+{{/if}}

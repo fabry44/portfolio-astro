@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime.BjG_zV1W.js";import"./index.DTD2g3-w.js";const t=()=>e.jsxs("div",{children:[e.jsx("iframe",{src:"/cv_fabien_roy.html",width:"100%",height:"600px",title:"Resume"}),e.jsx("a",{href:"/cv_fabien_roy.pdf",download:"cv_fabien_roy.pdf",children:"Télécharger le CV en PDF"})]});export{t as default};

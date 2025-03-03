@@ -8,10 +8,10 @@ import * as fs from 'fs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const resumeJsonPath = path.join(__dirname, 'resume.json');
 const outputDir = path.join(__dirname, 'public');
-const themePath = path.join(__dirname, 'themes', 'jsonresume-theme-macchiato');
+const themePath = path.join(__dirname, 'themes', 'jsonresume-theme-macchiato/index.js');
 
 // Commande pour générer le CV en HTML
-const generateHtmlCommand = `npx resumed render --theme ${themePath}`;
+const generateHtmlCommand = `npx resumed render --theme ${themePath} --output ${path.join(outputDir, 'cv_fabien_Roy.html')}`;
 
 // Exécuter la commande pour générer le CV en HTML
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
@@ -25,11 +25,13 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
   console.log(`HTML generated successfully: ${stdout}`);
 
   // Lire le fichier HTML généré
-  const htmlPath = path.join(outputDir, 'resume.html');
+  const htmlPath = path.join(outputDir, 'cv_fabien_Roy.html');
   let htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
   // Lancer Puppeteer pour générer le PDF
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   const page = await browser.newPage();
 
   // Charger la page HTML modifiée
@@ -37,7 +39,7 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
 
   // Générer le PDF
   await page.pdf({
-    path: path.join(outputDir, 'resume.pdf'),
+    path: path.join(outputDir, 'cv_fabien_Roy.pdf'),
     format: 'A4',
     margin: { top: '0', right: '0', bottom: '0', left: '0' },
   });

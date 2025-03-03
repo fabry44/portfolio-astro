@@ -1,0 +1,26 @@
+{{#if resume.publications.length}}
+<div id="publications" class="box achievement">
+    <h2><i class="fa fa-award ico"></i> Publications</h2>
+    {{#each resume.publications}}
+		<div class="header">
+        {{#if name}}
+        <h3>{{name}}</h3>
+        {{/if}}
+				<p class="address">
+			      <a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
+		    </p>
+        {{#if releaseDate}}
+        <p class="date">{{getMonth releaseDate}} {{getYear releaseDate}}</p>
+        {{/if}}
+    </div>
+    <div class="details">
+        {{#if publisher}}
+        <p><i class= "fa fa-bookmark ico"></i> {{publisher}}</p>
+        {{/if}}
+        {{#if summary}}
+			  <p>{{summary}}</p>
+			  {{/if}}
+    </div>
+    {{/each}}
+</div>
+{{/if}}

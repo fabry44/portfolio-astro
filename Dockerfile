@@ -1,23 +1,30 @@
-# Utilisation d'une image Node.js légère
-FROM node:18-alpine
+# Utiliser une image de base Node.js
+FROM node:18
 
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copier uniquement les fichiers nécessaires pour l’installation des dépendances
-COPY package.json package-lock.json ./
+# Installer les dépendances nécessaires pour Chromium
+RUN apt-get update && apt-get install -y \
+    gnupg \
+    wget \
+    ca-certificates \
+    && wget --quiet --output-document=chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+    && apt-get install -y ./chrome.deb \
+    && rm chrome.deb
+
+# Copier package.json et package-lock.json
+COPY package*.json ./
 
 # Installer les dépendances
-RUN npm install --production
+RUN npm install
 
-# Copier le reste du projet après installation des dépendances
+# Copier le reste des fichiers de l'application
 COPY . .
 
-# Construire le projet (uniquement en mode production)
-RUN npm run build
+# Installer Puppeteer
+RUN npm install puppeteer
 
-# Exposer le port utilisé par Astro
-EXPOSE 4321
-
-# Démarrer le serveur en mode preview (production)
+# Exécuter le script et construire le projet
 CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
+# CMD ["sh", "-c", "node generate-resume.js && npm run build"]
