@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 import puppeteer from 'puppeteer';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import fs from 'fs';
+import * as fs from 'fs';
 
 // Obtenir le chemin du répertoire courant
 const __dirname = dirname(fileURLToPath(import.meta.url));
