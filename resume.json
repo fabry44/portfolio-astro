@@ -1,165 +1,144 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
-  "basics": {
-    "name": "jymmy hendriks",
-    "label": "Programmer",
-    "image": "",
-    "email": "richard.hendriks@mail.com",
-    "phone": "(912) 555-4321",
-    "website": "http://johndoe.com",
-    "url": "http://richardhendricks.example.com",
-    "summary": "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+    "$schema": "https:\/\/raw.githubusercontent.com\/jsonresume\/resume-schema\/v1.0.0\/schema.json",
+    "basics": {
+        "name": "Roy Fabien",
+        "label": "D\u00e9veloppeur Web et Web Mobile",
+        "email": "fabienroy2@gmail.com",
+        "phone": "0650262098",
+        "summary": "Apr\u00e8s 15 ans d\u2019exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ans en tant que conducteur de travaux, j\u2019ai d\u00e9cid\u00e9 de relever un nouveau d\u00e9fi en me reconvertissant dans le d\u00e9veloppement web et mobile. Passionn\u00e9 par la programmation depuis toujours, je me sp\u00e9cialise aujourd\u2019hui en Symfony tout en explorant Node.js et Python.",
+        "location": {
+            "address": "22 rue des Renardi\u00e8res 44100 Nantes",
+            "postalCode": "44100",
+            "city": "Nantes",
+            "countryCode": "FR",
+            "region": "Pays de la Loire"
+        },
+        "profiles": []
     },
-    "profiles": [
-      {
-        "network": "linkedin",
-        "username": "",
-        "url": "https://www.twitter.com"
-      },
-      {
-        "network": "SoundCloud",
-        "username": "dandymusicnl",
-        "url": "https://soundcloud.example.com/dandymusicnl"
-      }
-    ]
-  },
-  "work": [
-    {
-      "name": "Pied Piper",
-      "location": "Palo Alto, CA",
-      "description": "Awesome compression company",
-      "position": "CEO/President",
-      "url": "http://piedpiper.example.com",
-      "startDate": "2013-12-01",
-      "endDate": "2014-12-01",
-      "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
-      "highlights": [
-        "Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-        "Successfully won Techcrunch Disrupt",
-        "Optimized an algorithm that holds the current world record for Weisman Scores"
-      ]
+    "work": [],
+    "education": [
+        {
+            "institution": "\u00c9cole Studi",
+            "url": "",
+            "area": "D\u00e9veloppement Web et Web Mobile",
+            "studyType": "Certificat d'\u00c9tat niveau 5",
+            "startDate": "2023-07-20",
+            "endDate": "2025-01-01",
+            "score": null,
+            "courses": []
+        },
+        {
+            "institution": "Lyc\u00e9e F\u00e9lix le Dantec \u00e0 Lannion",
+            "url": "",
+            "area": "Optique physique, g\u00e9om\u00e9trique et photonique",
+            "studyType": "BTS G\u00e9nie Optique option Photonique",
+            "startDate": "2010-09-01",
+            "endDate": "2010-06-01",
+            "score": null,
+            "courses": []
+        },
+        {
+            "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
+            "url": "",
+            "area": "Math\u00e9matiques",
+            "studyType": "Bac Scientifique",
+            "startDate": "2025-03-02",
+            "endDate": "2008-06-01",
+            "score": null,
+            "courses": []
+        }
+    ],
+    "project": [
+        {
+            "name": "Site web pour un zoo (Arcadia)",
+            "description": "Projet d'\u00e9tude Studi (ECF) : conception d'un site web Zoo-Arcadia",
+            "highlights": [],
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "PHP",
+                "Symfony",
+                "Bootstrap"
+            ],
+            "startDate": null,
+            "endDate": null,
+            "url": "#",
+            "roles": [],
+            "entity": null,
+            "type": "application"
+        },
+        {
+            "name": "SOS PRO, Site vitrine pour une auto-entreprise",
+            "description": "Site vitrine pour une auto-entreprise de services \u00e0 la personne avec Symfony 7.2, Bootstrap 5, JQuery et MariaDB",
+            "highlights": [],
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "PHP",
+                "Symfony",
+                "Bootstrap",
+                "MariaDB"
+            ],
+            "startDate": null,
+            "endDate": null,
+            "url": "#",
+            "roles": [],
+            "entity": null,
+            "type": "application"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Languages",
+            "level": null,
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "PHP",
+                "Rust",
+                "Python"
+            ]
+        },
+        {
+            "name": "Frameworks et Librairies",
+            "level": null,
+            "keywords": [
+                "Symfony",
+                "Astro",
+                "React",
+                "Symfony",
+                "Bootstrap",
+                "Tailwind CSS",
+                "Node.js"
+            ]
+        },
+        {
+            "name": "Bases de Donn\u00e9es",
+            "level": null,
+            "keywords": [
+                "MongoDB",
+                "MySQL"
+            ]
+        },
+        {
+            "name": "Outils Additionnels",
+            "level": null,
+            "keywords": [
+                "Figma",
+                "Git",
+                "GitHub",
+                "Netlify"
+            ]
+        }
+    ],
+    "languages": [],
+    "interests": [],
+    "references": [],
+    "meta": {
+        "version": "v1.0.0",
+        "lastModified": "2025-03-03T14:22:29+00:00"
     }
-  ],
-  "volunteer": [
-    {
-      "organization": "CoderDojo",
-      "position": "Teacher",
-      "url": "http://coderdojo.example.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Global movement of free coding clubs for young people.",
-      "highlights": [
-        "Awarded 'Teacher of the Month'"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "institution": "University of Oklahoma",
-      "url": "https://www.ou.edu/",
-      "area": "Information Technology",
-      "studyType": "Bachelor",
-      "startDate": "2011-06-01",
-      "endDate": "2014-01-01",
-      "score": "4.0",
-      "courses": [
-        "DB1101 - Basic SQL",
-        "CS2011 - Java Introduction"
-      ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Digital Compression Pioneer Award",
-      "date": "2014-11-01",
-      "awarder": "Techcrunch",
-      "summary": "There is no spoon."
-    }
-  ],
-  "publications": [
-    {
-      "name": "Video compression for 3d media",
-      "publisher": "Hooli",
-      "releaseDate": "2014-10-01",
-      "url": "http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)",
-      "summary": "Innovative middle-out compression algorithm that changes the way we store data."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript"
-      ]
-    },
-    {
-      "name": "Compression",
-      "level": "Master",
-      "keywords": [
-        "Mpeg",
-        "MP4",
-        "GIF"
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker"
-    }
-  ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Erlich Bachman",
-      "reference": "It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company."
-    }
-  ],
-  "projects": [
-    {
-      "name": "Miss Direction",
-      "description": "A mapping engine that misguides you",
-      "highlights": [
-        "Won award at AIHacks 2016",
-        "Built by all women team of newbie programmers",
-        "Using modern technologies such as GoogleMaps, Chrome Extension and Javascript"
-      ],
-      "keywords": [
-        "GoogleMaps",
-        "Chrome Extension",
-        "Javascript"
-      ],
-      "startDate": "2016-08-24",
-      "endDate": "2016-08-24",
-      "url": "http://missdirection.example.com",
-      "roles": [
-        "Team lead",
-        "Designer"
-      ],
-      "entity": "Smoogle",
-      "type": "application"
-    }
-  ],
-  "meta": {
-    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/sample.resume.json",
-    "version": "v1.0.0",
-    "lastModified": "2017-12-24T15:53:00"
-  }
 }
