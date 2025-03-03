@@ -8,9 +8,10 @@ import * as fs from 'fs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const resumeJsonPath = path.join(__dirname, 'resume.json');
 const outputDir = path.join(__dirname, 'public');
+const themePath = path.join(__dirname, 'themes', 'jsonresume-theme-macchiato');
 
 // Commande pour générer le CV en HTML
-const generateHtmlCommand = `npx resumed render --theme ./themes/jsonresume-theme-macchiato --format html ${resumeJsonPath} ${path.join(outputDir, 'resume.html')}`;
+const generateHtmlCommand = `npx resumed render --theme ${themePath}`;
 
 // Exécuter la commande pour générer le CV en HTML
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
