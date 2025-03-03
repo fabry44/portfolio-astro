@@ -1,5 +1,6 @@
 import { exec } from 'child_process';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from 'chrome-aws-lambda';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
@@ -10,48 +11,59 @@ const outputDir = path.join(__dirname, 'public');
 const distDir = path.join(__dirname, 'dist'); // Dossier final Netlify
 
 // Vérifier que les dossiers existent
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-}
-if (!fs.existsSync(distDir)) {
-    fs.mkdirSync(distDir, { recursive: true });
-}
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 
 // Commande pour générer le CV en HTML
 const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato --output ${path.join(outputDir, 'cv_fabien_roy.html')}`;
 
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
   if (error) {
-    console.error(`Error generating HTML: ${error.message}`);
+    console.error(`❌ Erreur lors de la génération du HTML: ${error.message}`);
     return;
   }
-  console.log(`HTML generated successfully: ${stdout}`);
+  console.log(`✅ HTML généré avec succès: ${stdout}`);
 
-  // Lire le fichier HTML généré
   const htmlPath = path.join(outputDir, 'cv_fabien_roy.html');
+
+  // Vérifier si le fichier HTML a bien été créé
+  if (!fs.existsSync(htmlPath)) {
+    console.error("❌ Erreur : Le fichier HTML n'a pas été trouvé !");
+    return;
+  }
+
   const htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
-  // Lancer Puppeteer pour générer le PDF
-  const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
-  const page = await browser.newPage();
+  try {
+    console.log("📄 Lancement de Puppeteer pour générer le PDF...");
+    
+    // Lancer Puppeteer avec `chrome-aws-lambda`
+    const browser = await puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath || '/usr/bin/google-chrome-stable',
+      headless: true,
+    });
 
-  // Charger la page HTML
-  await page.setContent(htmlContent, { waitUntil: 'networkidle2' });
+    const page = await browser.newPage();
+    await page.setContent(htmlContent, { waitUntil: 'networkidle2' });
 
-  // Générer le PDF
-  await page.pdf({
-    path: path.join(outputDir, 'cv_fabien_roy.pdf'),
-    format: 'A4',
-    margin: { top: '0', right: '0', bottom: '0', left: '0' },
-  });
+    // Générer le PDF
+    const pdfPath = path.join(outputDir, 'cv_fabien_roy.pdf');
+    await page.pdf({
+      path: pdfPath,
+      format: 'A4',
+      margin: { top: '0', right: '0', bottom: '0', left: '0' },
+    });
 
-  await browser.close();
-  console.log('PDF generated successfully');
+    await browser.close();
+    console.log("✅ PDF généré avec succès:", pdfPath);
 
-  // Copier les fichiers dans `dist/` pour qu'ils soient pris en compte par Netlify
-  fs.copyFileSync(path.join(outputDir, 'cv_fabien_roy.html'), path.join(distDir, 'cv_fabien_roy.html'));
-  fs.copyFileSync(path.join(outputDir, 'cv_fabien_roy.pdf'), path.join(distDir, 'cv_fabien_roy.pdf'));
-  console.log('Files copied to dist/');
+    // Copier les fichiers dans `dist/` pour qu'ils soient pris en compte par Netlify
+    fs.copyFileSync(htmlPath, path.join(distDir, 'cv_fabien_roy.html'));
+    fs.copyFileSync(pdfPath, path.join(distDir, 'cv_fabien_roy.pdf'));
+    console.log('✅ Fichiers copiés dans `dist/` pour Netlify');
+  } catch (error) {
+    console.error("❌ Erreur lors de la génération du PDF:", error);
+  }
 });
