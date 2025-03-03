@@ -1,7 +1,7 @@
-import { exec } from 'child_process';
-import puppeteer from 'puppeteer';
-import path from 'path';
-import fs from 'fs';
+const { exec } = require('child_process');
+const puppeteer = require('puppeteer');
+const path = require('path');
+const fs = require('fs');
 
 // Chemins vers votre fichier JSON et dossier de sortie
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
@@ -12,7 +12,7 @@ const outputDir = path.join(__dirname, 'public');
 const generateHtmlCommand = `npx resume-cli export --theme ./themes/jsonresume-theme-macchiato --format html ${resumeJsonPath} ${path.join(outputDir, 'resume.html')}`;
 
 // Exécuter la commande pour générer le CV en HTML
-exec(generateHtmlCommand, async (error: Error | null, stdout: string, stderr: string) => {
+exec(generateHtmlCommand, async (error, stdout, stderr) => {
   if (error) {
     console.error(`Error generating HTML: ${error.message}`);
     return;
@@ -25,8 +25,6 @@ exec(generateHtmlCommand, async (error: Error | null, stdout: string, stderr: st
   // Lire le fichier HTML généré
   const htmlPath = path.join(outputDir, 'resume.html');
   let htmlContent = fs.readFileSync(htmlPath, 'utf8');
-
-  
 
   // Lancer Puppeteer pour générer le PDF
   const browser = await puppeteer.launch();
