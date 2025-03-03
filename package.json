@@ -19,10 +19,21 @@
     "astro": "^4.16.18",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
+    "jsonresume-theme-bhdouglass": "^1.0.2",
+    "jsonresume-theme-elite": "^1.2.0",
+    "jsonresume-theme-even": "^0.23.0",
+    "jsonresume-theme-flat": "^0.3.7",
+    "jsonresume-theme-lowmess": "^0.0.11",
+    "jsonresume-theme-macchiato": "^1.1.0",
+    "jsonresume-theme-material": "^1.3.1",
+    "jsonresume-theme-modern2": "^0.0.20",
+    "jsonresume-theme-mooser": "^0.2.9",
+    "jsonresume-theme-umennel": "^0.1.1",
     "lucide-react": "^0.476.0",
     "motion": "^12.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "resumed": "^4.1.0",
     "simplex-noise": "^4.0.3",
     "solid-js": "^1.9.4",
     "tailwind-merge": "^3.0.2",
@@ -30,6 +41,7 @@
     "typescript": "^5.5.3"
   },
   "devDependencies": {
+    "puppeteer": "^24.3.0",
     "vite-plugin-solid": "^2.11.2"
   }
 }

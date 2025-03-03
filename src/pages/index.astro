@@ -32,7 +32,7 @@ import data from '../data/data.json';
 
 <Layout title={`Portfolio ${data.user.name} - Développeur Backend`}
     description="Développeur backend spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité.">
-    <main class="px-4">
+    <main>
         <Section>
             <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
                 <div class="flex flex-col">
@@ -82,10 +82,10 @@ import data from '../data/data.json';
                 </div>
             </div>
         </Section>
-        <Section_techno id="technology">
+        <Section_techno id="technology" class="px-4">
             <Technology technologies={data.technologies} />
         </Section_techno>
-        <Section id="project">
+        <Section id="project" class="px-4">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
                     <Code class="size-8 "/>Mes Projets
@@ -101,7 +101,7 @@ import data from '../data/data.json';
             </div>
             <ProjectMotion projects={data.projects} />
         </Section> -->
-        <Section_formation id="formation">
+        <Section_formation id="formation" class="px-4">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
                     <Cert_icon class="size-8 "/>Parcours de formation
@@ -109,7 +109,7 @@ import data from '../data/data.json';
             </div>
             <Formation formations={data.formations} />
         </Section_formation>
-        <Section_about id="about">
+        <Section_about id="about" class="px-4">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
                     <My_icons class="size-8 "/>À propos de moi
