@@ -1,11 +1,11 @@
 import { exec } from 'child_process';
 import puppeteer from 'puppeteer';
-import { dirname } from 'path';
+import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
 
 // Obtenir le chemin du répertoire courant
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const resumeJsonPath = path.join(__dirname, 'resume.json');
 const outputDir = path.join(__dirname, 'public');
 
