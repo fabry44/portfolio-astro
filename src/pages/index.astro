@@ -78,15 +78,19 @@ import data from '../data/data.json';
                             <Gmail class="size-4 md:size-6"/>
                             {data.user.email}
                         </Social_icons>
-                    </nav>
-                    <ResumeViewer client:only="react" />
+                    </nav>                    
                 </div>
             </div>
         </Section>
-        <Section_techno id="technology" class="px-4">
+        <Section>
+            <div class="flex justify-center align-middle">
+                <ResumeViewer client:only="react" />
+            </div>
+        </Section>
+        <Section_techno id="technology">
             <Technology technologies={data.technologies} />
         </Section_techno>
-        <Section id="project" class="px-4">
+        <Section id="project">
             <div class="flex justify-center">
                 <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
                     <Code class="size-8 "/>Mes Projets

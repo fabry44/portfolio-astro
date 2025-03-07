@@ -1,12 +1,23 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const ResumeViewer = () => {
   return (
-    <div>
-      <iframe src="/cv_fabien_roy.html" width="100%" height="600px" title="Resume"></iframe>
-      <a href="/cv_fabien_roy.pdf" download="cv_fabien_roy.pdf">
-        Télécharger le CV en PDF
+    <div class="curriculum">
+      <motion.iframe 
+        initial={{ opacity: 0, y: 1000, scale: 0.0 }}
+        animate={{ opacity: 1, y: 0, scale: 0.3 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        whileTap={{ scale: 1 }}        
+        src="/cv_fabien_roy.html"
+        width="612" 
+        height="792" 
+        title="Mon CV" />
+      <br />
+      <a class="font-bold py-2 px-4 rounded" href="/cv_fabien_roy.pdf" download="cv_fabien_roy.pdf">
+          <i class="fas fa-download"></i>
+        Télécharger
       </a>
     </div>
   );

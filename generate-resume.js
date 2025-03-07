@@ -9,13 +9,14 @@ import * as fs from 'fs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(__dirname, 'public');  
 const distDir = path.join(__dirname, 'dist'); // Dossier final Netlify
+const themePath = path.join(__dirname, 'themes', 'jsonresume-theme-macchiato/index.js');
 
 // Vérifier que les dossiers existent
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 
 // Commande pour générer le CV en HTML
-const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato --output ${path.join(outputDir, 'cv_fabien_roy.html')}`;
+const generateHtmlCommand = `npx resumed render --theme ${themePath} --output ${path.join(outputDir, 'cv_fabien_Roy.html')}`;
 
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
   if (error) {
