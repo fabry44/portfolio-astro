@@ -7,17 +7,15 @@ import * as fs from 'fs';
 
 // Obtenir le chemin du répertoire courant
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const distDir = path.join(__dirname, 'dist'); // Dossier final Netlify
-const themePath = path.join(__dirname, 'themes', 'jsonresume-theme-macchiato/index.js');
+const outputDir = path.join(__dirname, 'dist');  
 
-// Vérifier que le dossier dist/ existe
-if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
+// Vérifier que le dossier `dist/` existe
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
-// Définir le chemin de sortie du CV directement dans dist/
-const htmlPath = path.join(distDir, 'cv_fabien_roy.html');
-
-// Commande pour générer le CV en HTML directement dans dist/
-const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato --output ${htmlPath}`;
+// Commande pour générer le CV en HTML
+const htmlPath = path.join(outputDir, 'cv_fabien_roy.html');
+const pdfPath = path.join(outputDir, 'cv_fabien_roy.pdf');
+const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato/index.js --output ${htmlPath}`;
 
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
   if (error) {
@@ -36,12 +34,12 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
 
   try {
     console.log("📄 Lancement de Puppeteer pour générer le PDF...");
-
+    
     // Lancer Puppeteer avec `chrome-aws-lambda`
     const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath || '/usr/bin/google-chrome-stable',
+      executablePath: await chromium.executablePath || null,  // Utilisation de chrome-aws-lambda
       headless: true,
     });
 
@@ -49,7 +47,6 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
     await page.setContent(htmlContent, { waitUntil: 'networkidle2' });
 
     // Générer le PDF
-    const pdfPath = path.join(distDir, 'cv_fabien_roy.pdf');
     await page.pdf({
       path: pdfPath,
       format: 'A4',
@@ -58,7 +55,6 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
 
     await browser.close();
     console.log("✅ PDF généré avec succès:", pdfPath);
-
   } catch (error) {
     console.error("❌ Erreur lors de la génération du PDF:", error);
   }
