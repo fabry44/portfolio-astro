@@ -7,16 +7,17 @@ import * as fs from 'fs';
 
 // Obtenir le chemin du répertoire courant
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const outputDir = path.join(__dirname, 'public');  
 const distDir = path.join(__dirname, 'dist'); // Dossier final Netlify
 const themePath = path.join(__dirname, 'themes', 'jsonresume-theme-macchiato/index.js');
 
-// Vérifier que les dossiers existent
-if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+// Vérifier que le dossier dist/ existe
 if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 
-// Commande pour générer le CV en HTML
-const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato/index.js --output ${path.join(outputDir, 'cv_fabien_Roy.html')}`;
+// Définir le chemin de sortie du CV directement dans dist/
+const htmlPath = path.join(distDir, 'cv_fabien_roy.html');
+
+// Commande pour générer le CV en HTML directement dans dist/
+const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato --output ${htmlPath}`;
 
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
   if (error) {
@@ -25,8 +26,6 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
   }
   console.log(`✅ HTML généré avec succès: ${stdout}`);
 
-  const htmlPath = path.join(outputDir, 'cv_fabien_roy.html');
-  console.log(`📄 Chemin du fichier HTML: ${htmlPath}`);
   // Vérifier si le fichier HTML a bien été créé
   if (!fs.existsSync(htmlPath)) {
     console.error("❌ Erreur : Le fichier HTML n'a pas été trouvé !");
@@ -37,7 +36,7 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
 
   try {
     console.log("📄 Lancement de Puppeteer pour générer le PDF...");
-    
+
     // Lancer Puppeteer avec `chrome-aws-lambda`
     const browser = await puppeteer.launch({
       args: chromium.args,
@@ -50,7 +49,7 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
     await page.setContent(htmlContent, { waitUntil: 'networkidle2' });
 
     // Générer le PDF
-    const pdfPath = path.join(outputDir, 'cv_fabien_roy.pdf');
+    const pdfPath = path.join(distDir, 'cv_fabien_roy.pdf');
     await page.pdf({
       path: pdfPath,
       format: 'A4',
@@ -60,10 +59,6 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
     await browser.close();
     console.log("✅ PDF généré avec succès:", pdfPath);
 
-    // Copier les fichiers dans `dist/` pour qu'ils soient pris en compte par Netlify
-    fs.copyFileSync(htmlPath, path.join(distDir, 'cv_fabien_roy.html'));
-    fs.copyFileSync(pdfPath, path.join(distDir, 'cv_fabien_roy.pdf'));
-    console.log('✅ Fichiers copiés dans `dist/` pour Netlify');
   } catch (error) {
     console.error("❌ Erreur lors de la génération du PDF:", error);
   }
