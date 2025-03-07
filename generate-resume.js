@@ -16,8 +16,8 @@ if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 
 // Commande pour générer le CV en HTML
-// const generateHtmlCommand = `npx resumed render --theme ${themePath} --output ${path.join(outputDir, 'cv_fabien_Roy.html')}`;
-const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato --output ${path.join(outputDir, 'cv_fabien_Roy.html')}`;
+const generateHtmlCommand = `npx resumed render --theme ${themePath} --output ${path.join(outputDir, 'cv_fabien_Roy.html')}`;
+
 exec(generateHtmlCommand, async (error, stdout, stderr) => {
   if (error) {
     console.error(`❌ Erreur lors de la génération du HTML: ${error.message}`);
