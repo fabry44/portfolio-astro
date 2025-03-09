@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import puppeteer from 'puppeteer';
+import wkhtmltopdf from 'wkhtmltopdf';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
@@ -11,12 +11,13 @@ const outputDir = path.join(__dirname, 'dist');
 // Vérifier que le dossier `dist/` existe
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
-// Commande pour générer le CV en HTML
+// Définition des chemins des fichiers
 const htmlPath = path.join(outputDir, 'cv_fabien_roy.html');
 const pdfPath = path.join(outputDir, 'cv_fabien_roy.pdf');
 const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato/index.js --output ${htmlPath}`;
 
-exec(generateHtmlCommand, async (error, stdout, stderr) => {
+// Exécuter la commande pour générer le HTML
+exec(generateHtmlCommand, (error, stdout, stderr) => {
   if (error) {
     console.error(`❌ Erreur lors de la génération du HTML: ${error.message}`);
     return;
@@ -29,31 +30,14 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
     return;
   }
 
-  const htmlContent = fs.readFileSync(htmlPath, 'utf8');
+  console.log("📄 Lancement de wkhtmltopdf pour générer le PDF...");
 
-  try {
-    console.log("📄 Lancement de Puppeteer pour générer le PDF...");
-
-    // Lancer Puppeteer avec l'exécutable Chrome installé via Puppeteer
-    const browser = await puppeteer.launch({
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
-      headless: "new",
-    });
-
-    const page = await browser.newPage();
-    await page.setContent(htmlContent, { waitUntil: 'networkidle2' });
-
-    // Générer le PDF
-    await page.pdf({
-      path: pdfPath,
-      format: 'A4',
-      margin: { top: '0', right: '0', bottom: '0', left: '0' },
-    });
-
-    await browser.close();
-    console.log("✅ PDF généré avec succès:", pdfPath);
-  } catch (error) {
-    console.error("❌ Erreur lors de la génération du PDF:", error);
-  }
+  // Générer le PDF avec wkhtmltopdf
+  wkhtmltopdf(fs.readFileSync(htmlPath, 'utf8'), { output: pdfPath }, (err) => {
+    if (err) {
+      console.error("❌ Erreur lors de la génération du PDF:", err);
+    } else {
+      console.log(`✅ PDF généré avec succès: ${pdfPath}`);
+    }
+  });
 });
