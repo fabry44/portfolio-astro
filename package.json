@@ -8,7 +8,6 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "postinstall": "npx puppeteer-core browsers install chrome",
     "build-resume": "node generate-resume.js && npm run build"
   },
   "dependencies": {
