@@ -1,10 +1,8 @@
 import { exec } from 'child_process';
-import puppeteer from 'puppeteer-core';
-import chromium from 'chrome-aws-lambda';
+import puppeteer from 'puppeteer';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
-
 
 // Obtenir le chemin du répertoire courant
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -35,13 +33,12 @@ exec(generateHtmlCommand, async (error, stdout, stderr) => {
 
   try {
     console.log("📄 Lancement de Puppeteer pour générer le PDF...");
-    
-    // Lancer Puppeteer avec `chrome-aws-lambda`
+
+    // Lancer Puppeteer avec l'exécutable Chrome installé via Puppeteer
     const browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath || null,  // Utilisation de chrome-aws-lambda
-      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
+      headless: "new",
     });
 
     const page = await browser.newPage();
