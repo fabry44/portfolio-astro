@@ -1,5 +1,8 @@
 # Utiliser une image de base Node.js
-FROM node:18
+FROM node:20
+
+# Installer wkhtmltopdf
+RUN apt-get update && apt-get install -y wkhtmltopdf
 
 # Définir le répertoire de travail
 WORKDIR /app
@@ -23,7 +26,7 @@ RUN npm install
 COPY . .
 
 # Installer Puppeteer
-RUN npm install puppeteer
+# RUN npm install puppeteer
 
 # Exécuter le script et construire le projet
 CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]

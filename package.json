@@ -8,7 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "build-resume": "node generate-resume.js && npm run build"
+    "build-resume": "npm install && node generate-resume.js && npm run build"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
@@ -33,6 +33,7 @@
     "lucide-react": "^0.476.0",
     "motion": "^12.4.7",
     "puppeteer": "^24.4.0",
+    "puppeteer-core": "^24.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "resumed": "^4.1.0",
