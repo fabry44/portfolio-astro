@@ -32,7 +32,6 @@
     "jsonresume-theme-umennel": "^0.1.1",
     "lucide-react": "^0.476.0",
     "motion": "^12.4.7",
-    "puppeteer": "^24.4.0",
     "puppeteer-core": "^24.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
