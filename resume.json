@@ -1,18 +1,12 @@
 {
     "$schema": "https:\/\/raw.githubusercontent.com\/jsonresume\/resume-schema\/v1.0.0\/schema.json",
     "basics": {
-        "name": "Roy Fabien Test",
+        "name": "Roy Fabien",
         "label": "D\u00e9veloppeur Web et Web Mobile",
         "email": "fabienroy2@gmail.com",
         "phone": "0650262098",
         "summary": "Apr\u00e8s 15 ans d\u2019exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ans en tant que conducteur de travaux, j\u2019ai d\u00e9cid\u00e9 de relever un nouveau d\u00e9fi en me reconvertissant dans le d\u00e9veloppement web et mobile. Passionn\u00e9 par la programmation depuis toujours, je me sp\u00e9cialise aujourd\u2019hui en Symfony tout en explorant Node.js et Python.",
-        "location": {
-            "address": "22 rue des Renardi\u00e8res 44100 Nantes",
-            "postalCode": "44100",
-            "city": "Nantes",
-            "countryCode": "FR",
-            "region": "Pays de la Loire"
-        },
+        "location": [],
         "profiles": []
     },
     "work": [],
@@ -42,7 +36,7 @@
             "url": "",
             "area": "Math\u00e9matiques",
             "studyType": "Bac Scientifique",
-            "startDate": "2025-03-02",
+            "startDate": "2025-03-11",
             "endDate": "2008-06-01",
             "score": null,
             "courses": []
@@ -52,7 +46,6 @@
         {
             "name": "Site web pour un zoo (Arcadia)",
             "description": "Projet d'\u00e9tude Studi (ECF) : conception d'un site web Zoo-Arcadia",
-            "highlights": [],
             "keywords": [
                 "HTML",
                 "CSS",
@@ -61,17 +54,11 @@
                 "Symfony",
                 "Bootstrap"
             ],
-            "startDate": null,
-            "endDate": null,
-            "url": "#",
-            "roles": [],
-            "entity": null,
-            "type": "application"
+            "date": null
         },
         {
             "name": "SOS PRO, Site vitrine pour une auto-entreprise",
             "description": "Site vitrine pour une auto-entreprise de services \u00e0 la personne avec Symfony 7.2, Bootstrap 5, JQuery et MariaDB",
-            "highlights": [],
             "keywords": [
                 "HTML",
                 "CSS",
@@ -81,12 +68,7 @@
                 "Bootstrap",
                 "MariaDB"
             ],
-            "startDate": null,
-            "endDate": null,
-            "url": "#",
-            "roles": [],
-            "entity": null,
-            "type": "application"
+            "date": null
         }
     ],
     "skills": [
@@ -139,6 +121,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-03T15:16:55+00:00"
+        "lastModified": "2025-03-11T17:16:09+01:00"
     }
 }
