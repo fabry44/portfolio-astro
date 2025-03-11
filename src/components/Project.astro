@@ -1,14 +1,13 @@
 ---
+import ProjectImage from '../components/ProjectImage.jsx';
 const { projects } = Astro.props;
 ---
 <div class="flex flex-col gap-y-16">
 {
-    projects.map(({ name, description, technology, link, github }) => (
+    projects.map(({ name, description, technology, link, github, img }) => (
     <article class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
         <div class="w-full md:w-1/2 flex items-center group">
-        <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl lg:border lg:border-gray-800 group-hover:shadow-2xl">
-            <img alt="Captura del Proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/developpeur.webp" /> */
-        </div>
+            <ProjectImage client:only="react" img={img} name={name} />
         </div>
 
         <div class="w-full md:w-1/2 flex flex-col justify-center">
