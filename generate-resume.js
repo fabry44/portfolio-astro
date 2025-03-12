@@ -3,14 +3,6 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
 
-const chromiumPath = process.env.PUPPETEER_EXECUTABLE_PATH;
-if (!fs.existsSync(chromiumPath)) {
-    console.error("❌ Erreur : Le fichier Chromium n'existe pas au chemin défini !");
-    process.exit(1);
-} else {
-    console.log(`✅ Chromium trouvé : ${chromiumPath}`);
-}
-
 // Obtenir le chemin du répertoire courant
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(__dirname, 'dist');
