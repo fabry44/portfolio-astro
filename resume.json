@@ -69,6 +69,32 @@
                 "MariaDB"
             ],
             "date": null
+        },
+        {
+            "name": "Portfolio-API",
+            "description": "<div><strong>Portfolio Backend<\/strong> est une API d\u00e9velopp\u00e9e avec <strong>Symfony 7<\/strong> et administr\u00e9e via <strong>EasyAdmin<\/strong>. Elle permet de g\u00e9rer dynamiquement les projets, exp\u00e9riences et comp\u00e9tences affich\u00e9s sur mon portfolio. L'API est consomm\u00e9e par le <strong>frontend Astro<\/strong> et s\u00e9curis\u00e9e avec <strong>OAuth 2 (Client Credentials)<\/strong>.<br><br><\/div><div>Les mises \u00e0 jour du backend sont <strong>push\u00e9es manuellement sur GitHub<\/strong>, et le <strong>rebuild du frontend sur Netlify<\/strong> est \u00e9galement d\u00e9clench\u00e9 manuellement via un <strong>hook<\/strong>, ex\u00e9cutant un npm run build. L'API est aussi utilis\u00e9e pour la soumission de formulaires, garantissant une communication s\u00e9curis\u00e9e et fluide entre le front et le back.<br><br><\/div>",
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "PHP",
+                "Symfony",
+                "MariaDB"
+            ],
+            "date": "2025-03-12"
+        },
+        {
+            "name": "Portfolio-Astro",
+            "description": "<div><strong>Portfolio-Astro<\/strong> est l\u2019interface frontend de mon portfolio, d\u00e9velopp\u00e9 avec <strong>Astro<\/strong>, un framework moderne optimis\u00e9 pour le <strong>rendement et la rapidit\u00e9<\/strong>. Con\u00e7u pour g\u00e9n\u00e9rer un site statique ultra-performant, <strong>Astro<\/strong> permet d\u2019envoyer uniquement du HTML\/CSS aux utilisateurs et de charger dynamiquement du JavaScript <strong>l\u00e0 o\u00f9 c\u2019est n\u00e9cessaire<\/strong>. Cela garantit un <strong>temps de chargement minimal<\/strong> et un excellent score <strong>Lighthouse<\/strong> en SEO, accessibilit\u00e9 et performances.<br><br><\/div><div>Le site int\u00e8gre des <strong>composants React<\/strong>, notamment pour le formulaire de contact, qui communique avec mon <strong>Portfolio-API<\/strong> via une requ\u00eate s\u00e9curis\u00e9e. Il g\u00e8re \u00e9galement des <strong>animations fluides et interactives<\/strong> pour am\u00e9liorer l\u2019exp\u00e9rience utilisateur, tout en conservant une <strong>empreinte l\u00e9g\u00e8re<\/strong>.<br><br><\/div><div>Chaque mise \u00e0 jour du contenu (projets, exp\u00e9riences, comp\u00e9tences) est automatiquement int\u00e9gr\u00e9e en d\u00e9clenchant un <strong>rebuild manuel<\/strong> via un hook <strong>Netlify<\/strong>, assurant ainsi que le portfolio reste toujours \u00e0 jour et optimis\u00e9.<br><br><\/div>",
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Astro",
+                "Tailwind CSS",
+                "React"
+            ],
+            "date": "2025-03-12"
         }
     ],
     "skills": [
@@ -121,6 +147,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-11T17:23:32+01:00"
+        "lastModified": "2025-03-12T01:31:05+01:00"
     }
 }
