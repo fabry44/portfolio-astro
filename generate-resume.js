@@ -42,4 +42,16 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
     }
     console.log(`✅ PDF généré avec succès: ${pdfPath}`);
   });
+
+  // Copier les fichiers générés dans le répertoire Netlify public
+  const netlifyDistDir = path.join(__dirname, 'dist'); // Dossier de publication
+  const cvHtmlPublic = path.join(netlifyDistDir, 'cv_fabien_roy.html');
+  const cvPdfPublic = path.join(netlifyDistDir, 'cv_fabien_roy.pdf');
+
+  fs.copyFileSync(htmlPath, cvHtmlPublic);
+  fs.copyFileSync(pdfPath, cvPdfPublic);
+
+  console.log(`✅ CV copié dans le répertoire Netlify : ${cvHtmlPublic}`);
+  console.log(`✅ PDF copié dans le répertoire Netlify : ${cvPdfPublic}`);
+
 });

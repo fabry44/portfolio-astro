@@ -9,7 +9,7 @@ const ResumeViewer = () => {
         initial={{ opacity: 0, y: 1000, scale: 0.0 }}
         animate={{ opacity: 1, y: 0, scale: 0.3 }}
         transition={{ duration: 1, delay: 0.3 }}
-        whileTap={{ scale: 1 }}        
+        whileTap={{ scale: 1.5 }}        
         src="/cv_fabien_roy.html"
         width="612" 
         height="792" 
