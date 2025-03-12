@@ -4,14 +4,18 @@
         "name": "Roy Fabien",
         "phone": "0650262098",
         "birth": "1984-09-16T00:00:00+02:00",
-        "address": null,
-        "linkedin": null,
-        "github": null,
+        "address": "22 rue des Renardi\u00e8res 44100 Nantes",
+        "linkedin": [],
+        "github": [],
         "status": "Open to work",
         "about": "Apr\u00e8s 15 ans d\u2019exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ans en tant que conducteur de travaux, j\u2019ai d\u00e9cid\u00e9 de relever un nouveau d\u00e9fi en me reconvertissant dans le d\u00e9veloppement web et mobile. Passionn\u00e9 par la programmation depuis toujours, je me sp\u00e9cialise aujourd\u2019hui en Symfony tout en explorant Node.js et Python.",
         "function": "D\u00e9veloppeur Web et Web Mobile",
         "age": 40,
-        "languages": [],
+        "languages": [
+            "Fran\u00e7ais",
+            "Anglais",
+            "Espagnole"
+        ],
         "interests": []
     },
     "formations": [
@@ -335,5 +339,5 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
-    "updated_at": "2025-03-12 01:53:19"
+    "updated_at": "2025-03-12 20:44:09"
 }
