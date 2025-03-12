@@ -10,9 +10,11 @@ const outputDir = path.join(__dirname, 'dist');
 // Vérifier que le dossier `dist/` existe
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
-// Commande pour générer le CV en HTML
+// Définition des chemins des fichiers
 const htmlPath = path.join(outputDir, 'cv_fabien_roy.html');
 const pdfPath = path.join(outputDir, 'cv_fabien_roy.pdf');
+
+// Commande pour générer le CV en HTML
 const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato/index.js --output ${htmlPath}`;
 
 exec(generateHtmlCommand, (error, stdout, stderr) => {
@@ -22,31 +24,22 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
   }
   console.log(`✅ HTML généré avec succès: ${stdout}`);
 
-  // Vérifier si le fichier HTML a bien été créé
+  // Vérifier que le fichier HTML a bien été créé
   if (!fs.existsSync(htmlPath)) {
     console.error("❌ Erreur : Le fichier HTML n'a pas été trouvé !");
     return;
   }
 
-  console.log("📄 Vérification de Puppeteer CLI et lancement de la génération du PDF...");
+  console.log("📄 Lancement de Puppeteer CLI pour générer le PDF...");
 
-  // Vérification de Puppeteer CLI et du navigateur
-  exec(`puppeteer --version`, (puppeteerError, puppeteerStdout) => {
-    if (puppeteerError) {
-      console.error("❌ Puppeteer CLI n'est pas installé correctement !");
+  // Commande pour générer le PDF avec Puppeteer CLI
+  const generatePdfCommand = `puppeteer --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 --format A4 print ${htmlPath} ${pdfPath}`;
+
+  exec(generatePdfCommand, (pdfError, pdfStdout, pdfStderr) => {
+    if (pdfError) {
+      console.error(`❌ Erreur lors de la génération du PDF: ${pdfError.message}`);
       return;
     }
-    console.log(`✅ Puppeteer CLI détecté : ${puppeteerStdout.trim()}`);
-
-    // Commande pour générer le PDF
-    const generatePdfCommand = `puppeteer --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 --format A4 print ${htmlPath} ${pdfPath}`;
-
-    exec(generatePdfCommand, (pdfError, pdfStdout, pdfStderr) => {
-      if (pdfError) {
-        console.error(`❌ Erreur lors de la génération du PDF: ${pdfError.message}`);
-        return;
-      }
-      console.log(`✅ PDF généré avec succès: ${pdfPath}`);
-    });
+    console.log(`✅ PDF généré avec succès: ${pdfPath}`);
   });
 });
