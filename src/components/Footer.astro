@@ -3,22 +3,24 @@ import Github from "../icons/Social/Github.astro"
 ---
 
 <footer class="w-full sectionFooter">
-    <div class="opacity-80 w-full mx-auto flex justify-evenly"> 
-        <span class="text-sm sm:text-center flex items-center">
-            <a href="https://github.com/fabry44" target="_blank" 
-            rel="noopener noreferrer" class="hover:underline flex items-center ml-2">
-                <Github class="size-4 md:size-6 mr-2"/>
-                Fabien Roy   
-            </a>.             
-        </span> 
-        <span class="text-center flex items-end mb-2">&copy; {new Date().getFullYear()} Fabien Roy. Tous droits réservés.</span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"> 
+    <div class="opacity-80 w-full mx-auto flex flex-col items-center justify-center text-center py-8"> 
+        
+        
+        <ul class="flex md:flex-row gap-4 md:gap-8 flex-row justify-center m-auto">
             <li> 
                 <a href="#About" class="hover:underline me-4 md:me-6">A propos</a> 
             </li> 
             <li> 
                 <a id="contact" href="mailto:fabienroy2@gmail.com@gmail.com" class="hover:underline">Me contacter</a> 
             </li> 
+            <li> 
+                <a href="https://github.com/fabry44" target="_blank" 
+                rel="noopener noreferrer" class="hover:underline flex items-center ml-2">
+                    <Github class="size-4 md:size-6 mr-2"/>
+                    Fabien Roy   
+                </a>    
+            </li>
         </ul> 
+        <div class="text-center flex items-end mt-3">&copy; {new Date().getFullYear()} Fabien Roy. Tous droits réservés.</div>
     </div> 
 </footer>

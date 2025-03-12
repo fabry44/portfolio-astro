@@ -1,4 +1,5 @@
 ---
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import ProjectImage from '../components/ProjectImage.jsx';
 const { projects } = Astro.props;
 ---
@@ -24,7 +25,7 @@ const { projects } = Astro.props;
             </ul>
         </div>
 
-        <div class="mt-2 text-lg mb-4">{description}</div>
+        <div class="mt-2 text-lg mb-4" set:html={description}></div>
 
         <footer class="flex items-end justify-start mt-4 gap-x-4">
             {github && (
