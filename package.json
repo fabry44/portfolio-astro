@@ -8,7 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "build-resume": "rm -rf dist && npm install && node generate-resume.js && npm run build"
+    "build-resume": "rm -rf dist && npm install && npx puppeteer browsers install chrome && node generate-resume.js && npm run build"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
