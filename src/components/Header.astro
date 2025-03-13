@@ -9,31 +9,28 @@
         <button id="toggle-dark-mode">🌙</button>
     </nav>
     <script>
-        // Toggle dark mode
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.getElementById('toggle-dark-mode');
             const root = document.documentElement;
-
+    
+            // Vérifier le thème enregistré
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            root.classList.toggle('dark', savedTheme === 'dark');
+    
+            toggleButton.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    
             toggleButton.addEventListener('click', () => {
-                if (root.style.colorScheme === 'dark') {
-                    root.style.colorScheme = 'light';
-                    toggleButton.textContent = '🌙';
-                } else {
-                    root.style.colorScheme = 'dark';
-                    toggleButton.textContent = '☀️';
-                }
+                const isDarkMode = root.classList.toggle('dark');
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                toggleButton.textContent = isDarkMode ? '☀️' : '🌙';
             });
         });
-
-        // Change le header en fonction du scroll 
+    
+        // Changer la classe du header en fonction du scroll
         document.addEventListener("scroll", function() {
             let header = document.querySelector("header");
             if (!header) return;
-            if (window.scrollY > 100) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
+            header.classList.toggle("scrolled", window.scrollY > 100);
         });
-</script>
+    </script>
 </header>

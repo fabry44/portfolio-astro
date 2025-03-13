@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import "@fontsource-variable/source-code-pro";
+
 interface Props {
     title: string;
     description: string;
@@ -20,7 +21,7 @@ const { description, title } = Astro.props;
         <title>{title}</title>
     </head>
     <body
-        class="bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text"
+        class="bg-background text-text dark:bg-dark-background dark:text-dark-text"
     >
         <div class="background"></div>
         <Header />
@@ -92,7 +93,7 @@ const { description, title } = Astro.props;
             }
         }, */
 
-    :root {
+    /* :root {
         --text: #101c01;
         --background: #effae0;
         --primary: #374151;
@@ -108,9 +109,61 @@ const { description, title } = Astro.props;
             --secondary: #028866;
             --accent: #038eb5;
         }
-    }
+    } */
 
     
+    /* :root {
+        --text: #130e07;
+        --background: #faf5f0;
+        --primary: #ba7c45;
+        --secondary: #8fd6af;
+        --accent: #79c8cd;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            color-scheme: dark;
+            --text: #f8f3ec;
+            --background: #0f0a05;
+            --primary: #ba7c45;
+            --secondary: #297049;
+            --accent: #328086;
+        }
+    } */
+    @tailwind base;
+@tailwind components;
+@tailwind utilities;
+    /* @layer base {
+        :root {
+            --text: #130e07;
+            --background: #faf5f0;
+            --primary: #ba7c45;
+            --secondary: #8fd6af;
+            --accent: #79c8cd;
+        }
+        .dark {
+            --text: #f8f3ec;
+            --background: #0f0a05;
+            --primary: #ba7c45;
+            --secondary: #297049;
+            --accent: #328086;
+        }
+    } */
+    @layer base {
+        :root {
+            --text: #101c01;
+            --background: #effae0;
+            --primary: #374151;
+            --secondary: #78fddb;
+            --accent: #4ad4fc;
+        }
+        .dark {
+            --text: #f1fee1;
+            --background: #141f05;
+            --primary: #adb7c7;
+            --secondary: #028866;
+            --accent: #038eb5;
+        }
+    }
     header {
         background: transparent;
         transition: linear 1.3s;
@@ -118,7 +171,7 @@ const { description, title } = Astro.props;
     }
 
     header.scrolled {
-        background: var(--primary);
+        background: #374151;
         filter: drop-shadow(2px 4px 6px black);
         height: 80px;
         width: 100%;
@@ -251,14 +304,13 @@ const { description, title } = Astro.props;
         display: flex;
         margin-top: 20px;
         background: var(--accent);
-        overflow: hidden;
-        height: 500px;
-        width: 50%;
+        height: 260px;
+        width: 150px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        border-radius: 40px;
+        border-radius: 48px;
     }
 
     .curriculum body{
@@ -276,12 +328,15 @@ const { description, title } = Astro.props;
         position: absolute;
         background-color: var(--accent);
         color: white;
+        border-radius: 15px;
     }
 
     .curriculum a {
         position: relative;
-        top: 200px;
-        background-color: ;
+        top: 120px;
+        background: var(--background);
+        border-radius: 10px;
+        border: groove var(--accent);
     }
     
 
