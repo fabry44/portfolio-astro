@@ -7,7 +7,7 @@ import puppeteer from 'puppeteer';
 // Obtenir le chemin du répertoire courant
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(__dirname, 'public');
-const themeDir = path.join(__dirname, 'themes/jsonresume-theme-orbit-original/index.js');
+const themeDir = path.join(__dirname, 'themes/jsonresume-theme-macchiato copy/index.js');
 
 // Vérifier que le dossier `dist/` existe
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
