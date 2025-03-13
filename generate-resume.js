@@ -2,6 +2,7 @@ import { exec } from 'child_process';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs';
+import puppeteer from 'puppeteer';
 
 // Obtenir le chemin du répertoire courant
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -32,14 +33,37 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
 
   console.log("📄 Lancement de Puppeteer CLI pour générer le PDF...");
 
-  // Commande pour générer le PDF avec Puppeteer CLI
-  const generatePdfCommand = `puppeteer --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 --format A4 print ${htmlPath} ${pdfPath}`;
+  
 
-  exec(generatePdfCommand, (pdfError, pdfStdout, pdfStderr) => {
-    if (pdfError) {
-      console.error(`❌ Erreur lors de la génération du PDF: ${pdfError.message}`);
-      return;
-    }
+  async function generatePdf() {
+    console.log("🚀 Lancement de Puppeteer pour générer le PDF...");
+
+    const browser = await puppeteer.launch({
+      headless: true, // Mode sans interface graphique (important sur Netlify)
+      args: ['--no-sandbox', '--disable-setuid-sandbox'] // Éviter les problèmes de permissions
+    });
+
+    const page = await browser.newPage();
+    await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle2' });
+
+    await page.pdf({
+      path: pdfPath,
+      format: 'A4',
+      margin: { top: '0px', right: '0px', bottom: '0px', left: '0px' }
+    });
+
+    await browser.close();
     console.log(`✅ PDF généré avec succès: ${pdfPath}`);
-  });
+  }
+
+  // Appel de la fonction pour générer le PDF
+  generatePdf().catch(error => console.error(`❌ Erreur : ${error.message}`));
+
+  if (!fs.existsSync(pdfPath)) {
+    console.error("❌ Erreur : Le fichier PDF n'a pas été généré !");
+    return;
+  } else {
+    console.log(`📂 Le fichier PDF est bien généré : ${pdfPath}`);
+  }
+
 });
