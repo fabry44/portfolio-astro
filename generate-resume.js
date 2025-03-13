@@ -7,7 +7,7 @@ import puppeteer from 'puppeteer';
 // Obtenir le chemin du répertoire courant
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(__dirname, 'public');
-const themeDir = path.join(__dirname, 'themes/jsonresume-theme-macchiato');
+const themeDir = path.join(__dirname, 'themes/jsonresume-theme-macchiato/index.js');
 
 // Vérifier que le dossier `dist/` existe
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
@@ -17,7 +17,7 @@ const htmlPath = path.join(outputDir, 'cv_fabien_roy.html');
 const pdfPath = path.join(outputDir, 'cv_fabien_roy.pdf');
 
 // Commande pour générer le CV en HTML
-const generateHtmlCommand = `npx resumed render --theme jsonresume-theme-macchiato/index.js --output ${htmlPath}`;
+const generateHtmlCommand = `npx resumed render --theme ${themeDir} --output ${htmlPath}`;
 
 exec(generateHtmlCommand, (error, stdout, stderr) => {
   if (error) {
