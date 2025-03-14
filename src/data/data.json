@@ -16,7 +16,8 @@
             "Anglais",
             "Espagnole"
         ],
-        "interests": []
+        "interests": [],
+        "img": null
     },
     "formations": [
         {
@@ -339,5 +340,5 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
-    "updated_at": "2025-03-12 20:44:09"
+    "updated_at": "2025-03-14 01:29:36"
 }
