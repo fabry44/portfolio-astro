@@ -3,10 +3,10 @@
     "basics": {
         "name": "Roy Fabien",
         "label": "D\u00e9veloppeur Web et Web Mobile",
-        "image": null,
+        "image": "identity-67d4520136cf3358299333.webp",
         "email": "fabienroy2@gmail.com",
         "phone": "0650262098",
-        "summary": "Apr\u00e8s 15 ans d\u2019exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ans en tant que conducteur de travaux, j\u2019ai d\u00e9cid\u00e9 de relever un nouveau d\u00e9fi en me reconvertissant dans le d\u00e9veloppement web et mobile. Passionn\u00e9 par la programmation depuis toujours, je me sp\u00e9cialise aujourd\u2019hui en Symfony tout en explorant Node.js et Python.",
+        "summary": "<div>Apr\u00e8s 15 ans d\u2019exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ans en tant que conducteur de travaux, j\u2019ai d\u00e9cid\u00e9 de relever un nouveau d\u00e9fi en me reconvertissant dans le d\u00e9veloppement web et mobile. Passionn\u00e9 par la programmation depuis toujours, je me sp\u00e9cialise aujourd\u2019hui en Symfony tout en explorant Node.js et Python.<\/div>",
         "location": {
             "address": "22 rue des Renardi\u00e8res",
             "postalCode": "44100",
@@ -291,6 +291,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-14T16:34:15+01:00"
+        "lastModified": "2025-03-14T16:58:44+01:00"
     }
 }
