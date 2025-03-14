@@ -1,46 +1,7 @@
 ---
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
-import ProjectImage from '../components/ProjectImage.jsx';
+import Projects from "../components/Projects.jsx";
+
 const { projects } = Astro.props;
 ---
-<div class="flex flex-col gap-y-16">
-{
-    projects.map(({ name, description, technology, link, github, Allimg }) => (
-    <article class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
-        <div class="w-full md:w-1/2 flex items-center group">
-            <ProjectImage client:only="react" img={Allimg}/>
-        </div>
 
-        <div class="w-full md:w-1/2 flex flex-col justify-center">
-        <h3 class="text-2xl font-bold mb-2">{name}</h3>
-        <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-wrap mb-2 gap-x-2">
-            {technology.map(({ name, icon, class: className, style }) => (
-                <li>
-                <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${className}`} style={style}>
-                    {icon} 
-                </span>
-                </li>
-            ))}
-            </ul>
-        </div>
-
-        <div class="mt-2 text-lg mb-4" set:html={description}></div>
-
-        <footer class="flex items-end justify-start mt-4 gap-x-4">
-            {github && (
-            <a href={github} class="flex items-center gap-x-2">
-                <span class="size-6">🔗</span> Code
-            </a>
-            )}
-            {link && (
-            <a href={link} class="flex items-center gap-x-2">
-                <span class="size-4">🌐</span> Preview
-            </a>
-            )}
-        </footer>
-        </div>
-    </article>
-    ))
-}
-</div>
+<Projects client:only="react" projects={projects} />

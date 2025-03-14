@@ -22,6 +22,7 @@ import Section_formation from '../components/Section_formation.astro';
 import Section_experience from '../components/Section_experience.astro';
 import ContactComponent from '../components/ContactComponent.jsx';
 import ResumeViewer from '../components/ResumeViewer.jsx';
+import RollsPortrait from '../components/RollsPortrait';
 
 // import ProjectMotion from "../components/ProjectMotion.astro";
 
@@ -58,10 +59,8 @@ import data from '../data/data.json';
                             <p><strong>Email :</strong> <a href={"mailto:" + data.user.email} class="text-light-primary dark:text-dark-primary hover:underline">{data.user.email}</a></p>
                             <p><strong>Adresse :</strong> {data.user.address}</p>
                             <div class="flex justify-center mt-3">
-                                <img class="rounded-full w-24 h-24 md:w-48 md:h-48"
-                                    src="/developpeur.webp"
-                                    alt={data.user.name}
-                                />
+                                
+                                <RollsPortrait client:load></RollsPortrait> 
                             </div>
                         </div>
                     </div>
