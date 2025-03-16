@@ -30,13 +30,13 @@ export default function Projects({ projects }) {
     };
 
     return (
-        <div ref={ref} className="flex flex-col gap-y-16 items-center">
+        <div ref={ref} className="flex flex-wrap justify-center gap-16 mx-3.5">
             {projects.map((project, index) => (
                 <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: -350 }} // ✅ Départ hors écran
-                    animate={isVisible ? { opacity: 1, y: 0 } : {}} // ✅ Animation quand visible
-                    transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }} // ✅ Effet de cascade
+                    initial={{ opacity: 0, y: -950, scale: 0}} // ✅ Départ hors écran
+                    animate={isVisible ? { opacity: 1, y: 0, scale: 1} : {}} // ✅ Animation quand visible
+                    transition={{ duration: 0.8, delay: index * 0.35, ease: "easeOut" }} // ✅ Effet de cascade
                 >
                     <ProjectCard 
                         name={project.title}

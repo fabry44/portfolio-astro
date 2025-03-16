@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const RollsPortrait = () => (
+export const RollsPortrait = ({ img }) => (
   <motion.img
     initial={{ opacity: 0, x: 150, rotate: -180, scale: 0.5 }}
     whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
@@ -12,7 +12,7 @@ export const RollsPortrait = () => (
         type: "spring", // Utilisation d'un ressort pour un effet plus réaliste
     }}
     viewport={{ once: true, amount: 0.2 }}
-    src="/developpeur.webp"
+    src={`/uploads/users/${img}`}
     alt="Fabien Roy"
     className="rounded-full size-64"
   />

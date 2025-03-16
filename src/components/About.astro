@@ -1,10 +1,11 @@
 ---
 import RollsPortrait from '../components/RollsPortrait';
+const { about } = Astro.props; // Récupère les expériences passées en props
 ---
 
 <section class="flex flex-col md:flex-row gap-x-8 justify-center items-center">
-    <div class="[&>p]:mb-4 [&>p>strong]:text-accent [&>p>strong]:font-semibold text-pretty">
-        <p>
+    <div class="[&>p]:mb-4 [&>p>strong]:text-accent [&>p>strong]:font-semibold text-pretty"  set:html={about}>
+        <!-- <p>
             Je m'appelle <strong>Fabien Roy</strong>. Après 15 ans d'expérience dans les réseaux fibre optique, dont 6 années en tant que conducteur de travaux spécialisé dans le déploiement de la fibre optique, j’ai décidé d'entamer une reconversion vers le <strong>développement web et mobile</strong>.
         </p>
         
@@ -18,7 +19,7 @@ import RollsPortrait from '../components/RollsPortrait';
         
         <p class="text-pretty">
             Je me spécialise en <strong>développement backend avec Symfony</strong> et continue d'explorer d'autres technologies comme Node.js et Python. Chaque jour, je cherche à améliorer mes compétences, à travailler sur des projets concrets et à approfondir mes connaissances.
-        </p>
+        </p> -->
     </div>
-    <RollsPortrait client:load></RollsPortrait> 
+    <!-- <RollsPortrait client:load></RollsPortrait>  -->
 </section>

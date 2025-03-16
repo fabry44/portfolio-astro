@@ -1,98 +1,135 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import Linkedin from '../icons/Social/Linkedin.astro';
-import Github from '../icons/Social/Github.astro';
-import Social_icons from '../components/Social_icons.astro';
-import Gmail from '../icons/Social/Gmail.astro';
-import Section from '../components/Section.astro';
-import Section_techno from '../components/Section_techno.astro';
-import Technology from '../components/Technology.astro';
-import Code from '../icons/Titulos/Code.astro';
-import Project from '../components/Project.astro';
-import Experience from '../components/Experience.astro';
-import Formation from '../components/Formation.astro';
-import About from '../components/About.astro';
-import Cert_icon from '../icons/Titulos/Cert_icon.astro';
-import Exp_icon from '../icons/Titulos/Exp_icon.astro';
-import My_icons from '../icons/Titulos/My_icon.astro';
-import Section_about from '../components/Section_about.astro';
-import Footer from '../components/Footer.astro';
-import Section_formation from '../components/Section_formation.astro';
-import Section_experience from '../components/Section_experience.astro';
-import ContactComponent from '../components/ContactComponent.jsx';
-import ResumeViewer from '../components/ResumeViewer.jsx';
-import RollsPortrait from '../components/RollsPortrait';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Linkedin from "../icons/Social/Linkedin.astro";
+import Github from "../icons/Social/Github.astro";
+import Social_icons from "../components/Social_icons.astro";
+import Gmail from "../icons/Social/Gmail.astro";
+import Section from "../components/Section.astro";
+import Section_techno from "../components/Section_techno.astro";
+import Technology from "../components/Technology.astro";
+import Code from "../icons/Titulos/Code.astro";
+import Project from "../components/Project.astro";
+import Experience from "../components/Experience.astro";
+import Formation from "../components/Formation.astro";
+import About from "../components/About.astro";
+import Cert_icon from "../icons/Titulos/Cert_icon.astro";
+import Exp_icon from "../icons/Titulos/Exp_icon.astro";
+import My_icons from "../icons/Titulos/My_icon.astro";
+import Section_about from "../components/Section_about.astro";
+import Footer from "../components/Footer.astro";
+import Section_formation from "../components/Section_formation.astro";
+import Section_experience from "../components/Section_experience.astro";
+import ContactComponent from "../components/ContactComponent.jsx";
+import ResumeViewer from "../components/ResumeViewer.jsx";
+import RollsPortrait from "../components/RollsPortrait";
 
 // import ProjectMotion from "../components/ProjectMotion.astro";
 
 // import { Vortex } from "../components/Vortex.tsx";
 
-import data from '../data/data.json';
+import data from "../data/data.json";
 ---
 
-<Layout title={`Portfolio ${data.user.name} - Développeur Backend`}
-    description="Développeur backend spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité.">
+<Layout
+    title={`Portfolio ${data.user.name} - Développeur Backend`}
+    description="Développeur backend spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité."
+>
     <main>
         <Section>
-            <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
-                <div class="flex flex-col">
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
-                        Bonjour, je m'appelle {data.user.name}
-                        <a href={data.user.linkedin} target="_blank" rel="noopener">
-                            <div class="flex justify-center items-center hover:scale-110 transition">
-                                <Badge> {data.user.status} </Badge>
-                            </div>
-                        </a>
-                    </h1>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h2 class="text-xl lg:text-2xl text-pretty max-w-{700px} text-light-text dark:text-dark-primary">
-                                <span class="text-accent ">{data.user.function}.</span><br>
-                                {data.user.about}
-                            </h2>
+            <div class="flex flex-col items-center justify-center gap-20 mb4 pb-10">
+                <h1
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10"
+                >
+                    Bonjour, je m'appelle {data.user.name}
+                    <a href={data.user.linkedin} target="_blank" rel="noopener">
+                        <div
+                            class="flex justify-center items-center hover:scale-110 transition"
+                        >
+                            <Badge> {data.user.status} </Badge>
                         </div>
-                        <div class=" bg-light-secondary text-lg space-y-3 m-auto text-light-text dark:text-dark-text">
-                            <p><strong>Nom :</strong> {data.user.name}</p>
-                            <p><strong>Âge :</strong> {data.user.age} ans</p>
-                            <p><strong>Téléphone :</strong> {data.user.phone}</p>
-                            <p><strong>Email :</strong> <a href={"mailto:" + data.user.email} class="text-light-primary dark:text-dark-primary hover:underline">{data.user.email}</a></p>
-                            <p><strong>Adresse :</strong> {data.user.address}</p>
-                            <div class="flex justify-center mt-3">
-                                
-                                <RollsPortrait client:load></RollsPortrait> 
+                    </a>
+                </h1>
+                <div class="flex flex-col gap-10">
+                    <h2
+                        class="text-xl lg:text-2xl text-pretty max-w-{700px} text-light-text dark:text-dark-primary"
+                    >
+                        <span class="text-accent">{data.user.function}.</span><br />
+                    </h2>
+                    
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                            <div class="flex flex-col items-center gap-4 md:gap-6">
+                                <div class="flex items-center">
+                                    <div class="flex justify-center align-middle">
+                                        <RollsPortrait
+                                            client:load
+                                            img={data.user.img}
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-light-secondary text-lg space-y-3 m-auto text-light-text dark:text-dark-text p-4"
+                                >
+                                    <p><strong>Nom :</strong> {data.user.name}</p>
+                                    <p>
+                                        <strong>Âge :</strong>
+                                        {data.user.age} ans
+                                    </p>
+                                    <p>
+                                        <strong>Téléphone :</strong>
+                                        {data.user.phone}
+                                    </p>
+                                    <p>
+                                        <strong>Email :</strong>
+                                        <a
+                                            href={"mailto:" + data.user.email}
+                                            class="text-light-primary dark:text-dark-primary hover:underline"
+                                            >{data.user.email}</a>
+                                    </p>
+                                    <p>
+                                        <strong>Adresse :</strong>
+                                        {data.user.address}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end align-middle items-center">
+                                <ResumeViewer client:only="react" />
                             </div>
                         </div>
-                    </div>
-                    <nav class="flex gap-x-5 mt-6 flex-wrap">
-                        <Social_icons href={data.user.linkedin}>
-                            <Linkedin class="size-4 md:size-6"/>
-                            LinkedIn
-                        </Social_icons>
-                        <Social_icons href={data.user.github}>
-                            <Github class="size-4 md:size-6"/>
-                            GitHub
-                        </Social_icons>
-                        <Social_icons href={"mailto:" + data.user.email}>
-                            <Gmail class="size-4 md:size-6"/>
-                            {data.user.email}
-                        </Social_icons>
-                    </nav>                    
+                 
                 </div>
+                <nav
+                    class="flex gap-x-5 mt-6 flex-wrap items-start justify-start"
+                >
+                    <Social_icons href={data.user.linkedin}>
+                        <Linkedin class="size-4 md:size-6" />
+                        Linkedin
+                    </Social_icons>
+                    <Social_icons href={data.user.github}>
+                        <Github class="size-4 md:size-6" />
+                        GitHub
+                    </Social_icons>
+                    <Social_icons href={"mailto:" + data.user.email}>
+                        <Gmail class="size-4 md:size-6" />
+                        {data.user.email}
+                    </Social_icons>
+                </nav>
             </div>
         </Section>
-        <Section>
+        <!-- <Section>
             <div class="flex justify-center align-middle">
                 <ResumeViewer client:only="react" />
             </div>
-        </Section>
+        </Section> -->
         <Section_techno id="technology">
             <Technology technologies={data.technologies} />
         </Section_techno>
         <Section id="project">
             <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
-                    <Code class="size-8 "/>Mes Projets
+                <h2
+                    class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary"
+                >
+                    <Code class="size-8" />Mes Projets
                 </h2>
             </div>
             <Project projects={data.projects} />
@@ -107,16 +144,20 @@ import data from '../data/data.json';
         </Section> -->
         <Section_formation id="formation" class="px-4">
             <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
-                    <Cert_icon class="size-8 "/>Parcours de formation
+                <h2
+                    class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary"
+                >
+                    <Cert_icon class="size-8" />Parcours de formation
                 </h2>
             </div>
             <Formation formations={data.formations} />
         </Section_formation>
         <Section_about id="about" class="px-4">
             <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary">
-                    <My_icons class="size-8 "/>À propos de moi
+                <h2
+                    class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4 text-light-primary dark:text-dark-primary"
+                >
+                    <My_icons class="size-8" />À propos de moi
                 </h2>
             </div>
             <About about={data.user.about} />
@@ -132,7 +173,7 @@ import data from '../data/data.json';
             client:load>
 
         </Vortex> -->
-        
-        <Footer/>
+
+        <Footer />
     </main>
 </Layout>

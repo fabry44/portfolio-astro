@@ -4,23 +4,23 @@ import ProjectImage from "./ProjectImage.jsx";
 export default function ProjectCard({ name, highlights, technology, img, description, github, link, isOpen, toggleCard }) {
     return (
         <motion.div 
-            className={`relative bg-gray-700 border border-gray-200 dark:border-gray-700 p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer 
-                w-full sm:w-[480px] md:w-[600px] lg:w-[520px]`} // ✅ Taille uniforme des cartes
+            className={`relative ProjectCard p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer 
+                w-full sm:w-[300px] md:w-[450px] lg:w-[600px] mx-4`} // ✅ Taille uniforme des cartes
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             onClick={toggleCard}
         >
             {/* Image du projet */}
-            <div className="w-full h-[400px] overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
+            <div className="w-full h-[350px] overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
                 <ProjectImage img={img} />
             </div>
 
             {/* Nom du projet */}
-            <h3 className="text-xl text-white font-bold mt-4 text-center">{name}</h3>
+            <h3 className="text-xl flex justify-center items-center font-bold mt-5 mb-6 text-center h-16">{name}</h3>
 
             {/* Technologies */}
-            <div className="flex flex-wrap justify-center mt-3">
+            <div className="flex flex-wrap justify-center mt-4">
                 <ul className="flex flex-wrap gap-2">
                     {technology.map(({ name, icon, class: className, style }, index) => {
                         // Convertir le style en objet

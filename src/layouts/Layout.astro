@@ -11,7 +11,7 @@ const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="light">
+<html lang="fr" class="light">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
@@ -148,7 +148,7 @@ const { description, title } = Astro.props;
             --accent: #328086;
         }
     } */
-    @layer base {
+    /* @layer base {
         :root {
             --text: #101c01;
             --background: #effae0;
@@ -163,43 +163,122 @@ const { description, title } = Astro.props;
             --secondary: #028866;
             --accent: #038eb5;
         }
+    } */
+
+    /* @layer base {
+        :root {
+            --text: #011a1f;
+            --background: #f5fdff;
+            --primary: #9bd0e1;
+            --secondary: #aaa490;
+            --accent: #f8c847;
+        }
+        .dark {
+            --text: #e1f9fe;
+    --background: #00080a;
+    --primary: #618f9e;
+    --secondary: #716441;
+    --accent: #b68707;
     }
+    } */
+
+    @layer base {
+        :root {
+            --text: #0a0c0d;
+            --background: #f9fafa;
+            --primary: #9dcfe2;
+            --secondary: #c6b7ac;
+            --accent: #f8ca49;
+            --linearPrimarySecondary: linear-gradient(#9dcfe2, #c6b7ac);
+            --linearPrimaryAccent: linear-gradient(#9dcfe2, #f8ca49);
+            --linearSecondaryAccent: linear-gradient(#c6b7ac, #f8ca49);
+            --radialPrimarySecondary: radial-gradient(#9dcfe2, #c6b7ac);
+            --radialPrimaryAccent: radial-gradient(#9dcfe2, #f8ca49);
+            --radialSecondaryAccent: radial-gradient(#c6b7ac, #f8ca49);
+        }
+        .dark {
+            --text: #f1f3f4;
+            --background: #050606;
+            --primary: #1d4f62;
+            --secondary: #524338;
+            --accent: #b68707;
+            --linearPrimarySecondary: linear-gradient(#1d4f62, #524338);
+            --linearPrimaryAccent: linear-gradient(#1d4f62, #b68707);
+            --linearSecondaryAccent: linear-gradient(#524338, #b68707);
+            --radialPrimarySecondary: radial-gradient(#1d4f62, #524338);
+            --radialPrimaryAccent: radial-gradient(#1d4f62, #b68707);
+            --radialSecondaryAccent: radial-gradient(#524338, #b68707);
+        }
+    },
+/* @layer base {
+  :root {
+    --text: #0c1427;
+    --background: #f7f9fc;
+    --primary: #9dcee2;
+    --secondary: #d9a696;
+    --accent: #f8ca49;
+    --linearPrimarySecondary: linear-gradient(#9dcee2, #d9a696);
+--linearPrimaryAccent: linear-gradient(#9dcee2, #f8ca49);
+--linearSecondaryAccent: linear-gradient(#d9a696, #f8ca49);
+--radialPrimarySecondary: radial-gradient(#9dcee2, #d9a696);
+--radialPrimaryAccent: radial-gradient(#9dcee2, #f8ca49);
+--radialSecondaryAccent: radial-gradient(#d9a696, #f8ca49);
+  }
+  .dark {
+    --text: #d8e0f3;
+    --background: #030507;
+    --primary: #1d4f62;
+    --secondary: #693626;
+    --accent: #b68707;
+    --linearPrimarySecondary: linear-gradient(#9dcee2, #d9a696);
+--linearPrimaryAccent: linear-gradient(#9dcee2, #f8ca49);
+--linearSecondaryAccent: linear-gradient(#d9a696, #f8ca49);
+--radialPrimarySecondary: radial-gradient(#9dcee2, #d9a696);
+--radialPrimaryAccent: radial-gradient(#9dcee2, #f8ca49);
+--radialSecondaryAccent: radial-gradient(#d9a696, #f8ca49);
+  }
+}, */
+
+
     header {
-        background: transparent;
-        transition: linear 1.3s;
+        background: var(--background);
+        transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
         z-index: 10;
+        
     }
 
     header.scrolled {
-        background: #374151;
-        filter: drop-shadow(2px 4px 6px black);
+        background: var(--background);
+        filter: drop-shadow(2px 4px 6px black); 
         height: 80px;
         width: 100%;
-        color: white;
         border-radius: 15px;
         z-index: 10;
+        transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
     }
 
     @media screen and (min-width: 576px) {
         header.scrolled {
-        background: var(--primary);
-        filter: drop-shadow(2px 4px 6px black);
+        background: var(--background);
+        box-shadow: inset 1px -1px 3px;
         width: 80%;
-        color: white;
+        /* color: white; */
         border-radius: 15px;
         opacity: 0.9;
+        transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
         }
         
     }
 
     @media screen and (min-width: 768px) {
         header.scrolled {
-        background: var(--primary);
-        filter: drop-shadow(2px 4px 6px black);
-        width: 50%;
-        color: white;
+        background: var(--background);
+        box-shadow: inset 1px -1px 3px;
+        width: 80%;
+        /* color: white; */
         border-radius: 15px;
         opacity: 0.9;
+        transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
         }
         
     }
@@ -258,11 +337,23 @@ const { description, title } = Astro.props;
         z-index: 1; 
     }
 
+    .technoIcon {
+        background: var(--primary);
+    }
+    .ProjectCard {
+        background: var(--linearPrimarySecondary);
+    }
+
     .contactsection {
-        background: #374151ba;
+        background: var(--secondary);
         border-radius: 15px;
         padding: 30px;
         
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+    color: white;
     }
 
 
@@ -286,8 +377,8 @@ const { description, title } = Astro.props;
         width: 100%;
     }
     .sectionFooter {
-        background: var(--primary);
-        color: white;
+        background: var(--background);
+        box-shadow: inset -2px 2px 3px;
         height: 180px;
         width: 100vw;
         display: flex;
@@ -304,13 +395,12 @@ const { description, title } = Astro.props;
         display: flex;
         margin-top: 20px;
         background: var(--accent);
-        height: 260px;
-        width: 150px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        height: 345px;
+        width: 190px;
+        flex-direction: column;
         border-radius: 48px;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .curriculum body{
@@ -331,12 +421,13 @@ const { description, title } = Astro.props;
         border-radius: 15px;
     }
 
-    .curriculum a {
+    .curriculum a, .contactsection button {
         position: relative;
-        top: 120px;
+        margin-top: 20px;
         background: var(--background);
         border-radius: 10px;
         border: groove var(--accent);
+        color: var(--text);
     }
     
 

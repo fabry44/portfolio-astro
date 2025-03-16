@@ -18,7 +18,7 @@ const ProjectImage = ({ img = [] }) => {
     };
 
     return (
-        <div className="relative flex flex-col items-center transition duration-500 ease-in-out transform overflow-hidden rounded-xl w-full h-[400px]">
+        <div className="relative flex flex-col items-center transition duration-500 ease-in-out transform overflow-hidden rounded-xl w-full h-full">
             <AnimatePresence mode="wait" custom={direction}>
                 <motion.img
                     key={img[index]}
