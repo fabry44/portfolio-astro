@@ -1,3 +1,4 @@
+export const prerender = false; 
 import React, { useState } from "react";
 
 const ContactForm = () => {
@@ -16,7 +17,7 @@ const ContactForm = () => {
     setStatus("Envoi en cours...");
   
     try {
-        const response = await fetch("/api/send-contact", { // 🔐 Contacte Astro (et non plus Symfony directement)
+        const response = await fetch("/api/send-contact", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),

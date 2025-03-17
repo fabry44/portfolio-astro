@@ -13,6 +13,7 @@ export const RollsPortrait = ({ img }) => (
     }}
     viewport={{ once: true, amount: 0.2 }}
     src={`/uploads/users/${img}`}
+    loading='lazy'
     alt="Fabien Roy"
     className="rounded-full size-64"
   />

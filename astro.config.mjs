@@ -6,5 +6,6 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
+  site: 'https://fabien-roy.fr',
   integrations: [tailwind(), react()],
 });
