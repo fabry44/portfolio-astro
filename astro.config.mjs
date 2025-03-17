@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  output: 'hybrid', // Permet de garder les pages statiques mais avec des routes dynamiques si besoin
+  output: 'server',
   adapter: netlify(),
   integrations: [tailwind(), react()],
 });
