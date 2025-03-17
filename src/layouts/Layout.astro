@@ -20,23 +20,6 @@ const { description, title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <!-- Matomo -->
-        <script>
-            var _paq = fenêtre._paq = fenêtre._paq || [] ;
-            /* les méthodes de suivi telles que « setCustomDimension » doivent être appelées avant « trackPageView » */
-            _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-            _paq.push(["setCookieDomain", "*.fabien-roy.fr"]);
-            _paq.push(["setDoNotTrack", true]);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (fonction() {
-            var u="//analytics.fabien-roy.fr/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '1']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-            })();
-        </script>
-        <noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="//analytics.fabien-roy.fr/matomo.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
 
     </head>
     <body
@@ -47,6 +30,7 @@ const { description, title } = Astro.props;
         <slot />
     </body>
 </html>
+
 
 <style is:global>
     @import url("https://fonts.googleapis.com/css?family=Crimson%20Pro:700|Scada:400");
