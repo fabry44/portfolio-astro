@@ -12,12 +12,12 @@ export default defineConfig({
     tailwind(),
     react(),
     matomo({
-      enabled: import.meta.env.PROD, // Only load in production
+      enabled: import.meta.env.PROD, // Activer uniquement en prod
       host: "https://analytics.fabien-roy.fr/",
       setCookieDomain: "*.fabien-roy.fr",
-      trackerUrl: "js/", // defaults to matomo.php
-      srcUrl: "js/", // defaults to matomo.js
-      siteId: 666,
+      trackerUrl: "matomo.php", // Assurez-vous que matomo.php est bien accessible
+      srcUrl: "matomo.js", // Fichier de tracking JS
+      siteId: 1, // Vérifie que c'est bien l'ID de ton site Matomo
       heartBeatTimer: 5,
       disableCookies: true,
       debug: false,
