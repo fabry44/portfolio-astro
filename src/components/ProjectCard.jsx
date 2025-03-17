@@ -4,7 +4,7 @@ import ProjectImage from "./ProjectImage.jsx";
 export default function ProjectCard({ name, highlights, technology, img, description, github, link, isOpen, toggleCard }) {
     return (
         <motion.div 
-            className={`relative ProjectCard p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer 
+            className={`relative ProjectCard shadowstyle p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer 
                 w-full sm:w-[300px] md:w-[450px] lg:w-[600px] mx-4`} // ✅ Taille uniforme des cartes
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function ProjectCard({ name, highlights, technology, img, descrip
                                     className={`flex items-center gap-x-2 rounded-full text-xs py-1 px-3 font-medium ${className}`} 
                                     style={inlineStyle}
                                 >
-                                    {icon} {name}
+                                    {name}
                                 </span>
                             </li>
                         );

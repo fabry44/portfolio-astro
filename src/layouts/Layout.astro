@@ -253,9 +253,7 @@ const { description, title } = Astro.props;
     header.scrolled {
         background: var(--background);
         filter: drop-shadow(2px 4px 6px black); 
-        height: 80px;
         width: 100%;
-        border-radius: 15px;
         z-index: 10;
         transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
     }
@@ -263,10 +261,7 @@ const { description, title } = Astro.props;
     @media screen and (min-width: 576px) {
         header.scrolled {
         background: var(--background);
-        box-shadow: inset 1px -1px 3px;
-        width: 80%;
         /* color: white; */
-        border-radius: 15px;
         opacity: 0.9;
         transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
         }
@@ -276,10 +271,6 @@ const { description, title } = Astro.props;
     @media screen and (min-width: 768px) {
         header.scrolled {
         background: var(--background);
-        box-shadow: inset 1px -1px 3px;
-        width: 80%;
-        /* color: white; */
-        border-radius: 15px;
         opacity: 0.9;
         transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
         }
@@ -404,6 +395,7 @@ const { description, title } = Astro.props;
         border-radius: 48px;
         justify-content: space-around;
         align-items: center;
+        box-shadow: 2px 2px 4px black;
     }
 
     .curriculum body{
@@ -422,6 +414,7 @@ const { description, title } = Astro.props;
         background-color: var(--accent);
         color: white;
         border-radius: 15px;
+        box-shadow: 3px -5px 12px 2px black;
     }
 
     .curriculum a, .contactsection button {
@@ -433,6 +426,9 @@ const { description, title } = Astro.props;
         color: var(--text);
     }
     
+    .shadowstyle {
+        box-shadow: 2px 2px 2px black;
+    }
 
     /* arcticle > div {
             width: 100%;

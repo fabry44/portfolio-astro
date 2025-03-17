@@ -5,7 +5,7 @@ const { formations } = Astro.props;
     <div class="relative border-l border-gray-800 pl-6 divFormation">
         {formations.map(({ date, degree, institution, description }, index) => (
             <div class={`mb-10 ${index % 2 === 0 ? 'classPair' : 'classImpair'}`}>
-            <div class="absolute w-4 h-4 bg-accent rounded-full -left-2.5 mt-2"></div>
+            <div class="absolute w-4 h-4 bg-accent rounded-full -left-2.5 mt-2 shadowstyle"></div>
             <h2 class="text-2xl font-bold">{new Date(date).getFullYear()}</h2>
             <p class="text-xl font-semibold">{degree}</p>
             <p class="text-lg">{institution}</p>
