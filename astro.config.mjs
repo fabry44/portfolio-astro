@@ -5,10 +5,10 @@ import netlify from '@astrojs/netlify';
 import matomo from 'astro-matomo';
 
 export default defineConfig({
-  output: 'server', // CHANGER en "static" pour éviter les erreurs Netlify
-  adapter: netlify({
-    edge: false, // Empêche Netlify de forcer certaines optimisations côté serveur
-  }),
+  output: 'static', // CHANGER en "static" pour éviter les erreurs Netlify
+  // adapter: netlify({
+  //   edge: false, // Empêche Netlify de forcer certaines optimisations côté serveur
+  // }),
   site: 'https://fabien-roy.fr',
   integrations: [
     tailwind(),
