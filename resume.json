@@ -3,10 +3,10 @@
     "basics": {
         "name": "Roy Fabien",
         "label": "D\u00e9veloppeur Web et Web Mobile",
-        "image": "identity-67d4520136cf3358299333.webp",
+        "image": "identity-67d4520136cf3358299333-min-67d99ab154c1a780951172.webp",
         "email": "fabienroy2@gmail.com",
         "phone": "0650262098",
-        "summary": "<div>Apr\u00e8s 15 ans d\u2019exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ans en tant que conducteur de travaux, j\u2019ai d\u00e9cid\u00e9 de relever un nouveau d\u00e9fi en me reconvertissant dans le d\u00e9veloppement web et mobile. Passionn\u00e9 par la programmation depuis toujours, je me sp\u00e9cialise aujourd\u2019hui en Symfony tout en explorant Node.js et Python.<\/div>",
+        "summary": "<div>&lt;div&gt;Je m\\'appelle &lt;strong&gt;Fabien Roy&lt;\/strong&gt;. Apr\u00e8s 15 ans d\\'exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ann\u00e9es en tant que conducteur de travaux sp\u00e9cialis\u00e9 dans le d\u00e9ploiement de la fibre optique, j\u2019ai d\u00e9cid\u00e9 d\\'entamer une reconversion vers le &lt;strong&gt;d\u00e9veloppement web et mobile&lt;\/strong&gt;.&lt;br&gt;&lt;br&gt;&lt;\/div&gt;&lt;div&gt;J\\'ai obtenu un &lt;strong&gt;certificat d\\'\u00c9tat niveau 5 en D\u00e9veloppement Web et Web Mobile (DWWM)&lt;\/strong&gt; \u00e0 l\\'\u00e9cole Studi en candidat libre, tout en travaillant \u00e0 plein temps. Cette exp\u00e9rience a renforc\u00e9 ma pers\u00e9v\u00e9rance et ma capacit\u00e9 \u00e0 m\u2019adapter \u00e0 des d\u00e9fis exigeants.&lt;br&gt;&lt;br&gt;&lt;\/div&gt;&lt;div&gt;Avant m\u00eame cette reconversion, ma passion pour la programmation \u00e9tait d\u00e9j\u00e0 pr\u00e9sente. Dans mon ancien m\u00e9tier, j\u2019utilisais des scripts en &lt;strong&gt;VBA&lt;\/strong&gt; pour automatiser des t\u00e2ches r\u00e9p\u00e9titives, optimisant ainsi mon temps et la qualit\u00e9 des r\u00e9sultats. Aujourd\u2019hui, cette aptitude \u00e0 rechercher des solutions innovantes s\u2019applique pleinement \u00e0 mes projets de d\u00e9veloppement.&lt;br&gt;&lt;br&gt;&lt;\/div&gt;&lt;div&gt;Je me sp\u00e9cialise en &lt;strong&gt;d\u00e9veloppement backend avec Symfony&lt;\/strong&gt; et continue d\\'explorer d\\'autres technologies comme Node.js, Rust et Python. Chaque jour, je cherche \u00e0 am\u00e9liorer mes comp\u00e9tences, \u00e0 travailler sur des projets concrets et \u00e0 approfondir mes connaissances.&lt;br&gt;&lt;br&gt;&lt;\/div&gt;<\/div>",
         "location": {
             "address": "22 rue des Renardi\u00e8res",
             "postalCode": "44100",
@@ -291,6 +291,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-14T17:58:48+01:00"
+        "lastModified": "2025-03-18T16:16:43+00:00"
     }
 }
