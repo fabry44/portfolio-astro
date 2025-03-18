@@ -1,25 +1,21 @@
 ---
 import RollsPortrait from '../components/RollsPortrait';
-const { about } = Astro.props; // Récupère les expériences passées en props
+import DOMPurify from 'dompurify';
+
+const { about } = Astro.props;
+
+// Décoder les entités HTML échappées
+const decodedAbout = decodeURIComponent(about)
+  .replace(/&lt;/g, "<")
+  .replace(/&gt;/g, ">")
+  .replace(/&quot;/g, '"')
+  .replace(/&apos;/g, "'")
+  .replace(/&amp;/g, "&");
+
+// Nettoyer le HTML pour éviter XSS
+const sanitizedAbout = DOMPurify.sanitize(decodedAbout);
 ---
 
 <section class="flex flex-col md:flex-row gap-x-8 justify-center items-center">
-    <div class="[&>p]:mb-4 [&>p>strong]:text-accent [&>p>strong]:font-semibold text-pretty"  set:html={about}>
-        <!-- <p>
-            Je m'appelle <strong>Fabien Roy</strong>. Après 15 ans d'expérience dans les réseaux fibre optique, dont 6 années en tant que conducteur de travaux spécialisé dans le déploiement de la fibre optique, j’ai décidé d'entamer une reconversion vers le <strong>développement web et mobile</strong>.
-        </p>
-        
-        <p>
-            J'ai obtenu un <strong>certificat d'État niveau 5 en Développement Web et Web Mobile (DWWM)</strong> à l'école Studi en candidat libre, tout en travaillant à plein temps. Cette expérience a renforcé ma persévérance et ma capacité à m’adapter à des défis exigeants.
-        </p>
-        
-        <p>
-            Avant même cette reconversion, ma passion pour la programmation était déjà présente. Dans mon ancien métier, j’utilisais des scripts en <strong>VBA</strong> pour automatiser des tâches répétitives, optimisant ainsi mon temps et la qualité des résultats. Aujourd’hui, cette aptitude à rechercher des solutions innovantes s’applique pleinement à mes projets de développement.
-        </p>
-        
-        <p class="text-pretty">
-            Je me spécialise en <strong>développement backend avec Symfony</strong> et continue d'explorer d'autres technologies comme Node.js et Python. Chaque jour, je cherche à améliorer mes compétences, à travailler sur des projets concrets et à approfondir mes connaissances.
-        </p> -->
-    </div>
-    <!-- <RollsPortrait client:load></RollsPortrait>  -->
+    <div class="[&>p]:mb-4 [&>p>strong]:text-accent [&>p>strong]:font-semibold text-pretty" set:html={sanitizedAbout}></div>
 </section>
