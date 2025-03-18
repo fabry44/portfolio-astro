@@ -26,7 +26,4 @@ export default defineConfig({
       }
     }),
   ],
-  build: {
-    minify: true, // Active la minification
-  },
 });
