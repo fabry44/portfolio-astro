@@ -22,8 +22,16 @@ const { description, title } = Astro.props;
         <title>{title}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Scada:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Scada:wght@400&display=swap" rel="stylesheet">
+        <style>
+        @font-face {
+            font-family: 'Crimson Pro';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('/fonts/CrimsonPro.woff2') format('woff2');
+        }
+        </style>
 
     </head>
     <body
