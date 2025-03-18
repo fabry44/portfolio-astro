@@ -5,17 +5,19 @@ export const RollsPortrait = ({ img }) => (
     initial={{ opacity: 0, x: 150, rotate: -180, scale: 0.5 }}
     whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
     transition={{
-        duration: 2,
-        ease: [0.42, 0, 0.58, 1], // Utilisation d'une courbe d'animation personnalisée pour un effet plus naturel
-        delay: 0.2, // Ajout d'un léger délai pour une entrée plus douce
-        bounce: 0.8, // Ajout d'un effet de rebond pour plus de dynamisme
-        type: "spring", // Utilisation d'un ressort pour un effet plus réaliste
+        duration: 1.2, // Réduit la durée pour accélérer l'affichage
+        ease: [0.42, 0, 0.58, 1],
+        delay: 0.1, // Réduction du délai
     }}
+    fetchpriority="high" // Pour forcer le chargement rapide de l'image principale
+    width={64}
+    height={64}
     viewport={{ once: true, amount: 0.2 }}
     src={`/uploads/users/${img}`}
-    loading='lazy'
+    loading="eager" // Met "eager" pour les images critiques
     alt="Fabien Roy"
-    className="rounded-full size-64"
-  />
+    className="rounded-full size-64 object-cover"
+/>
+
 );
 export default RollsPortrait;

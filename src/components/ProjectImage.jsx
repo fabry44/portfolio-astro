@@ -26,6 +26,11 @@ const ProjectImage = ({ img = [] }) => {
                     className="object-cover w-full h-full"
                     loading="lazy"
                     src={`/projects/${img[index]}`}
+                    srcSet={`
+                      /projects/${img[index].replace(".jpg", ".webp")} 768w,
+                      /projects/${img[index]} 1200w
+                    `}
+                    sizes="(max-width: 600px) 768px, 1200px"
                     initial={{ x: direction * 250, opacity: 0, scale: 0.95 }}
                     animate={{ x: 0, opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } }}
                     exit={{ x: -direction * 250, opacity: 0, scale: 1.05, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } }}
