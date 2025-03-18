@@ -29,6 +29,6 @@ export default defineConfig({
     }),
   ],
   build: {
-    minify: false, // Désactive temporairement la minification pour tester
+    minify: true, // Désactive temporairement la minification pour tester
   },
 });
