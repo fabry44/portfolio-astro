@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import Header from "../components/Header.astro";
 import "@fontsource-variable/source-code-pro";
 
@@ -19,10 +20,10 @@ const { description, title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Scada:wght@400&display=swap" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Scada:wght@400&display=swap" rel="stylesheet">
 
     </head>
     <body

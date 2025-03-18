@@ -10,11 +10,11 @@ export const RollsPortrait = ({ img }) => (
         delay: 0.1, // Réduction du délai
     }}
     fetchpriority="high" // Pour forcer le chargement rapide de l'image principale
-    width={64}
-    height={64}
+    width={320}  // réduit la taille
+    height={320} // réduit la taille
     viewport={{ once: true, amount: 0.2 }}
     src={`/${img}`}
-    loading="eager" // Met "eager" pour les images critiques
+    loading="lazy" 
     alt="Fabien Roy"
     className="rounded-full size-64 object-cover"
 />
