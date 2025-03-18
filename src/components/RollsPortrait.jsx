@@ -1,5 +1,5 @@
+export const prerender = true;
 import { motion } from "framer-motion";
-
 export const RollsPortrait = ({ img }) => (
   <motion.img
     initial={{ opacity: 0, x: 150, rotate: -180, scale: 0.5 }}

@@ -1,3 +1,4 @@
+export const prerender = true;
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectImage from "./ProjectImage.jsx";
 

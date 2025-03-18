@@ -1,3 +1,4 @@
+export const prerender = true;
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard.jsx";

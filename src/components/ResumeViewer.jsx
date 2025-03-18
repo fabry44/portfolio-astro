@@ -1,4 +1,5 @@
 
+export const prerender = true;
 import React from 'react';
 import { motion } from 'framer-motion';
 

@@ -1,21 +1,6 @@
 ---
-import RollsPortrait from '../components/RollsPortrait';
-import DOMPurify from 'dompurify';
-
+import SanitizedHTML from "../components/SanitizedHTML.jsx";
 const { about } = Astro.props;
-
-// Décoder les entités HTML échappées
-const decodedAbout = decodeURIComponent(about)
-  .replace(/&lt;/g, "<")
-  .replace(/&gt;/g, ">")
-  .replace(/&quot;/g, '"')
-  .replace(/&apos;/g, "'")
-  .replace(/&amp;/g, "&");
-
-// Nettoyer le HTML pour éviter XSS
-const sanitizedAbout = DOMPurify.sanitize(decodedAbout);
 ---
 
-<section class="flex flex-col md:flex-row gap-x-8 justify-center items-center">
-    <div class="[&>p]:mb-4 [&>p>strong]:text-accent [&>p>strong]:font-semibold text-pretty" set:html={sanitizedAbout}></div>
-</section>
+<SanitizedHTML htmlContent={about} client:only="react" />
