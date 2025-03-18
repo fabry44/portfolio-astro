@@ -13,7 +13,7 @@ export const RollsPortrait = ({ img }) => (
     width={64}
     height={64}
     viewport={{ once: true, amount: 0.2 }}
-    src={`/uploads/users/${img}`}
+    src={`/${img}`}
     loading="eager" // Met "eager" pour les images critiques
     alt="Fabien Roy"
     className="rounded-full size-64 object-cover"
