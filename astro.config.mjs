@@ -5,19 +5,19 @@ import netlify from '@astrojs/netlify';
 import matomo from 'astro-matomo';
 
 export default defineConfig({
-  output: 'server',
-  adapter: netlify(),
+  output: 'static', // CHANGER en "static" pour éviter les erreurs Netlify
+  
   site: 'https://fabien-roy.fr',
   integrations: [
     tailwind(),
     react(),
     matomo({
-      enabled: import.meta.env.PROD, // Activer uniquement en prod
+      enabled: import.meta.env.PROD, 
       host: "https://analytics.fabien-roy.fr/",
       setCookieDomain: "*.fabien-roy.fr",
-      trackerUrl: "matomo.php", // Assurez-vous que matomo.php est bien accessible
-      srcUrl: "matomo.js", // Fichier de tracking JS
-      siteId: 1, // Vérifie que c'est bien l'ID de ton site Matomo
+      trackerUrl: "matomo.php",
+      srcUrl: "matomo.js",
+      siteId: 1,
       heartBeatTimer: 5,
       disableCookies: true,
       debug: false,
@@ -26,4 +26,7 @@ export default defineConfig({
       }
     }),
   ],
+  build: {
+    minify: false, // Désactive temporairement la minification pour tester
+  },
 });
