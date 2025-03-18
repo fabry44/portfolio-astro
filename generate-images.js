@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Dossiers à traiter
-const inputFolders = ['./public/projects/', './public/uploads/'];
+const inputFolders = ['./public/projects/', './public/'];
 
 // Fonction de traitement des images
 const processImages = async (folder) => {
