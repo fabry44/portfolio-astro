@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
 
-const folders = ['./', './projects/'];
+const folders = ['./public/', './public/projects/'];
 const sizes = ["small", "medium", "large"];
 const outputFilePath = './src/data/preload-images.json';
 
@@ -21,14 +21,15 @@ async function generateImages() {
                 for (const size of sizes) {
                     const outputPath = path.join(folder, `${baseName}-${size}.avif`);
                     const inputPath = path.join(folder, file);
-                    
-                    // Ajoute la conversion à la liste des promesses
+
                     const promise = sharp(inputPath)
                         .resize(size === "small" ? 320 : size === "medium" ? 640 : 1024)
                         .toFormat('avif')
                         .toFile(outputPath)
                         .then(() => {
-                            imagesData.push(outputPath.replace('./public', ''));
+                            // 🔥 Correction : obtenir le chemin relatif et uniformiser les séparateurs
+                            let cleanPath = path.relative('./public', outputPath).replace(/\\/g, '/');
+                            imagesData.push(cleanPath);
                         })
                         .catch(err => console.error(`Erreur lors de la conversion de ${inputPath} → ${outputPath}`, err));
 
@@ -38,10 +39,9 @@ async function generateImages() {
         }
     }
 
-    // Attendre que toutes les images soient générées avant de continuer
+    // Attendre que toutes les images soient générées avant d'écrire le JSON
     await Promise.all(promises);
 
-    // Écriture du JSON après que toutes les images aient été générées
     await fs.writeFile(outputFilePath, JSON.stringify(imagesData, null, 2));
     console.log("✔ Toutes les images ont été générées et listées dans preload-images.json !");
 }
