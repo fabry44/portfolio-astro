@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
 
-const folders = ['./public/', './public/projects/'];
+const folders = ['./', './projects/'];
 const sizes = ["small", "medium", "large"];
 const outputFilePath = './src/data/preload-images.json';
 
@@ -28,7 +28,7 @@ async function generateImages() {
                         .toFormat('avif')
                         .toFile(outputPath)
                         .then(() => {
-                            imagesData.push(outputPath.replace('./', ''));
+                            imagesData.push(outputPath.replace('./public', ''));
                         })
                         .catch(err => console.error(`Erreur lors de la conversion de ${inputPath} → ${outputPath}`, err));
 
