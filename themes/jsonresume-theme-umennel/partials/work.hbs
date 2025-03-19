@@ -13,8 +13,9 @@
 			</p>
 			{{/if}}
 			<p class="date">{{getMonth startDate}} {{getYear startDate}} – {{#if endDate}}{{getMonth endDate}} {{getYear endDate}}{{else}}present{{/if}}</p>
+			<p class="date">{{position}}</p>
 		</div>
-		<div class="details">
+		{{!-- <div class="details">
 			<h3>{{position}}</h3>
 			{{#if summary}}
 			{{summary}}
@@ -33,7 +34,7 @@
 				{{/each}}
 			</div>
 			{{/if}}
-		</div>
+		</div> --}}
 	</div>
 	{{/each}}
 </div>
