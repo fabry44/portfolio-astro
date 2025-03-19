@@ -6,13 +6,14 @@
 		<div class="header">
 			{{#if name}}
 			<h3>{{name}}</h3>
+			<span class="date" style="float: right;">{{getMonth startDate}} {{getYear startDate}} – {{#if endDate}}{{getMonth endDate}} {{getYear endDate}}{{else}}present{{/if}}</span>
 			{{/if}}
 			{{#if url}}
 			<p class="address">
 				<a href="{{url}}" target= "_blank"><i class="fa fa-globe ico"></i> {{url}}</a>
 			</p>
 			{{/if}}
-			<p class="date">{{getMonth startDate}} {{getYear startDate}} – {{#if endDate}}{{getMonth endDate}} {{getYear endDate}}{{else}}present{{/if}}</p>
+			{{!-- <p class="date">{{getMonth startDate}} {{getYear startDate}} – {{#if endDate}}{{getMonth endDate}} {{getYear endDate}}{{else}}present{{/if}}</p> --}}
 			<p class="date">{{position}}</p>
 		</div>
 		{{!-- <div class="details">
