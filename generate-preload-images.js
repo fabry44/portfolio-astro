@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const folders = ['./public/uploads/users/', './public/uploads/projects/'];
+const folders = ['./public/', './public/projects/'];
 const sizes = ["small", "medium", "large"];
 const outputFilePath = './src/data/preload-images.json';
 
