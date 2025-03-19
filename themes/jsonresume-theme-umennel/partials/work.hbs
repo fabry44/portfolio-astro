@@ -3,10 +3,12 @@
 	<h2><i class="fa fa-toolbox ico"></i> Expérience Professionnelle</h2>
 	{{#each resume.work}}
 	<div class="achievement">
-		<div class="header">
+		<div class="headerWork">
 			{{#if name}}
-			<h3>{{name}}</h3>
-			<span class="date" style="float: right;">{{getMonth startDate}} {{getYear startDate}} – {{#if endDate}}{{getMonth endDate}} {{getYear endDate}}{{else}}present{{/if}}</span>
+			<h3>
+				{{name}}
+				<span class="date" style="float: right;">{{getMonth startDate}} {{getYear startDate}} – {{#if endDate}}{{getMonth endDate}} {{getYear endDate}}{{else}}present{{/if}}</span>
+			</h3>
 			{{/if}}
 			{{#if url}}
 			<p class="address">
