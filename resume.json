@@ -6,6 +6,7 @@
         "image": "identity-67d4520136cf3358299333-min-67d99ab154c1a780951172.webp",
         "email": "fabienroy2@gmail.com",
         "phone": "0650262098",
+        "summary": "<div>Je m\\'appelle <strong>Fabien Roy<\/strong>. Apr\u00e8s 15 ans d\\'exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ann\u00e9es en tant que conducteur de travaux sp\u00e9cialis\u00e9 dans le d\u00e9ploiement de la fibre optique, j\u2019ai d\u00e9cid\u00e9 d\\'entamer une reconversion vers le <strong>d\u00e9veloppement web et mobile<\/strong>.<br>J\\'ai obtenu un <strong>certificat d\\'\u00c9tat niveau 5 en D\u00e9veloppement Web et Web Mobile (DWWM)<\/strong> \u00e0 l\\'\u00e9cole Studi en candidat libre, tout en travaillant \u00e0 plein temps. Cette exp\u00e9rience a renforc\u00e9 ma pers\u00e9v\u00e9rance et ma capacit\u00e9 \u00e0 m\u2019adapter \u00e0 des d\u00e9fis exigeants.<br>Avant m\u00eame cette reconversion, ma passion pour la programmation \u00e9tait d\u00e9j\u00e0 pr\u00e9sente. Dans mon ancien m\u00e9tier, j\u2019utilisais des scripts en <strong>VBA <\/strong>pour automatiser des t\u00e2ches r\u00e9p\u00e9titives, optimisant ainsi mon temps et la qualit\u00e9 des r\u00e9sultats. Aujourd\u2019hui, cette aptitude \u00e0 rechercher des solutions innovantes s\u2019applique pleinement \u00e0 mes projets de d\u00e9veloppement.<\/div>",
         "location": {
             "address": "22 rue des Renardi\u00e8res",
             "postalCode": "44100",
@@ -123,6 +124,17 @@
     "projects": [
         {
             "name": "Site web pour un zoo (Arcadia)",
+            "highlights": {
+                "11": "Symfony Security + Voters pour restreindre l\u2019acc\u00e8s aux administrateurs, v\u00e9t\u00e9rinaires et employ\u00e9s.",
+                "12": "Acc\u00e8s s\u00e9curis\u00e9 aux donn\u00e9es sensibles avec EasyAdmin v4.",
+                "13": "CRUD administrable pour g\u00e9rer les animaux, habitats et soins en fonction du r\u00f4le de l'utilisateur",
+                "14": "Stockage des donn\u00e9es dans PostgreSQL.",
+                "15": "MongoDB utilis\u00e9 pour suivre les interactions des visiteurs sur les fiches animaux.",
+                "16": "Stimulus JS pour capturer et analyser les clics des utilisateurs.",
+                "17": "S\u00e9lection dynamique des habitats et animaux avec Stimulus et Bootstrap.",
+                "18": "Syst\u00e8me de notation avec \u00e9toiles et commentaires des visiteurs.",
+                "19": "D\u00e9velopp\u00e9 sous Symfony 7"
+            },
             "keywords": [
                 "HTML",
                 "CSS",
@@ -137,6 +149,19 @@
         },
         {
             "name": "SOS PRO, Site vitrine de service aux particuliers et aux entreprises",
+            "highlights": {
+                "0": "Int\u00e9gration de FullCalendar avec gestion des \u00e9v\u00e9nements en drag-and-drop.",
+                "1": "Vue personnalis\u00e9e des interventions pour chaque utilisateur.",
+                "2": "CRUD s\u00e9curis\u00e9 pour les utilisateurs, interventions, devis et statistiques.",
+                "3": "Personnalisation des templates pour une meilleure exp\u00e9rience utilisateur.",
+                "4": "Utilisation de JWT et UUID pour une inscription s\u00e9curis\u00e9e via invitations.",
+                "7": "Utilisation de Voters Symfony pour une gestion fine des permissions.",
+                "8": "Respect des normes CNIL avec anonymisation des donn\u00e9es (pas de consentement requis).",
+                "9": "Matomo utilis\u00e9 pour le suivi analytique au lieu de Google Analytics.",
+                "10": "Int\u00e9gration de Symfony UX Turbo pour des pages dynamiques sans rechargement.",
+                "11": "Syst\u00e8me de g\u00e9olocalisation avec UX Map pour afficher les adresses des clients.",
+                "12": "D\u00e9velopp\u00e9 en Symfony 7 avec MariaDB comme base de donn\u00e9es."
+            },
             "keywords": [
                 "HTML",
                 "CSS",
@@ -151,6 +176,18 @@
         },
         {
             "name": "Portfolio-API",
+            "highlights": {
+                "0": "API REST s\u00e9curis\u00e9e avec OAuth2 et JWT (authentification robuste).",
+                "1": "Gestion avanc\u00e9e des permissions et r\u00f4les via le syst\u00e8me de s\u00e9curit\u00e9 Symfony.",
+                "2": "Protection contre les attaques CSRF, XSS et injection SQL avec Symfony et le HTMLSanitizer.",
+                "3": "D\u00e9velopp\u00e9 avec Symfony 7, structur\u00e9 avec Doctrine ORM et MariaDB.",
+                "4": "Stockage optimis\u00e9 : JSON export\u00e9 pour un chargement rapide c\u00f4t\u00e9 frontend (statique avec Astro).",
+                "5": "API stateless, compatible avec CI\/CD et Webhooks.",
+                "6": "EasyAdmin pour une gestion simplifi\u00e9e du contenu (Projets, Exp\u00e9riences, Formations).",
+                "7": "CRUD complet pour modifier dynamiquement les contenus du portfolio.",
+                "9": "Dockeris\u00e9 pour un environnement stable en d\u00e9veloppement et production.",
+                "10": "D\u00e9ploiement automatis\u00e9 via GitHub Actions et Webhook Netlify."
+            },
             "keywords": [
                 "HTML",
                 "CSS",
@@ -164,6 +201,17 @@
         },
         {
             "name": "Portfolio-Astro",
+            "highlights": [
+                "Astro.js pour un site statique ultra-rapide (optimisation du rendu).",
+                "Tailwind CSS : un design moderne, \u00e9pur\u00e9 et responsive.",
+                "Composants dynamiques r\u00e9cup\u00e9rant les donn\u00e9es en temps r\u00e9el via l\u2019API Symfony.",
+                "Connexion directe avec Portfolio-API via Fetch API.",
+                "Build automatique sur Netlify d\u00e8s modification du backend.",
+                "Syst\u00e8me de mise \u00e0 jour dynamique sans intervention manuelle.",
+                "Backend Symfony sur un serveur mutualis\u00e9 (optimisation des ressources).",
+                "Frontend Astro sur Netlify pour un h\u00e9bergement rapide et scalable.",
+                "S\u00e9paration nette backend\/frontend, facilitant l\u2019\u00e9volutivit\u00e9."
+            ],
             "keywords": [
                 "HTML",
                 "CSS",
@@ -239,6 +287,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-19T01:42:29+00:00"
+        "lastModified": "2025-03-19T15:10:01+00:00"
     }
 }
