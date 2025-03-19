@@ -2,6 +2,7 @@
 export const prerender = true;
 import Header from "../components/Header.astro";
 import "@fontsource-variable/source-code-pro";
+import preloadImages from '../data/preload-images.json';
 
 interface Props {
     title: string;
@@ -23,15 +24,9 @@ const { description, title } = Astro.props;
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Scada:wght@400&display=swap" rel="stylesheet">
-        <style>
-        @font-face {
-            font-family: 'Crimson Pro';
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            src: url('/fonts/CrimsonPro.woff2') format('woff2');
-        }
-        </style>
+        {preloadImages.map((imgPath) => (
+            <link rel="preload" as="image" href={imgPath} type="image/avif" fetchpriority="high" />
+          ))}
 
     </head>
     <body
