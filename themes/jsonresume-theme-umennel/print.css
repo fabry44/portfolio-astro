@@ -60,8 +60,8 @@ a[href]:after {
 }
 
 .keyword{
-  color: #32475c;
-  background: #eee !important;
+  color: #eee;
+  background: #32475c !important;
 }
 
 .badge {

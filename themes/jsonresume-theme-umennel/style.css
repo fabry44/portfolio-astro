@@ -116,10 +116,14 @@ h3 {
   font-weight: bold;
 }
 
+.sidebar {
+  background: #9dcfe2;
+}
+
 .achievement .header {
   width: 100%;
   padding: 10px;
-  background: #95a3ad;
+  background: #e3e2e1;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
   margin-bottom: 10px;
@@ -128,10 +132,10 @@ h3 {
 .achievement .headerWork {
   width: 100%;
   padding: 5px;
-  background: #eee;
   border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  
+  border-right: 1px solid #ccc;
+  background: #e3e2e1;
+  margin: 5px;
 }
 
 .achievement .date {
