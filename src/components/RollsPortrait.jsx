@@ -9,6 +9,9 @@ export const RollsPortrait = ({ img }) => {
       {isMobile ? (
         <img
           fetchpriority="high"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }} // ⚡ Plus rapide et fluide
           width={320}
           height={320}
           src={`/${img.replace(/\.(jpg|jpeg|png|webp)$/, "-small.avif")}`}

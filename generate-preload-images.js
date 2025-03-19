@@ -28,7 +28,7 @@ async function generateImages() {
                         .toFormat('avif')
                         .toFile(outputPath)
                         .then(() => {
-                            imagesData.push(outputPath.replace('./public', ''));
+                            imagesData.push(outputPath.replace('./', ''));
                         })
                         .catch(err => console.error(`Erreur lors de la conversion de ${inputPath} → ${outputPath}`, err));
 
