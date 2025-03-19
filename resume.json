@@ -6,7 +6,6 @@
         "image": "identity-67d4520136cf3358299333-min-67d99ab154c1a780951172.webp",
         "email": "fabienroy2@gmail.com",
         "phone": "0650262098",
-        "summary": "<div>Je m\\'appelle <strong>Fabien Roy<\/strong>. Apr\u00e8s 15 ans d\\'exp\u00e9rience dans les r\u00e9seaux fibre optique, dont 6 ann\u00e9es en tant que conducteur de travaux sp\u00e9cialis\u00e9 dans le d\u00e9ploiement de la fibre optique, j\u2019ai d\u00e9cid\u00e9 d\\'entamer une reconversion vers le <strong>d\u00e9veloppement web et mobile<\/strong>.<br>J\\'ai obtenu un <strong>certificat d\\'\u00c9tat niveau 5 en D\u00e9veloppement Web et Web Mobile (DWWM)<\/strong> \u00e0 l\\'\u00e9cole Studi en candidat libre, tout en travaillant \u00e0 plein temps. Cette exp\u00e9rience a renforc\u00e9 ma pers\u00e9v\u00e9rance et ma capacit\u00e9 \u00e0 m\u2019adapter \u00e0 des d\u00e9fis exigeants.<br>Avant m\u00eame cette reconversion, ma passion pour la programmation \u00e9tait d\u00e9j\u00e0 pr\u00e9sente. Dans mon ancien m\u00e9tier, j\u2019utilisais des scripts en <strong>VBA <\/strong>pour automatiser des t\u00e2ches r\u00e9p\u00e9titives, optimisant ainsi mon temps et la qualit\u00e9 des r\u00e9sultats. Aujourd\u2019hui, cette aptitude \u00e0 rechercher des solutions innovantes s\u2019applique pleinement \u00e0 mes projets de d\u00e9veloppement.<\/div>",
         "location": {
             "address": "22 rue des Renardi\u00e8res",
             "postalCode": "44100",
@@ -121,7 +120,7 @@
             "courses": []
         }
     ],
-    "project": [
+    "projects": [
         {
             "name": "Site web pour un zoo (Arcadia)",
             "description": "<div><strong>Projet d'\u00e9tude Studi (ECF) : conception d'un site web Zoo-Arcadia:<br><\/strong><br>Ce projet a \u00e9t\u00e9 r\u00e9alis\u00e9 dans le cadre de l\u2019\u00e9valuation de certification et visait \u00e0 mettre en place un syst\u00e8me de gestion pour un zoo.<br><br><\/div><div>Le site est structur\u00e9 avec trois r\u00f4les distincts : <strong>administrateurs, v\u00e9t\u00e9rinaires et employ\u00e9s<\/strong>, chacun ayant des droits sp\u00e9cifiques via <strong>Symfony Security et Voters<\/strong>. La base de donn\u00e9es repose sur <strong>PostgreSQL<\/strong> pour stocker les informations des animaux et habitats.<br><br><\/div><div>L'interface a \u00e9t\u00e9 enrichie avec des fonctionnalit\u00e9s interactives :<br><br><\/div><ul><li><strong>Affichage des habitats et animaux<\/strong> avec <strong>Stimulus et Bootstrap<\/strong>.<\/li><li><strong>Suivi des clics des visiteurs<\/strong> sur les fiches des animaux avec <strong>MongoDB<\/strong>.<\/li><li><strong>Notation et avis des visiteurs<\/strong> int\u00e9gr\u00e9s pour recueillir des feedbacks.<\/li><\/ul><div>Le projet est administr\u00e9 via <strong>EasyAdmin v4<\/strong>, garantissant une gestion efficace des donn\u00e9es.<br><br><\/div>",
@@ -291,6 +290,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-18T23:55:36+00:00"
+        "lastModified": "2025-03-19T00:14:08+00:00"
     }
 }
