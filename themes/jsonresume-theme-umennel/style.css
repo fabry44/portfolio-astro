@@ -119,8 +119,8 @@ h3 {
 
 .sidebar {
   background: #9dcfe2;
-  height: 1020px;
-  padding-top: 20px;
+  height: 100vh;
+  padding-top: 40px;
 }
 
 .achievement .header {
