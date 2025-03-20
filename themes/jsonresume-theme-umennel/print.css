@@ -21,7 +21,7 @@ body {
   font-size: 1.2em;
   -webkit-print-color-adjust: exact;
   background: none !important;
-  padding: 0 15px;
+  padding: 0;
 }
 
 .container {
@@ -29,12 +29,14 @@ body {
   padding-left: 15px;
   margin-right: 15px;
   margin-left: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
   width: 100%;
 }
 
 .sidebar {
   background: #9dcfe2;
-  
+  padding-top: 40px;
 }
 
 .col-sm-5{
@@ -98,6 +100,8 @@ a[href]:after {
     padding-left: 15px;
     margin-right: 15px;
     margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
     width: 100%;
     height: 100%;
   }
