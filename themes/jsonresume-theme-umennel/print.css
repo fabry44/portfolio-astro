@@ -20,7 +20,7 @@ body {
   font-size: 1.2em;
   -webkit-print-color-adjust: exact;
   background: none !important;
-  padding: 15px;
+  padding: 0 15px;
 }
 
 .container {
