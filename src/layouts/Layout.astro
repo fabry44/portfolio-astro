@@ -40,20 +40,34 @@ const { description, title } = Astro.props;
 
 
 <style is:global>
-    @import url("https://fonts.googleapis.com/css?family=Crimson%20Pro:700|Scada:400");
+    /* @import url("https://fonts.googleapis.com/css?family=Crimson%20Pro:700|Scada:400"); */
+    @font-face {
+    font-family: 'Crimson Pro';
+    src: url('/fonts/CrimsonPro-Regular.woff2') format('woff2'),
+         url('/fonts/CrimsonPro-Regular.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: 'Scada';
+    src: url('/fonts/Scada-Regular.woff2') format('woff2'),
+         url('/fonts/Scada-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
     h1,
     h2,
     h3,
     h4,
     h5 {
-        font-family: "Crimson Pro";
+        font-family: "Crimson Pro", sans-serif;
         font-weight: 700;
     }
 
     html {
         font-size: 100%; /* 16px */
-        font-family: "Scada";
+        font-family: 'Scada', sans-serif;
         font-weight: 400;
         /* scroll-behavior: smooth; */
         scroll-snap-type: y mandatory;

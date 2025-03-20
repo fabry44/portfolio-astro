@@ -35,6 +35,7 @@ blockquote {
   border: none;
   margin: 0;
   padding: 5px 0 5px 15px;
+  background-color: #f2ebe4;
 }
 
 .list-group-item:last-child {
@@ -118,12 +119,14 @@ h3 {
 
 .sidebar {
   background: #9dcfe2;
+  height: 1020px;
+  padding-top: 20px;
 }
 
 .achievement .header {
   width: 100%;
   padding: 10px;
-  background: #e3e2e1;
+  background: #f2ebe4;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
   margin-bottom: 10px;
@@ -134,8 +137,8 @@ h3 {
   padding: 5px;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  background: #e3e2e1;
-  margin: 5px;
+  background: #f2ebe4;
+  margin-bottom: 10px;
 }
 
 .achievement .date {
@@ -158,7 +161,7 @@ h3 {
   margin-right: 5px;
   margin-bottom: 5px;
   padding: 5px 10px;
-  background: #32475c;
+  background: device-cmyk( 46% 23% 0% 64% / .5, #32475c);
   position: relative;
   font-size: .85em;
 }
