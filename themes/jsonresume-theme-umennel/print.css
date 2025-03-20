@@ -1,6 +1,6 @@
 @page {
   size: A4;
-  margin: 0;
+  margin: 0 !important;
 }
 
 blockquote,
@@ -88,6 +88,7 @@ a[href]:after {
   @page {
     size: A4;
     margin: 0 !important; /* Supprime les marges automatiques */
+    padding: 0 !important;
   }
   html, body {
     margin: 0;
@@ -96,12 +97,12 @@ a[href]:after {
     height: 100%;
   }
   .container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-top: 0;
-    margin-bottom: 0;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     width: 100%;
     height: 100%;
   }
