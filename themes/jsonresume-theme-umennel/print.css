@@ -29,6 +29,12 @@ body {
   width: 100%;
 }
 
+.sidebar {
+  background: #9dcfe2;
+  height: 110% !important;
+  padding-top: 40px;
+}
+
 .col-sm-5{
   width: 40%;
   padding: 15px 15px 0 15px;

@@ -11,12 +11,12 @@ const ResumeViewer = () => {
         animate={{ opacity: 1, y: 0, scale: 0.3 }}
         transition={{ duration: 1, delay: 0.3 }}
         whileTap={{ scale: 1.5 }}        
-        src="/cv_fabien_roy.pdf"
+        src="/cv_fabien_roy.html"
         width="812" 
         height="1092" 
         title="Mon CV" />
       <br />
-      <a class="font-bold py-2 px-4 rounded" href="/cv_fabien_roy.pdf">
+      <a class="font-bold py-2 px-4 rounded" href="/cv_fabien_roy.html">
           <i class="fas fa-view"></i>
         voir
       </a>
