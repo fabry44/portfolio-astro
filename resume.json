@@ -17,7 +17,7 @@
         "profiles": [
             {
                 "network": "Linkedin",
-                "username": null,
+                "username": "Fabien Roy",
                 "url": "www.linkedin.com\/in\/roy-fabien-13982a157"
             },
             {
@@ -287,6 +287,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-19T16:56:04+00:00"
+        "lastModified": "2025-03-20T11:25:34+00:00"
     }
 }
