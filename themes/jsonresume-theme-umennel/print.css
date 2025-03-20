@@ -31,12 +31,12 @@ body {
 
 .col-sm-5{
   width: 40%;
-  padding: 15px;
+  padding: 15px 15px 0 15px;
 }
 
 .col-sm-7{
   width: 60%;
-  padding: 0;
+  padding: 15px 15px 0 15px;
 }
 
 a[href]:after {
