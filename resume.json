@@ -18,7 +18,7 @@
             {
                 "network": "Linkedin",
                 "username": "Fabien Roy",
-                "url": "www.linkedin.com\/in\/roy-fabien-13982a157"
+                "url": "https:\/\/www.linkedin.com\/in\/roy-fabien-13982a157"
             },
             {
                 "network": "Github",
@@ -287,6 +287,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-20T16:59:03+00:00"
+        "lastModified": "2025-03-20T17:01:22+00:00"
     }
 }
