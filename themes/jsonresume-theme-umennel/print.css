@@ -36,7 +36,7 @@ body {
 
 .col-sm-7{
   width: 60%;
-  padding: 15px;
+  padding: 0;
 }
 
 a[href]:after {

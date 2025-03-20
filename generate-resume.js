@@ -32,8 +32,6 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
     return;
   }
 
-  console.log("📄 Lancement de Puppeteer CLI pour générer le PDF...");
-
   
 
   async function generatePdf() {
