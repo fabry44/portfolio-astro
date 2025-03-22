@@ -23,7 +23,7 @@
         {
             "degree": "Certificat d'\u00c9tat niveau 5",
             "institution": "\u00c9cole Studi",
-            "date": "2025-01-01T00:00:00+00:00",
+            "date": "2024-12-11T00:00:00+00:00",
             "description": "D\u00e9veloppement Web et Web Mobile"
         },
         {
@@ -393,5 +393,5 @@
             "style": "background-color: #00758F; color: #fff;"
         }
     ],
-    "updated_at": "2025-03-20 17:01:22"
+    "updated_at": "2025-03-22 19:16:19"
 }
