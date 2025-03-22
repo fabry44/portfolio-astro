@@ -15,8 +15,8 @@ export async function POST({ request }: APIContext) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 grant_type: "client_credentials",
-                client_id: import.meta.env.OAUTH_CLIENT_ID, // ⚠️ Stocké en .env
-                client_secret: import.meta.env.OAUTH_CLIENT_SECRET, // ⚠️ Stocké en .env
+                client_id: import.meta.env.OAUTH_CLIENT_ID, // ⚠️ Stocké en variable d'environnement netlify
+                client_secret: import.meta.env.OAUTH_CLIENT_SECRET, // ⚠️ Stocké en variable d'environnement netlify
                 scope: "portfolio",
             }),
         });
