@@ -6,7 +6,7 @@
 		<div class="header">
 			<h3>{{institution}}</h3>
 			<p><i class="fa fa-graduation-cap ico"></i> {{area}}</p>
-			<p class="date">{{getYear startDate}} – {{#if endDate}}{{getYear endDate}}{{else}}present{{/if}}</p>
+			<p class="date">{{#if startDate}}{{getYear startDate}} – {{/if}}{{#if endDate}}{{getYear endDate}}{{else}}actuellement{{/if}}</p>
 			{{#if gpa}}<p>GPA: {{gpa}}</p>{{/if}}
 		</div>
 		<div class="details">
