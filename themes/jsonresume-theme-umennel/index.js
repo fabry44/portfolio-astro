@@ -27,8 +27,8 @@ function render(resume) {
 	});
 
 	Handlebars.registerHelper('getMonth', function(dateStr) {
-		var months = ["January", "February", "March", "April", "May", "June",
-			"July", "August", "September", "October", "November", "December"];
+		var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+			"Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 		return months[parseInt(dateStr.substr(5,2))-1] || '';
 	});
 
