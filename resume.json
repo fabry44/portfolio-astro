@@ -105,7 +105,7 @@
             "url": "",
             "area": "Optique physique, g\u00e9om\u00e9trique et photonique",
             "studyType": "BTS G\u00e9nie Optique option Photonique",
-            "startDate": "2010-09-01",
+            "startDate": null,
             "endDate": "2010-06-01",
             "score": null,
             "courses": []
@@ -115,7 +115,7 @@
             "url": "",
             "area": "Math\u00e9matiques",
             "studyType": "Bac Scientifique",
-            "startDate": "2025-03-11",
+            "startDate": null,
             "endDate": "2008-06-01",
             "score": null,
             "courses": []
@@ -287,6 +287,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-22T19:16:19+00:00"
+        "lastModified": "2025-03-22T21:46:55+00:00"
     }
 }
