@@ -197,7 +197,7 @@
                 "MariaDB"
             ],
             "endDate": "2025-03-12",
-            "url": null
+            "url": "backoffice.fabien-roy.fr"
         },
         {
             "name": "Portfolio-Astro",
@@ -221,7 +221,7 @@
                 "React"
             ],
             "endDate": "2025-03-12",
-            "url": "https:\/\/fabien-roy.netlify.app\/"
+            "url": "fabien-roy.fr"
         }
     ],
     "skills": [
@@ -287,6 +287,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-22T21:46:55+00:00"
+        "lastModified": "2025-03-22T22:03:39+00:00"
     }
 }
