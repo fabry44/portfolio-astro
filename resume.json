@@ -227,45 +227,50 @@
     "skills": [
         {
             "name": "Languages",
-            "level": "beginner",
-            "keywords": [
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "PHP",
-                "Rust",
-                "Python"
-            ]
+            "level": null,
+            "keywords": {
+                "0": "HTML",
+                "1": "CSS",
+                "2": "JavaScript",
+                "3": "PHP",
+                "6": "SQL",
+                "7": "Python"
+            }
         },
         {
             "name": "Frameworks et Librairies",
-            "level": "advanced",
-            "keywords": [
-                "Symfony",
-                "Astro",
-                "React",
-                "Symfony",
-                "Bootstrap",
-                "Tailwind CSS",
-                "Node.js"
-            ]
+            "level": null,
+            "keywords": {
+                "0": "Symfony",
+                "4": "Bootstrap",
+                "5": "Tailwind CSS",
+                "6": "Node.js",
+                "7": "JQuery",
+                "8": "Django",
+                "9": "React",
+                "10": "Astro"
+            }
         },
         {
             "name": "Bases de Donn\u00e9es",
-            "level": "beginner",
-            "keywords": [
-                "MongoDB",
-                "MySQL"
-            ]
+            "level": null,
+            "keywords": {
+                "2": "MariaDB",
+                "3": "PostgreSQL",
+                "4": "MongoDB",
+                "5": "MySQL"
+            }
         },
         {
             "name": "Outils Additionnels",
-            "level": "beginner",
+            "level": null,
             "keywords": [
                 "Figma",
                 "Git",
                 "GitHub",
-                "Netlify"
+                "Netlify",
+                "Docker",
+                "Heroku"
             ]
         }
     ],
@@ -287,6 +292,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-23T22:33:19+00:00"
+        "lastModified": "2025-03-23T22:45:42+00:00"
     }
 }
