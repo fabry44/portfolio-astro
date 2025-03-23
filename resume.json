@@ -112,8 +112,8 @@
         },
         {
             "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
-            "url": "",
-            "area": "Math\u00e9matiques",
+            "url": null,
+            "area": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques",
             "studyType": "Bac Scientifique",
             "startDate": null,
             "endDate": "2008-06-01",
@@ -287,6 +287,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-22T22:03:39+00:00"
+        "lastModified": "2025-03-23T22:33:19+00:00"
     }
 }
