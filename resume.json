@@ -142,7 +142,10 @@
                 "PHP",
                 "Symfony",
                 "Bootstrap",
-                "MongoDB"
+                "MongoDB",
+                "Postrgresql",
+                "Heroku",
+                "Docker"
             ],
             "endDate": "2024-07-22",
             "url": "https:\/\/project-zoo-arcadia-c0cc1a69ef90.herokuapp.com\/"
@@ -169,7 +172,10 @@
                 "PHP",
                 "Symfony",
                 "Bootstrap",
-                "MariaDB"
+                "jQuery",
+                "MariaDB",
+                "Docker",
+                "Matomo"
             ],
             "endDate": "2024-11-17",
             "url": "sospro-jalila.fr"
@@ -292,6 +298,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-23T22:45:42+00:00"
+        "lastModified": "2025-03-23T22:56:29+00:00"
     }
 }

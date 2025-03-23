@@ -104,6 +104,24 @@
                     "icon": "Mongo",
                     "class": "bg-[#47A248] text-white",
                     "style": "background-color: #47A248; color: #fff;"
+                },
+                {
+                    "name": "Postrgresql",
+                    "icon": "Postgres",
+                    "class": "bg-[#336791] text-white",
+                    "style": "background-color: #336791; color: white;"
+                },
+                {
+                    "name": "Heroku",
+                    "icon": "Heroku",
+                    "class": "bg-[#409] text-white",
+                    "style": "background-color: #409; color: white;"
+                },
+                {
+                    "name": "Docker",
+                    "icon": "Docker",
+                    "class": "bg-[#2396ed] text-white",
+                    "style": "background-color: #2396ed; color: white;"
                 }
             ]
         },
@@ -167,10 +185,28 @@
                     "style": "background-color: #563D7C; color: #fff;"
                 },
                 {
+                    "name": "jQuery",
+                    "icon": "Jquery",
+                    "class": "bg-[#0769AD] text-white",
+                    "style": "background-color: #0769AD; color: #fff;"
+                },
+                {
                     "name": "MariaDB",
                     "icon": "Maria",
                     "class": "bg-[#003545] text-white",
                     "style": "background-color: #003545; color: #fff;"
+                },
+                {
+                    "name": "Docker",
+                    "icon": "Docker",
+                    "class": "bg-[#2396ed] text-white",
+                    "style": "background-color: #2396ed; color: white;"
+                },
+                {
+                    "name": "Matomo",
+                    "icon": "Matomo",
+                    "class": "bg-[#3152a0] text-white",
+                    "style": "background-color: #3152a0; color: white;"
                 }
             ]
         },
@@ -453,5 +489,5 @@
             "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-03-23 22:45:42"
+    "updated_at": "2025-03-23 22:56:29"
 }
