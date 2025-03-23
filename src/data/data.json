@@ -36,7 +36,7 @@
             "degree": "Bac Scientifique",
             "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
             "date": "2008-06-01T00:00:00+00:00",
-            "description": "Math\u00e9matiques"
+            "description": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques"
         }
     ],
     "projects": [
@@ -391,7 +391,67 @@
             "icon": "Mysql",
             "class": "bg-[#00758F] text-white",
             "style": "background-color: #00758F; color: #fff;"
+        },
+        {
+            "name": "Postrgresql",
+            "icon": "Postgres",
+            "class": "bg-[#336791] text-white",
+            "style": "background-color: #336791; color: white;"
+        },
+        {
+            "name": "MariaDB",
+            "icon": "MariaDB",
+            "class": "bg-[#c49a6c] text-white",
+            "style": "background-color: #c49a6c; color: white;"
+        },
+        {
+            "name": "Symfony",
+            "icon": "Symfony",
+            "class": "bg-[#000000] text-white",
+            "style": "background-color: #000000; color: white;"
+        },
+        {
+            "name": "Heroku",
+            "icon": "Heroku",
+            "class": "bg-[#409] text-white",
+            "style": "background-color: #409; color: white;"
+        },
+        {
+            "name": "JQuery",
+            "icon": "Jquery",
+            "class": "bg-[#0868AC] text-white",
+            "style": "background-color: #0868AC; color: white;"
+        },
+        {
+            "name": "Django",
+            "icon": "Django",
+            "class": "bg-[#2ba977] text-white",
+            "style": "background-color: #2ba977; color: white;"
+        },
+        {
+            "name": "Docker",
+            "icon": "Docker",
+            "class": "bg-[#2396ed] text-white",
+            "style": "background-color: #2396ed; color: white;"
+        },
+        {
+            "name": "SQL",
+            "icon": "Sql",
+            "class": "bg-[#00bcf2] text-white",
+            "style": "background-color: #00bcf2; color: white;"
+        },
+        {
+            "name": "Matomo",
+            "icon": "Matomo",
+            "class": "bg-[#3152a0] text-white",
+            "style": "background-color: #3152a0; color: white;"
+        },
+        {
+            "name": "Github",
+            "icon": "Github",
+            "class": "bg-[#fff] text-white",
+            "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-03-22 22:03:39"
+    "updated_at": "2025-03-23 22:45:42"
 }
