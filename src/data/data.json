@@ -445,7 +445,13 @@
             "icon": "Matomo",
             "class": "bg-[#3152a0] text-white",
             "style": "background-color: #3152a0; color: white;"
+        },
+        {
+            "name": "Github",
+            "icon": "Github",
+            "class": "bg-[#fff] text-white",
+            "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-03-23 22:33:19"
+    "updated_at": "2025-03-23 22:45:42"
 }
