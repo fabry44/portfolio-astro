@@ -267,6 +267,12 @@
                     "icon": "Maria",
                     "class": "bg-[#003545] text-white",
                     "style": "background-color: #003545; color: #fff;"
+                },
+                {
+                    "name": "Docker",
+                    "icon": "Docker",
+                    "class": "bg-[#2396ed] text-white",
+                    "style": "background-color: #2396ed; color: white;"
                 }
             ]
         },
@@ -327,6 +333,12 @@
                     "icon": "React",
                     "class": "bg-[#1c7777] text-white",
                     "style": "background-color: #1c7777; color: #fff;"
+                },
+                {
+                    "name": "Docker",
+                    "icon": "Docker",
+                    "class": "bg-[#2396ed] text-white",
+                    "style": "background-color: #2396ed; color: white;"
                 }
             ]
         }
@@ -489,5 +501,5 @@
             "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-03-23 22:56:29"
+    "updated_at": "2025-03-23 23:14:36"
 }
