@@ -9,14 +9,14 @@ import Gmail from "../icons/Social/Gmail.astro";
 import Section from "../components/Section.astro";
 import Section_techno from "../components/Section_techno.astro";
 import Technology from "../components/Technology.astro";
-import Code from "../icons/Titulos/Code.astro";
+import Code from "../icons/Titres/Code.astro";
 import Project from "../components/Project.astro";
 import Experience from "../components/Experience.astro";
 import Formation from "../components/Formation.astro";
 import About from "../components/About.astro";
-import Cert_icon from "../icons/Titulos/Cert_icon.astro";
-import Exp_icon from "../icons/Titulos/Exp_icon.astro";
-import My_icons from "../icons/Titulos/My_icon.astro";
+import Cert_icon from "../icons/Titres/Cert_icon.astro";
+import Exp_icon from "../icons/Titres/Exp_icon.astro";
+import My_icons from "../icons/Titres/My_icon.astro";
 import Section_about from "../components/Section_about.astro";
 import Footer from "../components/Footer.astro";
 import Section_formation from "../components/Section_formation.astro";
@@ -24,6 +24,7 @@ import Section_experience from "../components/Section_experience.astro";
 import ContactComponent from "../components/ContactComponent.jsx";
 import ResumeViewer from "../components/ResumeViewer.jsx";
 import RollsPortrait from "../components/RollsPortrait";
+import Contact_icon from "../icons/Titres/Contact_icon.astro";
 
 // import ProjectMotion from "../components/ProjectMotion.astro";
 
@@ -100,7 +101,7 @@ import data from "../data/data.json";
                  
                 </div>
                 <nav
-                    class="flex gap-x-5 mt-6 flex-wrap items-start justify-start"
+                    class="flex gap-x-5 mt-6 flex-wrap items-center justify-center"
                 >
                     <Social_icons href={data.user.linkedin}>
                         <Linkedin class="size-4 md:size-6" />
@@ -163,17 +164,13 @@ import data from "../data/data.json";
             </div>
             <About about={data.user.about} />
         </Section_about>
-        <ContactComponent client:idle />
-        <!-- <Vortex 
-            particleCount={150}
-            rangeY={800}
-            rangeSpeed={0.3}
-            baseRadius={1}
-            rangeRadius={2}
-            baseHue={180}
-            client:load>
-
-        </Vortex> -->
+        <div class="flex flex-col items-center">
+            <h2 class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4">
+            <Contact_icon class="w-12 h-12" /> Me contacter
+            </h2>
+        </div>
+            <ContactComponent client:idle />
+        
 
         <Footer />
     </main>

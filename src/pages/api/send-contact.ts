@@ -10,7 +10,7 @@ export async function POST({ request }: APIContext) {
         const formData = await request.json();
 
         // 🔐 Récupérer un token sécurisé
-        const oauthResponse = await fetch("https://backoffice.fabien-roy.fr/token", {
+        const oauthResponse = await fetch("https://dashboard.fabien-roy.fr/token", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -29,7 +29,7 @@ export async function POST({ request }: APIContext) {
         const accessToken = oauthData.access_token;
 
         // 📩 Envoyer le formulaire sécurisé à Symfony
-        const apiResponse = await fetch("https://backoffice.fabien-roy.fr/api/contact", {
+        const apiResponse = await fetch("https://dashboard.fabien-roy.fr/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

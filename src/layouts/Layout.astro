@@ -206,7 +206,7 @@ const { description, title } = Astro.props;
     }
     } */
 
-    @layer base {
+    /* @layer base {
         :root {
             --text: #0a0c0d;
             --background: #f9fafa;
@@ -233,7 +233,56 @@ const { description, title } = Astro.props;
             --radialPrimaryAccent: radial-gradient(#1d4f62, #b68707);
             --radialSecondaryAccent: radial-gradient(#524338, #b68707);
         }
-    }
+    } */
+    @layer base {
+  :root {
+    --text: #050606;
+    --background: #fcfcfc;
+    --primary: #5dadbf;
+    --secondary: #baad9a;
+    --accent: #f9b04d;
+
+    --success: #169222;
+    --warning: #E0BD63;
+    --error: #DA4B4B;
+    --info: var(--primary);
+
+    --linearPrimarySecondary: linear-gradient(#5dadbf, #baad9a);
+    --linearPrimaryAccent: linear-gradient(#5dadbf, #f9b04d);
+    --linearSecondaryAccent: linear-gradient(#baad9a, #f9b04d);
+
+    --radialPrimarySecondary: radial-gradient(#5dadbf, #baad9a);
+    --radialPrimaryAccent: radial-gradient(#5dadbf, #f9b04d);
+    --radialSecondaryAccent: radial-gradient(#baad9a, #f9b04d);
+  }
+
+  .dark {
+    --text: #f9fafa;
+    --background: #030303;
+    --primary: #408fa0;           /* Version éclaircie de #3A7E8D */
+    --secondary: #645744;         /* Version éclaircie de #52A5B8 */
+    --accent: #b16a06;
+
+    --success: #1FBF32;
+    --warning: #F3D17E;
+    --error: #F47171;
+    --info: var(--primary);
+
+    --linearPrimarySecondary: linear-gradient(#408fa0, #645744);
+    --linearPrimaryAccent: linear-gradient(#408fa0, #b16a06);
+    --linearSecondaryAccent: linear-gradient(#645744, #b16a06);
+
+    --radialPrimarySecondary: radial-gradient(#408fa0, #645744);
+    --radialPrimaryAccent: radial-gradient(#408fa0, #b16a06);
+    --radialSecondaryAccent: radial-gradient(#645744, #b16a06);
+  }
+}
+
+
+
+
+
+
 /* @layer base {
   :root {
     --text: #0c1427;
@@ -315,14 +364,19 @@ const { description, title } = Astro.props;
 
     
     .bg-section {
-        background-image: url("/contact.webp");
+        background-image: url("/contact.webp"); /* image à remplacer une fois dispo */
         background-size: cover;
         background-position: center;
-        /* background-attachment: fixed; */
-        position: relative;
-        /* z-index: -1; */
+        background-repeat: no-repeat;
+
+        
+        
+
+        padding: 3rem 1rem;
         height: 1200px;
-        padding: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     @media screen and (min-width: 768px) {
@@ -359,16 +413,16 @@ const { description, title } = Astro.props;
         background: var(--linearPrimarySecondary);
     }
 
-    .contactsection {
+    /* .contactsection {
         background: var(--secondary);
         border-radius: 15px;
         padding: 30px;
         
-    }
+    } */
 
     input::placeholder,
     textarea::placeholder {
-    color: white;
+    color: grey;
     }
 
 
@@ -393,7 +447,6 @@ const { description, title } = Astro.props;
     }
     .sectionFooter {
         background: var(--background);
-        box-shadow: inset -2px 2px 3px;
         height: 180px;
         width: 100vw;
         display: flex;

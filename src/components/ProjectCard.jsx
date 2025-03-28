@@ -6,14 +6,14 @@ export default function ProjectCard({ name, highlights, technology, img, descrip
     return (
         <motion.div 
             className={`relative ProjectCard shadowstyle p-6 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer 
-                w-full sm:w-[300px] md:w-[450px] lg:w-[600px] mx-4`} // ✅ Taille uniforme des cartes
+                w-full sm:w-[200px] md:w-[350px] lg:w-[450px] mx-4`} // ✅ Taille uniforme des cartes
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             onClick={toggleCard}
         >
             {/* Image du projet */}
-            <div className="w-full h-[350px] overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
+            <div className="w-full h-[250px] overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
                 <ProjectImage img={img} />
             </div>
 

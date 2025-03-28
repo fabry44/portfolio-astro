@@ -17,6 +17,7 @@ export const ContactComponent = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="flex justify-center items-center bg-section relative overflow-hidden"
         >
+            {/* <div class="absolute inset-0 bg-white/20 backdrop-blur-md"></div> */}
             <motion.div
                 className="flex flex-wrap -mx-3 mb-6 contactsection absolute z-10"
                 initial={{ opacity: 0, y: 40, scale: 0.9, rotate: -5 }} // Ajout d'un effet de "pop-in"
@@ -36,7 +37,10 @@ export const ContactComponent = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                    <ContactForm />
+                    
+                    
+                        <ContactForm />
+                    
                 </motion.div>
 
                 {/* Informations de contact */}
@@ -46,11 +50,11 @@ export const ContactComponent = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                    <div className="bg-light-secondary text-lg space-y-3 m-auto text-light-text dark:text-dark-text flex flex-col items-start">
-                        <h2 className="text-2xl font-bold">Me contacter</h2>
+                    <div className="bg-light-secondary dark:text-dark-secondary  text-lg space-y-3 m-auto text-light-text dark:text-dark-text flex flex-col jus items-start">
+                        <h1 className="text-2xl font-bold">Coordonnées</h1>
                         <p><strong>Téléphone :</strong> {user.phone}</p>
                         <p><strong>Email :</strong> 
-                            <a href={`mailto:${user.email}`} className="text-light-primary dark:text-dark-primary hover:underline">
+                            <a href={`mailto:${user.email}`} className="text-dark-primary dark:text-dark-primary hover:underline">
                                 {user.email}
                             </a>
                         </p>
