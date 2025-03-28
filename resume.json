@@ -200,7 +200,8 @@
                 "JavaScript",
                 "PHP",
                 "Symfony",
-                "MariaDB"
+                "MariaDB",
+                "Docker"
             ],
             "endDate": "2025-03-12",
             "url": "backoffice.fabien-roy.fr"
@@ -224,7 +225,8 @@
                 "JavaScript",
                 "Astro",
                 "Tailwind CSS",
-                "React"
+                "React",
+                "Docker"
             ],
             "endDate": "2025-03-12",
             "url": "fabien-roy.fr"
@@ -298,6 +300,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-23T22:56:29+00:00"
+        "lastModified": "2025-03-23T23:14:36+00:00"
     }
 }
