@@ -15,11 +15,32 @@ function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: logiques d'envoi du formulaire (API, email, etc.)
-    console.log('Form submitted:', formData);
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus("Envoi en cours...");
+  
+    try {
+        const response = await fetch("/api/send-contact", { 
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
+  
+        const result = await response.json();
+        if (response.ok) {
+            setStatus(result.message);
+            setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+        } else {
+            setStatus(`Erreur : ${result.error}`);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l'envoi:", error.message);
+        setStatus("Échec de l'envoi du message.");
+    }
   };
+
 
   return (
     <form onSubmit={handleSubmit} 
@@ -82,7 +103,7 @@ function ContactForm() {
                      focus:outline-none focus:border-[#52A5B8] focus:ring-2 focus:ring-[#52A5B8] 
                      focus:bg-[#C8EBF2]"
           value={formData.phone} onChange={handleChange} 
-          placeholder="Votre téléphone"
+          placeholder="Votre numéro de téléphone"
         />
       </div>
       {/* Champ Message (texte multiligne) */}
@@ -111,6 +132,7 @@ function ContactForm() {
         >
           Envoyer
         </button>
+        <p>{status}</p>
       </div>
     </form>
   );
