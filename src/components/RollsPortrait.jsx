@@ -2,19 +2,22 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export const RollsPortrait = ({ img }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(null); // null = inconnu
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
     setIsMobile(mediaQuery.matches);
+    setReady(true);
 
     const handler = (e) => setIsMobile(e.matches);
     mediaQuery.addEventListener("change", handler);
-
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
-  // ⚡️ Version simplifiée pour mobile (sans transform)
+  // Ne rien afficher tant qu'on ne sait pas si mobile ou desktop
+  if (!ready) return null;
+
   const animationProps = isMobile
     ? {
         initial: { opacity: 0 },
