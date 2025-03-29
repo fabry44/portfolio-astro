@@ -6,6 +6,8 @@ import matomo from 'astro-matomo';
 
 import sitemap from "@astrojs/sitemap";
 
+import robotsTxt from "astro-robots-txt";
+
 export default defineConfig({
   output: 'server', // CHANGER en "static" pour éviter les erreurs Netlify
   adapter: netlify({
@@ -25,7 +27,7 @@ export default defineConfig({
     viewTransition: {
       contentElement: "main"
     }
-  }), sitemap()],
+  }), sitemap(), robotsTxt()],
   build: {
     minify: true, // Désactive temporairement la minification pour tester
   },

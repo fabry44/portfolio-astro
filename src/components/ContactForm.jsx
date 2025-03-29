@@ -126,7 +126,7 @@ function ContactForm() {
       <div className="flex items-center md:col-span-2 mt-2">
         <input 
           type="checkbox" id="rgpd" name="consent" required 
-          className="mr-2"
+          className="mr-2" value={formData.message} onChange={handleChange} 
         />
         <label htmlFor="rgpd" className="text-sm text-[#454647]">
           J'accepte que mes données soient utilisées pour me contacter.
