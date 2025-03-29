@@ -32,7 +32,7 @@ export const ContactComponent = () => {
             >
                 {/* Formulaire de contact */}
                 <motion.div 
-                    className="w-full md:w-1/2 px-3 mt-6 mb-6 md:mb-0 p-4"
+                    className="w-full md:w-1/2 px-3 mt-6 mb-6 md:m-3 p-4"
                     initial={{ opacity: 0, x: -50 }} 
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
