@@ -1,0 +1,46 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Mentions Légales - Portfolio de Fabien Roy"
+  description="Mentions légales du portfolio de Fabien Roy, développeur web. Hébergement, propriété intellectuelle, crédit et contact."
+>
+  <main class="px-4 md:px-8 lg:px-16 xl:px-32 py-8">
+    <Section>
+      <h1 class="text-2xl font-bold mb-4">Mentions Légales</h1>
+
+      <h2 class="text-xl font-semibold mt-6">Editeur du site</h2>
+      <p>
+        Ce site est édité par Fabien Roy, developpeur web. Adresse e-mail : <strong>fabienroy2@gmail.com</strong>.<br />
+      </p>
+
+      <h2 class="text-xl font-semibold mt-6">Hébergement</h2>
+      <ul class="list-disc ml-6">
+        <li><strong>Site</strong> : Netlify</li>
+        <li><strong>Données / API</strong> : Hostinger</li>
+      </ul>
+
+      <h2 class="text-xl font-semibold mt-6">Propriété intellectuelle</h2>
+      <p>
+        Tous les contenus présents sur ce site (textes, images, code, etc.) sont la propriété exclusive de Fabien Roy, sauf mention contraire.
+      </p>
+
+      <h2 class="text-xl font-semibold mt-6">Responsabilité</h2>
+      <p>
+        L’éditeur du site ne saurait être tenu responsable des dommages directs ou indirects causés à l’équipement de l’utilisateur lors de l’accès au site.
+      </p>
+
+      <h2 class="text-xl font-semibold mt-6">Crédits</h2>
+      <p>
+        Conception et développement : Fabien Roy<br />
+        Technologies utilisées site: Astro, Tailwind CSS, Composant React, TypeScript, etc.<br />
+        Technologies utilisées API/ Données: Php, Symfony, MariaDB, etc.<br />
+      </p>
+    </Section>
+    <Footer />
+  </main>
+</Layout>

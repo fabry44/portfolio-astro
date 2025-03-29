@@ -16,11 +16,11 @@ const ResumeViewer = () => {
         height="1092" 
         title="Mon CV" />
       <br />
-      <a class="font-bold py-2 px-4 rounded" href="/cv_fabien_roy.html">
+      <a class="cta focus:ring-opacity-50 transition-colors duration-300 py-2 px-4 rounded" href="/cv_fabien_roy.html">
           <i class="fas fa-view"></i>
         voir
       </a>
-      <a class="font-bold py-2 px-4 rounded" href="/cv_fabien_roy.pdf" download="cv_fabien_roy.pdf">
+      <a class="cta focus:ring-opacity-50 transition-colors duration-300 py-2 px-4 rounded" href="/cv_fabien_roy.pdf" download="cv_fabien_roy.pdf">
           <i class="fas fa-download"></i>
         Télécharger
       </a>

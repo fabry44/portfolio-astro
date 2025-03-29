@@ -251,9 +251,9 @@ const { description, title } = Astro.props;
     --linearPrimaryAccent: linear-gradient(#5dadbf, #f9b04d);
     --linearSecondaryAccent: linear-gradient(#baad9a, #f9b04d);
 
-    --radialPrimarySecondary: radial-gradient(#5dadbf, #baad9a);
-    --radialPrimaryAccent: radial-gradient(#5dadbf, #f9b04d);
-    --radialSecondaryAccent: radial-gradient(#baad9a, #f9b04d);
+    --radialPrimarySecondary: radial-gradient(circle, rgba(93, 173, 191, 0.6), rgba(186, 173, 154, 0.8));
+    --radialPrimaryAccent: radial-gradient(circle, rgba(93, 173, 191, 0.8), rgba(249, 176, 77, 0.8));
+    --radialSecondaryAccent: radial-gradient(circle, rgba(186, 173, 154, 0.8), rgba(249, 176, 77, 0.8));
   }
 
   .dark {
@@ -315,6 +315,7 @@ const { description, title } = Astro.props;
 
     header {
         background: var(--background);
+        opacity: 0.8;
         transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
         z-index: 10;
         
@@ -407,10 +408,13 @@ const { description, title } = Astro.props;
     }
 
     .technoIcon {
-        background: var(--primary);
+        background: var(--secondary);
     }
     .ProjectCard {
-        background: var(--linearPrimarySecondary);
+        background: var(--radialPrimarySecondary);
+        backdrop-filter: blur(15px);
+        background-position: right top;
+        background-size: 100%;
     }
 
     /* .contactsection {
@@ -447,8 +451,7 @@ const { description, title } = Astro.props;
     }
     .sectionFooter {
         background: var(--background);
-        height: 180px;
-        width: 100vw;
+        min-height: 180px;
         display: flex;
         z-index: 10;
     }
@@ -499,6 +502,21 @@ const { description, title } = Astro.props;
         border: groove var(--accent);
         color: var(--text);
     }
+
+    .cta:hover {
+        position: relative;
+        margin-top: 20px;
+        background: var(--background);
+        border-radius: 10px;
+        border: groove var(--accent);
+        color: var(--text);
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .cta:hover {
+    background: var(--primary);
+    box-shadow: 1px 3px 12px var(--primary);
+}
     
     .shadowstyle {
         box-shadow: 2px 2px 2px black;

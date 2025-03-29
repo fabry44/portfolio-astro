@@ -7,7 +7,8 @@ function ContactForm() {
     lastName: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    rgpd: false,
   });
 
   const handleChange = (e) => {
@@ -31,7 +32,7 @@ function ContactForm() {
         const result = await response.json();
         if (response.ok) {
             setStatus(result.message);
-            setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+            setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "", rgpd: false });
         } else {
             setStatus(`Erreur : ${result.error}`);
         }
@@ -58,7 +59,7 @@ function ContactForm() {
                      focus:outline-none focus:border-[#52A5B8] focus:ring-2 focus:ring-[#52A5B8] 
                      focus:bg-[#C8EBF2]"
           value={formData.firstName} onChange={handleChange} 
-          placeholder="Entrez votre prénom"
+          placeholder="Votre prénom"
         />
       </div>
       {/* Champ Nom */}
@@ -73,7 +74,7 @@ function ContactForm() {
                      focus:outline-none focus:border-[#52A5B8] focus:ring-2 focus:ring-[#52A5B8] 
                      focus:bg[#C8EBF2]"
           value={formData.lastName} onChange={handleChange} 
-          placeholder="Entrez votre nom"
+          placeholder="Votre nom"
         />
       </div>
       {/* Champ Email */}
@@ -103,7 +104,7 @@ function ContactForm() {
                      focus:outline-none focus:border-[#52A5B8] focus:ring-2 focus:ring-[#52A5B8] 
                      focus:bg-[#C8EBF2]"
           value={formData.phone} onChange={handleChange} 
-          placeholder="Votre numéro de téléphone"
+          placeholder="Votre n° de téléphone"
         />
       </div>
       {/* Champ Message (texte multiligne) */}
@@ -121,14 +122,24 @@ function ContactForm() {
           placeholder="Votre message..."
         />
       </div>
+      {/* Champ Consentement RGPD */}
+      <div className="flex items-center md:col-span-2 mt-2">
+        <input 
+          type="checkbox" id="rgpd" name="consent" required 
+          className="mr-2"
+        />
+        <label htmlFor="rgpd" className="text-sm text-[#454647]">
+          J'accepte que mes données soient utilisées pour me contacter.
+          Les données collectées ne sont pas utilisées à d'autres fins de traitement.
+          Vous pouvez demander leur suppression à tout moment.
+          Aucune information personnelle n'est collectée sans votre consentement et ne seront jamais partagées avec des tiers.
+        </label>
+      </div>
       {/* Bouton d'envoi */}
       <div className="md:col-span-2 text-center mt-2">
         <button 
           type="submit"
-          className="inline-block bg-[#3A7E8D] text-white font-semibold text-lg py-3 px-8 rounded-md 
-                     shadow-md hover:bg-[#52A5B8] hover:shadow-lg 
-                     focus:outline-none focus:ring-4 focus:ring-[#C8EBF2] focus:ring-opacity-50 
-                     transition-colors duration-300"
+          className="cta focus:ring-opacity-50 transition-colors duration-300 py-2 px-4 rounded"
         >
           Envoyer
         </button>
