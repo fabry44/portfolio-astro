@@ -22,9 +22,9 @@ const { description, title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <link rel="sitemap" href="/sitemap-index.xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Scada:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Scada:wght@400&display=swap" rel="stylesheet"> -->
         {preloadImages.map((imgPath) => (
             <link rel="preload" as="image" href={imgPath} type="image/avif" fetchpriority="high" />
           ))}
@@ -41,8 +41,8 @@ const { description, title } = Astro.props;
 
 
 <style is:global>
-    /* @import url("https://fonts.googleapis.com/css?family=Crimson%20Pro:700|Scada:400"); */
-    @font-face {
+    @import url("https://fonts.googleapis.com/css?family=Crimson%20Pro:700|Scada:400");
+/* @font-face {
     font-family: 'Crimson Pro';
     src: url('/fonts/CrimsonPro-Regular.woff2') format('woff2'),
          url('/fonts/CrimsonPro-Regular.woff') format('woff');
@@ -56,7 +56,7 @@ const { description, title } = Astro.props;
          url('/fonts/Scada-Regular.woff') format('woff');
     font-weight: 400;
     font-display: swap;
-}
+} */
     h1,
     h2,
     h3,
