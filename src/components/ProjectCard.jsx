@@ -13,7 +13,7 @@ export default function ProjectCard({ name, highlights, technology, img, descrip
             onClick={toggleCard}
         >
             {/* Image du projet */}
-            <div className="w-full h-[250px] overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
+            <div className="w-full  overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
                 <ProjectImage img={img} />
             </div>
 
