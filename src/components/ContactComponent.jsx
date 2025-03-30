@@ -50,7 +50,7 @@ export const ContactComponent = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                    <div className="bg-light-secondary dark:text-dark-secondary  text-lg space-y-3 m-auto text-light-text dark:text-dark-text flex flex-col jus items-start">
+                    <div className="text-black text-lg space-y-3 m-auto text-light-text dark:text-dark-text flex flex-col jus items-start">
                         <h1 className="text-2xl font-bold">Coordonnées</h1>
                         <p><strong>Téléphone :</strong> {user.phone}</p>
                         <p><strong>Email :</strong> 

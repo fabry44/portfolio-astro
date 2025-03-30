@@ -31,7 +31,7 @@ export default function Projects({ projects }) {
     };
 
     return (
-        <div ref={ref} className="flex flex-wrap justify-center gap-16 mx-3.5">
+        <div ref={ref} className="flex flex-wrap justify-center gap-16">
             {projects.map((project, index) => (
                 <motion.div
                     key={index}

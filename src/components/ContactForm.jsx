@@ -45,7 +45,8 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} 
-          className="max-w-2xl mx-auto p-8 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg 
+          id="contactForm"
+          className="max-w-2xl mx-auto p-8 rounded-lg 
                      grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Champ Prénom */}
       <div className="flex flex-col">

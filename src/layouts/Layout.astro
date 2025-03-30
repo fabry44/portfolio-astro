@@ -339,7 +339,7 @@ const { description, title } = Astro.props;
 
     
     .bg-section {
-        background-image: url("/contact.webp"); /* image à remplacer une fois dispo */
+        background-image: url("/contact_fond_3.webp"); /* image à remplacer une fois dispo */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -397,6 +397,13 @@ const { description, title } = Astro.props;
         padding: 30px;
         
     } */
+
+    #contactForm {
+        background: var(--secondary); 
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 2px 2px 4px black;
+    }
 
     input::placeholder,
     textarea::placeholder {
@@ -468,7 +475,7 @@ const { description, title } = Astro.props;
         box-shadow: 3px -5px 12px 2px black;
     }
 
-    .curriculum a, .contactsection button {
+    .cta {
         position: relative;
         margin-top: 20px;
         background: var(--background);
