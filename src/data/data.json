@@ -42,9 +42,9 @@
     "projects": [
         {
             "title": "Site web pour un zoo (Arcadia)",
-            "img": "zooaracadia1-67d0367072ced161776008.jpg",
+            "img": "arcadia-acceuil-min-67e89fac63bef268701111.webp",
             "Allimg": [
-                "zooaracadia1-67d0367072ced161776008.jpg",
+                "arcadia-acceuil-min-67e89fac63bef268701111.webp",
                 "zooaracadia2-67d03678808e9248702050.jpg",
                 "zooaracadia3-67d0367e98eab890383041.jpg"
             ],
@@ -501,5 +501,5 @@
             "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-03-30 00:36:36"
+    "updated_at": "2025-03-30 01:35:14"
 }
