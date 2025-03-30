@@ -13,12 +13,12 @@ export default function ProjectCard({ name, highlights, technology, img, descrip
             onClick={toggleCard}
         >
             {/* Image du projet */}
-            <div className="w-full  overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
+            <div className="w-full h-[250px] overflow-hidden rounded-lg"> {/* ✅ Hauteur fixe pour éviter la déformation */}
                 <ProjectImage img={img} />
             </div>
 
             {/* Nom du projet */}
-            <h3 className="text-xl flex justify-center items-center font-bold mt-5 mb-6 text-center h-16">{name}</h3>
+            <h3 className="text-xl text-black flex justify-center items-center font-bold mt-5 mb-6 text-center h-16">{name}</h3>
 
             {/* Technologies */}
             <div className="flex flex-wrap justify-center mt-4">
