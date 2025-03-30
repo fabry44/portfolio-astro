@@ -19,7 +19,7 @@ export const ContactComponent = () => {
         >
             {/* <div class="absolute inset-0 bg-white/20 backdrop-blur-md"></div> */}
             <motion.div
-                className="flex flex-wrap -mx-3 mb-6 contactsection absolute z-10"
+                className="flex md:flex-row flex-col -mx-3 mb-6 contactsection absolute z-10"
                 initial={{ opacity: 0, y: 40, scale: 0.9, rotate: -5 }} // Ajout d'un effet de "pop-in"
                 whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
                 transition={{
