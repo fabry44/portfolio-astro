@@ -196,11 +196,11 @@ function ContactForm() {
       <AnimatePresence>
         {toast.show && (
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.4 }}
-            className={`fixed inset-0 flex items-center justify-center z-50 px-6 py-3 rounded-lg shadow-lg text-white ${
+            className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 px-6 py-3 rounded-lg shadow-lg text-white ${
               toast.type === "error" ? "bg-red-600" : "bg-green-600"
             }`}
           >

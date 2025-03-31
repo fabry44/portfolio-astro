@@ -1,5 +1,7 @@
 📌 Portfolio-API (Frontend)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/199bc0eb-62f0-492a-9fa8-d723c45fb127/deploy-status)](https://app.netlify.com/sites/fabien-roy/deploys)
+
 📂 Projet Full-Stack : API Symfony (backend) & Astro (frontend)  
 🔗 Frontend : Astro.js – déployé sur Netlify avec un webhook de build automatique  
 🔗 Backend : Symfony 7 (API) – hébergé sur un serveur mutualisé ou Heroku  
