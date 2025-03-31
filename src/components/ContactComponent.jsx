@@ -7,6 +7,7 @@ export const ContactComponent = () => {
 
     return (
         <motion.section
+            id="contact"
             initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }} // Ajout d'un flou initial
             whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{

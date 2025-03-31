@@ -28,6 +28,14 @@ const { description, title } = Astro.props;
         {preloadImages.map((imgPath) => (
             <link rel="preload" as="image" href={imgPath} type="image/avif" fetchpriority="high" />
           ))}
+        <script>
+        (function () {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+            }
+        })();
+        </script>
 
     </head>
     <body
@@ -79,6 +87,7 @@ const { description, title } = Astro.props;
         flex-direction: column;
         min-height: 100vh;
         min-width: 100vw;
+        transition: background 0.3s ease;
     }
 
     /* :root {
@@ -301,6 +310,22 @@ const { description, title } = Astro.props;
         width: 100%;
         z-index: 10;
         transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
+    }
+
+    #toggle-dark-mode {
+        background: var(--background);
+        position: fixed;
+        right: 10px;
+        top: 60px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        transition: background 0.3s ease, filter 0.3s ease, height 0.3s ease, border-radius 0.8s ease;
+        font-size: 25px;
+        display: flex
+;
+    justify-content: center;
+    align-items: center;
     }
 
     @media screen and (min-width: 576px) {

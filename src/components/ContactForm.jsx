@@ -200,7 +200,7 @@ function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.4 }}
-            className={`fixed bottom-5 right-5 z-50 px-6 py-3 rounded-lg shadow-lg text-white ${
+            className={`fixed inset-0 flex items-center justify-center z-50 px-6 py-3 rounded-lg shadow-lg text-white ${
               toast.type === "error" ? "bg-red-600" : "bg-green-600"
             }`}
           >

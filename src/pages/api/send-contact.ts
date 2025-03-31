@@ -15,8 +15,8 @@ export async function POST({ request }: APIContext) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 grant_type: "client_credentials",
-                client_id: import.meta.env.OAUTH_CLIENT_ID, // ⚠️ Stocké en variable d'environnement netlify
-                client_secret: import.meta.env.OAUTH_CLIENT_SECRET, // ⚠️ Stocké en variable d'environnement netlify
+                client_id: import.meta.env.OAUTH_CLIENT_ID, // Stocké en variable d'environnement netlify
+                client_secret: import.meta.env.OAUTH_CLIENT_SECRET, // Stocké en variable d'environnement netlify
                 scope: "portfolio",
             }),
         });
@@ -33,7 +33,7 @@ export async function POST({ request }: APIContext) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${accessToken}` // ✅ Authentification sécurisée
+                "Authorization": `Bearer ${accessToken}`
             },
             body: JSON.stringify(formData),
         });
@@ -43,7 +43,7 @@ export async function POST({ request }: APIContext) {
             return new Response(JSON.stringify({ error: apiResult.error || "Échec de l'envoi" }), { status: 500 });
         }
 
-        return new Response(JSON.stringify({ message: "Message envoyé avec succès !" }), { status: 200 });
+        return new Response(JSON.stringify({ message: "Message envoyé avec succès ! Un email de confirmation vous sera envoyé. Merci !" }), { status: 200 });
 
     } catch (error) {
         return new Response(JSON.stringify({ error: "Erreur serveur" }), { status: 500 });
