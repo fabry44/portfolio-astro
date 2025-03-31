@@ -8,7 +8,7 @@ function ContactForm() {
     email: '',
     phone: '',
     message: '',
-    rgpd: false,
+    rgpd: '',
   });
 
   const handleChange = (e) => {
@@ -32,7 +32,7 @@ function ContactForm() {
         const result = await response.json();
         if (response.ok) {
             setStatus(result.message);
-            setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "", rgpd: false });
+            setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "", rgpd: "" });
         } else {
             setStatus(`Erreur : ${result.error}`);
         }
