@@ -35,7 +35,7 @@ blockquote {
   border: none;
   margin: 0;
   padding: 5px 0 5px 15px;
-  background-color: #e6f7fd;
+  background-color: #9dcfe2;
 }
 
 .list-group-item:last-child {
@@ -118,7 +118,7 @@ h3 {
 }
 
 .sidebar {
-  background: #9dcfe2;
+  background: #e6f7fd;
   height: 1500px;
   padding-top: 40px;
 }
