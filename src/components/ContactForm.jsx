@@ -8,39 +8,67 @@ function ContactForm() {
     email: '',
     phone: '',
     message: '',
-    rgpd: '',
+    rgpd: false,
   });
 
+  function validateForm(data) {
+  if (!data.firstName.trim()) return "Le prénom est obligatoire.";
+  if (!data.lastName.trim()) return "Le nom est obligatoire.";
+  if (!data.email.trim()) return "L'email est obligatoire.";
+  if (!data.message.trim()) return "Le message ne peut pas être vide.";
+  if (!data.rgpd) return "Vous devez accepter la politique RGPD.";
+  return null;
+}
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, type, value, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
   };
+
 
   const [status, setStatus] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+  
+    const errorMessage = validateForm(formData);
+    if (errorMessage) {
+      setStatus(`❌ ${errorMessage}`);
+      return;
+    }
+  
     setStatus("Envoi en cours...");
-  
     try {
-        const response = await fetch("/api/send-contact", { 
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        });
+      const response = await fetch("/api/send-contact", { 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
   
-        const result = await response.json();
-        if (response.ok) {
-            setStatus(result.message);
-            setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "", rgpd: "" });
-        } else {
-            setStatus(`Erreur : ${result.error}`);
-        }
+      const result = await response.json();
+      if (response.ok) {
+        setStatus("✅ Message envoyé avec succès !");
+        setTimeout(() => setStatus(""), 5000); // Réinitialiser le message après 5 secondes
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+          rgpd: false
+        });
+      } else {
+        setStatus(`❌ Erreur : ${result.error}`);
+      }
     } catch (error) {
-        console.error("Erreur lors de l'envoi:", error.message);
-        setStatus("Échec de l'envoi du message.");
+      console.error("Erreur lors de l'envoi:", error.message);
+      setStatus("❌ Échec de l'envoi du message.");
     }
   };
+  
 
 
   return (
@@ -127,7 +155,7 @@ function ContactForm() {
       <div className="flex items-center md:col-span-2 mt-2">
         <input 
           type="checkbox" id="rgpd" name="rgpd" required 
-          className="mr-2" value={formData.rgpd} onChange={handleChange} 
+          className="mr-2" checked={formData.rgpd} onChange={handleChange} 
         />
         <label htmlFor="rgpd" className="text-sm text-[#454647]">
           J'accepte que mes données soient utilisées pour me contacter.
