@@ -126,7 +126,7 @@ function ContactForm() {
       {/* Champ Consentement RGPD */}
       <div className="flex items-center md:col-span-2 mt-2">
         <input 
-          type="checkbox" id="rgpd" name="consent" required 
+          type="checkbox" id="rgpd" name="rgpd" required 
           className="mr-2" value={formData.rgpd} onChange={handleChange} 
         />
         <label htmlFor="rgpd" className="text-sm text-[#454647]">
