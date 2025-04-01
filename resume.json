@@ -29,32 +29,22 @@
     },
     "work": [
         {
-            "name": "Soci\u00e9t\u00e9 ERT Technologies",
-            "location": "44 \u2013 Nantes",
+            "name": "CDH",
+            "location": "44-Gu\u00e9m\u00e9n\u00e9-Penfao",
             "description": null,
-            "position": "Monteur C\u00e2bleur FIBRE OPTIQUE",
-            "startDate": "2007-08-01",
-            "endDate": "2011-04-01",
-            "summary": null,
-            "highlights": []
-        },
-        {
-            "name": "La Signalisation de Bretagne",
-            "location": "Anetz - 44",
-            "description": null,
-            "position": "TECHNICIEN FIBRE OPTIQUE FTTH",
-            "startDate": "2011-04-01",
-            "endDate": "2012-09-01",
+            "position": "Conducteur de travaux Tirage et raccordement Fibre Optique",
+            "startDate": "2019-04-01",
+            "endDate": null,
             "summary": null,
             "highlights": []
         },
         {
             "name": "Groupe Circet",
-            "location": "44-St Herblain",
+            "location": "44-carquefou",
             "description": null,
-            "position": "Technicien fibre optique",
-            "startDate": "2012-09-01",
-            "endDate": "2013-02-01",
+            "position": "Chef de chantier puis Conducteur de travaux",
+            "startDate": "2013-11-01",
+            "endDate": "2019-04-01",
             "summary": null,
             "highlights": []
         },
@@ -70,33 +60,43 @@
         },
         {
             "name": "Groupe Circet",
-            "location": "44-carquefou",
+            "location": "44-St Herblain",
             "description": null,
-            "position": "Chef de chantier puis Conducteur de travaux",
-            "startDate": "2013-11-01",
-            "endDate": "2019-04-01",
+            "position": "Technicien fibre optique",
+            "startDate": "2012-09-01",
+            "endDate": "2013-02-01",
             "summary": null,
             "highlights": []
         },
         {
-            "name": "CDH",
-            "location": "44-Gu\u00e9m\u00e9n\u00e9-Penfao",
+            "name": "La Signalisation de Bretagne",
+            "location": "Anetz - 44",
             "description": null,
-            "position": "Conducteur de travaux Tirage et raccordement Fibre Optique",
-            "startDate": "2019-04-01",
-            "endDate": null,
+            "position": "TECHNICIEN FIBRE OPTIQUE FTTH",
+            "startDate": "2011-04-01",
+            "endDate": "2012-09-01",
+            "summary": null,
+            "highlights": []
+        },
+        {
+            "name": "Soci\u00e9t\u00e9 ERT Technologies",
+            "location": "44 \u2013 Nantes",
+            "description": null,
+            "position": "Monteur C\u00e2bleur FIBRE OPTIQUE",
+            "startDate": "2007-08-01",
+            "endDate": "2011-04-01",
             "summary": null,
             "highlights": []
         }
     ],
     "education": [
         {
-            "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
-            "url": null,
-            "area": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques",
-            "studyType": "Bac Scientifique",
-            "startDate": null,
-            "endDate": "2004-06-01",
+            "institution": "\u00c9cole Studi",
+            "url": "https:\/\/www.studi.com",
+            "area": "Graduate D\u00e9veloppeur PHP\/Symfony",
+            "studyType": "Certificat d'\u00c9tat niveau 5 D\u00e9veloppement Web et Web Mobile",
+            "startDate": "2023-07-20",
+            "endDate": "2024-12-26",
             "score": null,
             "courses": []
         },
@@ -111,12 +111,12 @@
             "courses": []
         },
         {
-            "institution": "\u00c9cole Studi",
-            "url": "https:\/\/www.studi.com",
-            "area": "Graduate D\u00e9veloppeur PHP\/Symfony",
-            "studyType": "Certificat d'\u00c9tat niveau 5 D\u00e9veloppement Web et Web Mobile",
-            "startDate": "2023-07-20",
-            "endDate": "2024-12-26",
+            "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
+            "url": null,
+            "area": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques",
+            "studyType": "Bac Scientifique",
+            "startDate": null,
+            "endDate": "2004-06-01",
             "score": null,
             "courses": []
         }
@@ -300,6 +300,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-04-01T10:37:02+00:00"
+        "lastModified": "2025-04-01T13:39:03+00:00"
     }
 }
