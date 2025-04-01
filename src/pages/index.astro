@@ -35,28 +35,35 @@ import data from "../data/data.json";
 
 <Layout
     title={`Portfolio ${data.user.name} - Développeur Backend`}
-    description="Développeur web spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité."
+    description="Développeur backend spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité."
 >
     <main>
         <Section>
-            <div class="flex flex-col items-center justify-center gap-20 mb4 pb-10">
+            <div class="flex flex-col items-center gap-20 mb4 pb-10">
                 <h1
                     class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10"
                 >
-                    {data.user.name}, développeur web en reconversion, actuellement en recherche active de nouveaux défis.
-                    <a href={data.user.linkedin} target="_blank" rel="noopener">
+                    {data.user.name}
+                    <!-- <a href={data.user.linkedin} target="_blank" rel="noopener">
                         <div
                             class="flex justify-center items-center hover:scale-110 transition"
                         >
                             <Badge> {data.user.status} </Badge>
                         </div>
-                    </a>
+                    </a> -->
                 </h1>
                 <div class="flex flex-col gap-10">
                     <h2
                         class="text-xl lg:text-2xl text-pretty max-w-{700px} text-light-text dark:text-dark-primary"
                     >
                         <span class="text-accent">{data.user.function}.</span><br />
+                        <a href={data.user.linkedin} target="_blank" rel="noopener">
+                            <span
+                                class="hover:scale-110 transition"
+                            >
+                                <Badge> {data.user.status} </Badge>
+                        </span>
+                        </a>
                     </h2>
                     
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
