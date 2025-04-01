@@ -38,8 +38,9 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
     console.log("🚀 Lancement de Puppeteer pour générer le PDF...");
 
     const browser = await puppeteer.launch({
-      headless: true, // Mode sans interface graphique (important sur Netlify)
-      args: ['--no-sandbox', '--disable-setuid-sandbox'] // Éviter les problèmes de permissions
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || require('puppeteer').executablePath(),
+        headless: "new",
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     const page = await browser.newPage();
