@@ -93,20 +93,10 @@
         {
             "institution": "\u00c9cole Studi",
             "url": "https:\/\/www.studi.com",
-            "area": "D\u00e9veloppement Web et Web Mobile",
-            "studyType": "Certificat d'\u00c9tat niveau 5",
+            "area": "Graduate D\u00e9veloppeur PHP\/Symfony",
+            "studyType": "Certificat d'\u00c9tat niveau 5 D\u00e9veloppement Web et Web Mobile",
             "startDate": "2023-07-20",
-            "endDate": "2024-12-11",
-            "score": null,
-            "courses": []
-        },
-        {
-            "institution": "Lyc\u00e9e F\u00e9lix le Dantec \u00e0 Lannion",
-            "url": "",
-            "area": "Optique physique, g\u00e9om\u00e9trique et photonique",
-            "studyType": "BTS G\u00e9nie Optique option Photonique",
-            "startDate": null,
-            "endDate": "2010-06-01",
+            "endDate": "2024-12-26",
             "score": null,
             "courses": []
         },
@@ -116,7 +106,27 @@
             "area": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques",
             "studyType": "Bac Scientifique",
             "startDate": null,
-            "endDate": "2008-06-01",
+            "endDate": "2004-06-01",
+            "score": null,
+            "courses": []
+        },
+        {
+            "institution": "IUT Saint Malo",
+            "url": null,
+            "area": "IUT G\u00e9nie des T\u00e9l\u00e9communications et R\u00e9seaux",
+            "studyType": "1\u00e8re ann\u00e9e IUT",
+            "startDate": "2004-09-01",
+            "endDate": "2005-06-01",
+            "score": null,
+            "courses": []
+        },
+        {
+            "institution": "Lyc\u00e9e F\u00e9lix le Dantec \u00e0 Lannion",
+            "url": null,
+            "area": "Optique physique, g\u00e9om\u00e9trique et photonique",
+            "studyType": "BTS G\u00e9nie Optique option Photonique",
+            "startDate": "2005-09-01",
+            "endDate": "2007-06-01",
             "score": null,
             "courses": []
         }
@@ -300,6 +310,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-03-31T22:37:29+00:00"
+        "lastModified": "2025-04-01T09:16:41+00:00"
     }
 }
