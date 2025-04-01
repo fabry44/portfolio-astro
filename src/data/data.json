@@ -21,22 +21,28 @@
     },
     "formations": [
         {
-            "degree": "Certificat d'\u00c9tat niveau 5",
+            "degree": "Certificat d'\u00c9tat niveau 5 D\u00e9veloppement Web et Web Mobile",
             "institution": "\u00c9cole Studi",
-            "date": "2024-12-11T00:00:00+00:00",
-            "description": "D\u00e9veloppement Web et Web Mobile"
-        },
-        {
-            "degree": "BTS G\u00e9nie Optique option Photonique",
-            "institution": "Lyc\u00e9e F\u00e9lix le Dantec \u00e0 Lannion",
-            "date": "2010-06-01T00:00:00+00:00",
-            "description": "Optique physique, g\u00e9om\u00e9trique et photonique"
+            "date": "2024-12-26T00:00:00+00:00",
+            "description": "Graduate D\u00e9veloppeur PHP\/Symfony"
         },
         {
             "degree": "Bac Scientifique",
             "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
-            "date": "2008-06-01T00:00:00+00:00",
+            "date": "2004-06-01T00:00:00+00:00",
             "description": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques"
+        },
+        {
+            "degree": "1\u00e8re ann\u00e9e IUT",
+            "institution": "IUT Saint Malo",
+            "date": "2005-06-01T00:00:00+00:00",
+            "description": "IUT G\u00e9nie des T\u00e9l\u00e9communications et R\u00e9seaux"
+        },
+        {
+            "degree": "BTS G\u00e9nie Optique option Photonique",
+            "institution": "Lyc\u00e9e F\u00e9lix le Dantec \u00e0 Lannion",
+            "date": "2007-06-01T00:00:00+00:00",
+            "description": "Optique physique, g\u00e9om\u00e9trique et photonique"
         }
     ],
     "projects": [
@@ -129,7 +135,9 @@
             "title": "SOS PRO, Site vitrine de service aux particuliers et aux entreprises",
             "img": "sospro1-67d04ed97f3b9360902221.jpg",
             "Allimg": [
-                "sospro1-67d04ed97f3b9360902221.jpg"
+                "sospro1-67d04ed97f3b9360902221.jpg",
+                "sos-pro-acceuil-min-67eb18a1ce833306300343.webp",
+                "sos-pro-cartes-min-67eb1902df025084966975.webp"
             ],
             "description": "<div>Le projet <strong>SOSPRO<\/strong> a \u00e9t\u00e9 con\u00e7u pour g\u00e9rer une entreprise de services \u00e0 domicile et en entreprise. Il permet aux administrateurs de g\u00e9rer les devis, clients, interventions et statistiques depuis une interface s\u00e9curis\u00e9e.<br><br><\/div><div>La solution repose sur <strong>Symfony 7<\/strong> et int\u00e8gre <strong>EasyAdmin v4<\/strong> pour faciliter l'administration. L\u2019un des points cl\u00e9s du projet est la gestion des interventions via un <strong>planning interactif (FullCalendar)<\/strong>, offrant aux clients une vue personnalis\u00e9e de leurs prestations.<br><br><\/div><div>En termes de s\u00e9curit\u00e9, <strong>JWT et UUID<\/strong> sont utilis\u00e9s pour garantir une inscription s\u00e9curis\u00e9e via un syst\u00e8me d\u2019invitations. Le respect du <strong>RGPD<\/strong> a \u00e9galement \u00e9t\u00e9 une priorit\u00e9 avec l\u2019impl\u00e9mentation de <strong>Matomo<\/strong> pour le suivi analytique sans n\u00e9cessiter de consentement.<br><br><\/div><div>L'optimisation UX a \u00e9t\u00e9 r\u00e9alis\u00e9e via <strong>Symfony UX Turbo<\/strong>, permettant une navigation fluide sans rechargement complet des pages. L\u2019int\u00e9gration d\u2019<strong>UX Map<\/strong> permet la g\u00e9olocalisation des clients et la gestion des demandes de devis.<br><br><\/div>",
             "highlights": {
@@ -212,9 +220,11 @@
         },
         {
             "title": "Portfolio-API",
-            "img": "portfolio-api1-67d0d2fa03641441968175.jpg",
+            "img": "api-dashboard-min-67eb189658e9c264314540.webp",
             "Allimg": [
-                "portfolio-api1-67d0d2fa03641441968175.jpg"
+                "api-dashboard-min-67eb189658e9c264314540.webp",
+                "api-contact-min-67eb18ada1631319733737.webp",
+                "api-information-min-67eb18b8e71e2671177947.webp"
             ],
             "description": "<div><strong>Portfolio Backend<\/strong> est une API d\u00e9velopp\u00e9e avec <strong>Symfony 7<\/strong> et administr\u00e9e via <strong>EasyAdmin<\/strong>. Elle permet de g\u00e9rer dynamiquement les projets, exp\u00e9riences et comp\u00e9tences affich\u00e9s sur mon portfolio. L'API est consomm\u00e9e par le <strong>frontend Astro<\/strong> et s\u00e9curis\u00e9e avec <strong>OAuth 2 (Client Credentials)<\/strong>.<br><br><\/div><div>Les mises \u00e0 jour du backend sont <strong>push\u00e9es manuellement sur GitHub<\/strong>, et le <strong>rebuild du frontend sur Netlify<\/strong> est \u00e9galement d\u00e9clench\u00e9 manuellement via un <strong>hook<\/strong>, ex\u00e9cutant un npm run build. L'API est aussi utilis\u00e9e pour la soumission de formulaires, garantissant une communication s\u00e9curis\u00e9e et fluide entre le front et le back.<br><br><\/div>",
             "highlights": {
@@ -278,10 +288,10 @@
         },
         {
             "title": "Portfolio-Astro",
-            "img": "portfolio-astro1-67d0d5b357916785843358.jpg",
+            "img": "astro-acceuil-min-67eb1871ac82c247643430.webp",
             "Allimg": [
-                "portfolio-astro1-67d0d5b357916785843358.jpg",
-                "portfolio-astro2-67d0d5be4b231609193910.jpg"
+                "astro-acceuil-min-67eb1871ac82c247643430.webp",
+                "astro-requete-min-67eb186863df1513131561.webp"
             ],
             "description": "<div><strong>Portfolio-Astro<\/strong> est l\u2019interface frontend de mon portfolio, d\u00e9velopp\u00e9 avec <strong>Astro<\/strong>, un framework moderne optimis\u00e9 pour le <strong>rendement et la rapidit\u00e9<\/strong>. Con\u00e7u pour g\u00e9n\u00e9rer un site statique ultra-performant, <strong>Astro<\/strong> permet d\u2019envoyer uniquement du HTML\/CSS aux utilisateurs et de charger dynamiquement du JavaScript <strong>l\u00e0 o\u00f9 c\u2019est n\u00e9cessaire<\/strong>. Cela garantit un <strong>temps de chargement minimal<\/strong> et un excellent score <strong>Lighthouse<\/strong> en SEO, accessibilit\u00e9 et performances.<br><br><\/div><div>Le site int\u00e8gre des <strong>composants React<\/strong>, notamment pour le formulaire de contact, qui communique avec mon <strong>Portfolio-API<\/strong> via une requ\u00eate s\u00e9curis\u00e9e. Il g\u00e8re \u00e9galement des <strong>animations fluides et interactives<\/strong> pour am\u00e9liorer l\u2019exp\u00e9rience utilisateur, tout en conservant une <strong>empreinte l\u00e9g\u00e8re<\/strong>.<br><br><\/div><div>Chaque mise \u00e0 jour du contenu (projets, exp\u00e9riences, comp\u00e9tences) est automatiquement int\u00e9gr\u00e9e en d\u00e9clenchant un <strong>rebuild manuel<\/strong> via un hook <strong>Netlify<\/strong>, assurant ainsi que le portfolio reste toujours \u00e0 jour et optimis\u00e9.<br><br><\/div>",
             "highlights": [
@@ -501,5 +511,5 @@
             "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-03-31 17:13:35"
+    "updated_at": "2025-04-01 09:16:41"
 }
