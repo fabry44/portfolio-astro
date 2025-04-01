@@ -21,10 +21,10 @@
     },
     "formations": [
         {
-            "degree": "Bac Scientifique",
-            "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
-            "date": "2004-06-01T00:00:00+00:00",
-            "description": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques"
+            "degree": "Certificat d'\u00c9tat niveau 5 D\u00e9veloppement Web et Web Mobile",
+            "institution": "\u00c9cole Studi",
+            "date": "2024-12-26T00:00:00+00:00",
+            "description": "Graduate D\u00e9veloppeur PHP\/Symfony"
         },
         {
             "degree": "BTS G\u00e9nie Optique option Photonique",
@@ -33,10 +33,10 @@
             "description": "Optique physique, g\u00e9om\u00e9trique et photonique"
         },
         {
-            "degree": "Certificat d'\u00c9tat niveau 5 D\u00e9veloppement Web et Web Mobile",
-            "institution": "\u00c9cole Studi",
-            "date": "2024-12-26T00:00:00+00:00",
-            "description": "Graduate D\u00e9veloppeur PHP\/Symfony"
+            "degree": "Bac Scientifique",
+            "institution": "Lyc\u00e9e Chateaubriand \u00e0 Combourg",
+            "date": "2004-06-01T00:00:00+00:00",
+            "description": "Bac Scientifique sp\u00e9cialit\u00e9 Math\u00e9matiques"
         }
     ],
     "projects": [
@@ -505,5 +505,5 @@
             "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-04-01 10:37:02"
+    "updated_at": "2025-04-01 13:39:03"
 }
