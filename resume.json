@@ -178,7 +178,7 @@
                 "Matomo"
             ],
             "endDate": "2024-11-17",
-            "url": "sospro-jalila.fr"
+            "url": "https:\/\/www.sospro-jalila.fr"
         },
         {
             "name": "Portfolio-API",
@@ -204,7 +204,7 @@
                 "Docker"
             ],
             "endDate": "2025-03-12",
-            "url": "backoffice.fabien-roy.fr"
+            "url": "https:\/\/www.backoffice.fabien-roy.fr"
         },
         {
             "name": "Portfolio-Astro",
@@ -229,7 +229,7 @@
                 "Docker"
             ],
             "endDate": "2025-03-12",
-            "url": "fabien-roy.fr"
+            "url": "https:\/\/www.fabien-roy.fr"
         }
     ],
     "skills": [
@@ -300,6 +300,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-04-01T13:39:03+00:00"
+        "lastModified": "2025-04-03T21:32:59+00:00"
     }
 }
