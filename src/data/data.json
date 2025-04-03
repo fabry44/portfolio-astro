@@ -147,7 +147,7 @@
                 "11": "Syst\u00e8me de g\u00e9olocalisation avec UX Map pour afficher les adresses des clients.",
                 "12": "D\u00e9velopp\u00e9 en Symfony 7 avec MariaDB comme base de donn\u00e9es."
             },
-            "link": "sospro-jalila.fr",
+            "link": "https:\/\/www.sospro-jalila.fr",
             "github": "https:\/\/github.com\/fabry44\/SOSPRO.git",
             "technology": [
                 {
@@ -233,7 +233,7 @@
                 "9": "Dockeris\u00e9 pour un environnement stable en d\u00e9veloppement et production.",
                 "10": "D\u00e9ploiement automatis\u00e9 via GitHub Actions et Webhook Netlify."
             },
-            "link": "backoffice.fabien-roy.fr",
+            "link": "https:\/\/www.backoffice.fabien-roy.fr",
             "github": "https:\/\/github.com\/fabry44\/Portfolio-API.git",
             "technology": [
                 {
@@ -299,7 +299,7 @@
                 "Frontend Astro sur Netlify pour un h\u00e9bergement rapide et scalable.",
                 "S\u00e9paration nette backend\/frontend, facilitant l\u2019\u00e9volutivit\u00e9."
             ],
-            "link": "fabien-roy.fr",
+            "link": "https:\/\/www.fabien-roy.fr",
             "github": "https:\/\/github.com\/fabry44\/portfolio-astro.git",
             "technology": [
                 {
@@ -505,5 +505,5 @@
             "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-04-01 13:39:03"
+    "updated_at": "2025-04-03 21:32:59"
 }
