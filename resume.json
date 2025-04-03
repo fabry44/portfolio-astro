@@ -204,7 +204,7 @@
                 "Docker"
             ],
             "endDate": "2025-03-12",
-            "url": "https:\/\/www.backoffice.fabien-roy.fr"
+            "url": "https:\/\/www.dashboard.fabien-roy.fr"
         },
         {
             "name": "Portfolio-Astro",
@@ -300,6 +300,6 @@
     "references": [],
     "meta": {
         "version": "v1.0.0",
-        "lastModified": "2025-04-03T21:32:59+00:00"
+        "lastModified": "2025-04-03T22:01:13+00:00"
     }
 }
