@@ -233,7 +233,7 @@
                 "9": "Dockeris\u00e9 pour un environnement stable en d\u00e9veloppement et production.",
                 "10": "D\u00e9ploiement automatis\u00e9 via GitHub Actions et Webhook Netlify."
             },
-            "link": "https:\/\/www.dashboard.fabien-roy.fr",
+            "link": "https:\/\/dashboard.fabien-roy.fr",
             "github": "https:\/\/github.com\/fabry44\/Portfolio-API.git",
             "technology": [
                 {
@@ -505,5 +505,5 @@
             "style": "background-color: #fff; color: white;"
         }
     ],
-    "updated_at": "2025-04-03 22:01:13"
+    "updated_at": "2025-04-03 22:10:14"
 }
