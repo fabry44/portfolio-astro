@@ -38,9 +38,8 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
     console.log("🚀 Lancement de Puppeteer pour générer le PDF...");
 
     const browser = await puppeteer.launch({
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || require('puppeteer').executablePath(),
-        headless: "new",
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      headless: true, // Mode sans interface graphique (important sur Netlify)
+      args: ['--no-sandbox', '--disable-setuid-sandbox'] // Éviter les problèmes de permissions
     });
 
     const page = await browser.newPage();
@@ -57,7 +56,7 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
   }
 
   // Appel de la fonction pour générer le PDF
-  generatePdf().catch(error => console.error(`❌ Erreur : ${error.message}`));
+  // generatePdf().catch(error => console.error(`❌ Erreur : ${error.message}`));
 
   if (!fs.existsSync(pdfPath)) {
     console.error("❌ Erreur : Le fichier PDF n'a pas été généré !");
