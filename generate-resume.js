@@ -56,7 +56,7 @@ exec(generateHtmlCommand, (error, stdout, stderr) => {
   }
 
   // Appel de la fonction pour générer le PDF
-  // generatePdf().catch(error => console.error(`❌ Erreur : ${error.message}`));
+  generatePdf().catch(error => console.error(`❌ Erreur : ${error.message}`));
 
   if (!fs.existsSync(pdfPath)) {
     console.error("❌ Erreur : Le fichier PDF n'a pas été généré !");
