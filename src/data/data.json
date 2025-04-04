@@ -503,7 +503,13 @@
             "icon": "Github",
             "class": "bg-[#fff] text-white",
             "style": "background-color: #fff; color: white;"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "Typescript",
+            "class": "bg-[#007acc] text-white",
+            "style": "background-color: #007acc; color: white;"
         }
     ],
-    "updated_at": "2025-04-03 22:10:14"
+    "updated_at": "2025-04-04 08:40:22"
 }
