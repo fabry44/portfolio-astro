@@ -13,7 +13,6 @@
   "dependencies": {
     "@astrojs/check": "^0.8.2",
     "@astrojs/react": "^4.2.1",
-    "@astrojs/sitemap": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/source-code-pro": "^5.0.19",
     "@types/react": "^19.0.10",
@@ -51,6 +50,7 @@
   },
   "devDependencies": {
     "@astrojs/netlify": "^6.2.3",
+    "@astrojs/sitemap": "^3.4.0",
     "vite-plugin-solid": "^2.11.2"
   }
 }

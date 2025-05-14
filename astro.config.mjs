@@ -27,7 +27,14 @@ export default defineConfig({
     viewTransition: {
       contentElement: "main"
     }
-  }), sitemap(), robotsTxt()],
+  }), sitemap({
+      // on exclut mention-legales et cv
+      filter: (page) =>
+        !page.includes('mentions-legales/') &&
+        !page.includes('/cv_fabien_roy.html')&&
+        !page.includes('/cv_fabien_roy.pdf') &&
+        !page.includes('/politique-confidentialite/'),
+    }), robotsTxt()],
   build: {
     minify: true, // Désactive temporairement la minification pour tester
   },
