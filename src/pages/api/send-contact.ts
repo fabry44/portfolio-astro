@@ -29,7 +29,7 @@ export async function POST({ request }: APIContext) {
         const accessToken = oauthData.access_token;
 
         // 📩 Envoyer le formulaire sécurisé à Symfony
-        const apiResponse = await fetch("https://dashboard.fabien-roy.fr/api/contact", {
+        const apiResponse = await fetch("https://backoffice.fabien-roy.fr/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
