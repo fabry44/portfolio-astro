@@ -5,4 +5,4 @@ import Projects from "../components/Projects.jsx";
 const { projects } = Astro.props;
 ---
 
-<Projects client:only="react" projects={projects} />
+<Projects client:load projects={projects} />

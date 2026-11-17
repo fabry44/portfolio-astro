@@ -1,18 +1,19 @@
 ---
 export const prerender = true;
 import Github from "../icons/Social/Github_dark.astro"
+import data from '../data/data.json';
 ---
 
 <footer class="w-full sectionFooter">
-    <div class="opacity-80 w-full mx-auto flex flex-col items-center justify-center text-center py-8"> 
+    <div class="w-full mx-auto flex flex-col items-center justify-center text-center py-8 px-4">
         
         
         <ul class="flex md:flex-row gap-4 md:gap-8 flex-col justify-center m-auto">
             <li> 
-                <a href="/#about" class="hover:underline me-4 md:me-6">A propos</a> 
+                <a href="/#about" class="hover:underline">À propos</a>
             </li> 
             <li> 
-                <a id="contact" href="mailto:fabienroy2@gmail.com@gmail.com" class=" text-pretty hover:underline">Me contacter</a> 
+                <a href={`mailto:${data.user.email}`} class="text-pretty hover:underline">Me contacter</a>
             </li> 
             <li> 
                 <a href="https://github.com/fabry44" target="_blank" 
@@ -31,3 +32,8 @@ import Github from "../icons/Social/Github_dark.astro"
         <div class="text-center flex items-end mt-3">&copy; {new Date().getFullYear()} Fabien Roy. Tous droits réservés.</div>
     </div> 
 </footer>
+
+<style>
+    footer a { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; text-underline-offset: .2em; }
+    ul { flex-wrap: wrap; align-items: center; }
+</style>

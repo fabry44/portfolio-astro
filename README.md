@@ -1,112 +1,75 @@
-📌 Portfolio-API (Frontend)
+# Portfolio de Fabien Roy
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/199bc0eb-62f0-492a-9fa8-d723c45fb127/deploy-status)](https://app.netlify.com/sites/fabien-roy/deploys)
+Portfolio développé avec **Astro, React et Tailwind CSS**, prévu pour Netlify.
+Cette version génère les pages à partir de fichiers locaux versionnés. Elle ne dépend plus de Portfolio-API, conservé séparément comme réalisation historique.
 
-📂 Projet Full-Stack : API Symfony (backend) & Astro (frontend)  
-🔗 Frontend : Astro.js – déployé sur Netlify avec un webhook de build automatique  
-🔗 Backend : Symfony 7 (API) – hébergé sur un serveur mutualisé ou Heroku  
+## Fonctionnement
 
-📖 Table des matières  
-🚀 Aperçu du projet  
-🛠️ Technologies utilisées  
-⚙️ Installation et Configuration  
-🔄 Workflow CI/CD (Mise à jour & Déploiement)  
-📂 Structure du projet  
-✅ Fonctionnalités principales  
-📌 To-Do List  
-📜 Licence  
+- Pages, projets et parcours : `src/pages/`, `src/components/`, `src/data/data.json`.
+- CV développeur : PDF officiel dans `public/cv/`, proposé sans JavaScript. Aucun générateur de CV dans le build.
+- Contact : `POST /api/send-contact` → Netlify Function → validation Turnstile côté serveur → SMTP.
+- Envoi désactivé par défaut ; alternative email visible. Aucun accusé automatique au visiteur ni base applicative de contacts.
+- Matomo retiré du chargement ; certaines polices sont encore chargées depuis Google Fonts.
 
-🚀 Aperçu du projet  
+## Développement local
 
-Le frontend (Astro.js) consomme une API JSON exposée par le backend (Symfony) pour le formulaire de contact.  
-Les données sont mises à jour dynamiquement via GitHub et un webhook Netlify.  
+Utiliser **Node 24** et le verrou de dépendances :
 
-🛠️ Technologies utilisées:  
-
-🔹 Frontend (Portfolio) :  
-Astro.js – Framework pour générer un site statique  
-Tailwind CSS + DaisyUI – Styling moderne et responsive  
-Fetch API – Récupération des données du backend  
-Netlify – Hébergement et build automatique  
-
-🔹 CI/CD & Hébergement :  
-GitHub Actions – Gestion des mises à jour automatiques  
-Netlify Build Hooks – Déclenchement automatique du build  
-Docker (local) – Conteneurisation de Symfony en dev  
-
-⚙️ Installation et Configuration  
-
-1️⃣ Cloner le projet  
+Le socle utilise Astro 7 et l’intégration React correspondante. Tailwind CSS reste en version 3, compilé par `postcss.config.mjs` sans l’ancienne intégration Astro. `public/robots.txt` est un fichier statique, sans générateur supplémentaire.
 
 ```sh
-git clone https://github.com/fabry44/portfolio-astro.git
-```  
-
-3️⃣ Frontend : Installation Astro  
-
-```sh
-cd ../portfolio-astro
-npm install
+npm ci --include=dev --ignore-scripts
 npm run dev
-```  
+```
 
-4️⃣ Commandes disponibles  
+Le serveur Astro développe uniquement le frontend ; il n’émule pas les Functions Netlify.
 
-| Command                   | Action                                           |  
-| :------------------------ | :----------------------------------------------- |  
-| `npm install`             | Installs dependencies                            |  
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |  
-| `npm run build`           | Build your production site to `./dist/`          |  
-| `npm run preview`         | Preview your build locally, before deploying     |  
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |  
-| `npm run astro -- --help` | Get help using the Astro CLI                     |  
+| Commande | Usage |
+| --- | --- |
+| `npm test` | Tests serveur avec doublures, sans envoi réel |
+| `npm run check` | Diagnostics Astro/TypeScript |
+| `npm run build` | Génération statique dans `dist/` |
+| `npm run preview` | Aperçu statique Astro |
+| `npm run dev:contact` | Aperçu du build sur `127.0.0.1:4321` ; contact toujours fermé, POST en 503 |
+| `npm run test:browser` | Parcours Chromium sur cet aperçu ; widget et envois simulés |
+| `npm audit` / `npm audit --omit=dev` | Avis de sécurité connus, à vérifier pour toutes les dépendances et pour la production |
 
-🔄 Workflow CI/CD (Mise à jour & Déploiement)  
+### Vérification navigateur
 
-🚀 Mise à jour du contenu  
-
-Build à partir du repository main sur GitHub.  
-Déclenchement automatique du build Netlify via webhook (Build Hook Netlifly).  
-
-⚡ Commande pour forcer la mise à jour  
+Après le build, installer le navigateur de test puis lancer `npm run dev:contact` dans un premier terminal :
 
 ```sh
-rl -X POST -d {} https://api.netlify.com/build_hooks/LE_TOKEN_NETLIFLY
-```  
+PLAYWRIGHT_BROWSERS_PATH=qa-local/browser-cache npx playwright install chromium
+```
 
-📂 Structure du projet  
+Dans un autre terminal :
 
-📁 frontend-astro/          # Site Astro.js  
-├── src/pages/              # Pages statiques  
-├── src/components/         # Composants dynamiques  
-├── public/                 # Assets et fichiers statiques  
-├── astro.config.mjs        # Config Astro  
-├── tsconfig.json           # Configuration TypeScript  
-├── tailwind.config.mjs     # Configuration Tailwind CSS  
-├── package.json            # Dépendances NPM  
+```sh
+PLAYWRIGHT_BROWSERS_PATH=qa-local/browser-cache npm run test:browser
+```
 
-✅ Fonctionnalités principales  
+Les captures et résultats sont écrits dans `qa-local/`, ignoré par Git. Les tests couvrent desktop/mobile, sans JavaScript, CV, clavier, images, états de contact et double soumission. Les scénarios d’envoi sont des doublures explicites, pas une preuve de réception SMTP ou de fonctionnement en production.
 
-✔️ Formulaire de contact pour envoyer le formulaire de contact et récupérer les soumissions via le frontend Astro  
-✔️ Backend sécurisé avec JWT et CORS  
-✔️ Stockage des données en JSON pour un rendu ultra rapide en static par le frontend Astro  
-✔️ Déploiement automatisé sur Netlify via API GitHub Actions (API GitHub) & Webhooks  
-✔️ Utilisation de Docker en dev pour une config standardisée  
-✔️ Gestion des styles avec Tailwind  
+## Configuration Netlify
 
-📌 To-Do List  
+`netlify.toml` définit le build, `dist/`, Node 24 et `netlify/functions/`. Les pages et PDF sont revalidés ; seuls les fichiers versionnés de `/_astro/` utilisent le cache immutable.
 
-Ajouter une fonctionnalité de commentaires sur les projets  
+Le modèle `.env.example` ne contient aucune valeur secrète. Seule `PUBLIC_TURNSTILE_SITE_KEY` est publique et utilisée au build ; les autres variables restent côté serveur. La fonction exige `CONTACT_FORM_ENABLED=true` et une configuration complète avant tout envoi. L’aperçu local ne charge pas ces secrets et reste fermé.
 
-📜 Licence  
+Voir `docs/contact-netlify.md` pour les paramètres, les contrôles et la recette à prévoir avant activation. Configurer un compte, publier ou envoyer un message réel sont des opérations distinctes des tests locaux.
 
-Ce projet est sous licence MIT – vous pouvez le modifier et l’utiliser librement.  
+La préparation de publication, le paquet local vérifié et le retour arrière sont décrits dans [`docs/publication-netlify.md`](docs/publication-netlify.md). `python3 scripts/prepare-netlify-release.py` archive le candidat déjà testé, sans publier ni installer d'outil. Le ZIP statique ne contient pas les Functions : ce n'est pas un paquet de déploiement complet.
 
-🔐 Variables d'environnement  
+### Médias du profil et du portfolio
 
-Les variables suivantes doivent être configurées dans un fichier `.env` en développement ou, pour des raisons de sécurité, comme variables d'environnement sur Netlify en production :  
+`node scripts/prepare-profile-images.mjs` recrée les variantes du portrait à partir de l'original conservé, sans retouche du visage. Après un build, `node scripts/capture-portfolio-project.mjs` capture réellement l'accueil et le contact de l'aperçu local ; refaire un build après la capture pour intégrer les nouveaux fichiers. Le contact reste fermé. Avec le navigateur QA disponible, `node scripts/verify-media.mjs` contrôle le portrait aux densités 1×/2×/3×, la galerie, les thèmes et les petits écrans. Ces outils écrivent leurs preuves dans `qa-local/` ; ils ne lancent ni serveur ni publication.
 
-- `OAUTH_CLIENT_ID` : Client ID pour l'authentification Oauth 2.0 avec l'Api 
-- `OAUTH_CLIENT_SECRET` : Secret pour l'authentification Oauth 2.0 avec l'Api 
+## Docker
+
+Le Dockerfile prépare uniquement un aperçu statique sous Node 24, sans Chrome ni générateur PDF. Il n’émule pas les Functions. Ne pas l’utiliser comme preuve de recette Netlify ; ne jamais inclure de secrets dans le contexte de build.
+
+## Licence
+
+Voir `LICENSE` (MIT). Les contenus personnels et crédits doivent être examinés avant toute réutilisation.
 
 
