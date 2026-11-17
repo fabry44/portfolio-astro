@@ -1,0 +1,16 @@
+---
+const pdf = '/cv/2026-11/CV-Fabien-ROY-dev-officiel.pdf';
+---
+<section id="cv" aria-labelledby="cv-title" class="text-center px-4">
+  <h2 id="cv-title" class="text-3xl font-semibold mb-4">Mon CV</h2>
+  <p class="mb-6">CV développeur PHP / Symfony — PDF officiel.</p>
+  <div class="cv-actions">
+    <a href={pdf} target="_blank" rel="noopener noreferrer" class="cta py-2 px-4">Consulter le CV (PDF, nouvel onglet)</a>
+    <a href={pdf} download="CV-Fabien-ROY-dev-officiel.pdf" class="cta py-2 px-4">Télécharger le CV (PDF)</a>
+  </div>
+</section>
+<style>
+  section { scroll-margin-top: 7rem; }
+  .cv-actions { display: flex; flex-direction: column; align-items: center; gap: .8rem; }
+  .cv-actions a { width: 100%; max-width: 24rem; }
+</style>

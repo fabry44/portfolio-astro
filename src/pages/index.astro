@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
+
 import Linkedin from "../icons/Social/Linkedin.astro";
 import Github from "../icons/Social/Github.astro";
 import GitLab from "../icons/Social/GitLab.astro";
@@ -12,74 +12,63 @@ import Section_techno from "../components/Section_techno.astro";
 import Technology from "../components/Technology.astro";
 import Code from "../icons/Titres/Code.astro";
 import Project from "../components/Project.astro";
-import Experience from "../components/Experience.astro";
+
 import Formation from "../components/Formation.astro";
 import About from "../components/About.astro";
 import Cert_icon from "../icons/Titres/Cert_icon.astro";
-import Exp_icon from "../icons/Titres/Exp_icon.astro";
+
 import My_icons from "../icons/Titres/My_icon.astro";
 import Section_about from "../components/Section_about.astro";
 import Footer from "../components/Footer.astro";
 import Section_formation from "../components/Section_formation.astro";
-import Section_experience from "../components/Section_experience.astro";
-import ContactComponent from "../components/ContactComponent.jsx";
-import ResumeViewer from "../components/ResumeViewer.jsx";
-import RollsPortrait from "../components/RollsPortrait";
-import Contact_icon from "../icons/Titres/Contact_icon.astro";
+
+import ContactSection from "../components/ContactSection.astro";
+import ResumeLinks from "../components/ResumeLinks.astro";
+
+
 
 // import ProjectMotion from "../components/ProjectMotion.astro";
 
 // import { Vortex } from "../components/Vortex.tsx";
 
 import data from "../data/data.json";
+import { getProfileAge } from '../lib/profile-age.mjs';
 ---
 
 <Layout
-    title={`Portfolio ${data.user.name} - Développeur Backend`}
-    description="Développeur backend spécialisé en Symfony, passionné par l'optimisation et la création de solutions performantes. Mon objectif est d'apprendre continuellement et de contribuer à des projets innovants qui allient technique et créativité."
+    title={`${data.user.name} — Développeur web PHP / Symfony et Astro`}
+    description="Développeur web PHP / Symfony et Astro à Nantes. Découvrez mon parcours dans le développement web et les télécommunications, mes projets et mon CV."
 >
-    <main>
+    <main id="top">
         <Section>
-            <div class="flex flex-col items-center gap-20 mb-4 pb-10">
+            <div class="profile-intro">
                 <h1
-                    class="text-4xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10"
+                    class="profile-name font-bold"
                 >
                     {data.user.name}
                 </h1>
-                <div class="flex flex-col gap-10">
+                <div class="profile-content">
                     <h2
-                        class="lg:text-3xl text-pretty max-w-{700px} text-light-text dark:text-dark-primary"
+                        class="profile-role"
                     >
-                        <span class="text-accent">{data.user.function}.</span
-                        ><br />
-                        <a
-                            href={data.user.linkedin}
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            <span class="hover:scale-110 transition">
-                                <Badge> {data.user.status} </Badge>
-                            </span>
-                        </a>
+                        {data.user.function}
                     </h2>
+                    <p class="profile-summary">{data.user.introduction}</p>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                        <div class="flex flex-col items-center gap-4 md:gap-6">
+                    <div class="profile-grid">
+                        <div class="profile-identity">
                             <div class="flex items-center">
                                 <div class="flex justify-center align-middle">
-                                    <RollsPortrait
-                                        client:load
-                                        img={data.user.img}
-                                    />
+                                    <img src={`/${data.user.img}`} srcset={data.user.imgSrcSet} sizes="224px" width="224" height="224" loading="eager" fetchpriority="high" alt="Fabien Roy" class="profile-portrait rounded-full object-cover" />
                                 </div>
                             </div>
                             <div
-                                class="bg-light-secondary text-lg space-y-3 m-auto text-light-text dark:text-dark-text p-4"
+                                class="profile-details"
                             >
                                 <p><strong>Nom :</strong> {data.user.name}</p>
                                 <p>
                                     <strong>Âge :</strong>
-                                    {data.user.age} ans
+                                    <span id="profile-age">{getProfileAge()}</span> ans
                                 </p>
                                 <p>
                                     <strong>Téléphone :</strong>
@@ -89,7 +78,7 @@ import data from "../data/data.json";
                                     <strong>Email :</strong>
                                     <a
                                         href={"mailto:" + data.user.email}
-                                        class="text-light-primary dark:text-dark-primary hover:underline"
+                                        class="hover:underline"
                                         >{data.user.email}</a
                                     >
                                 </p>
@@ -100,14 +89,15 @@ import data from "../data/data.json";
                             </div>
                         </div>
                         <div
-                            class="flex justify-center align-middle items-center"
+                            class="profile-cv"
                         >
-                            <ResumeViewer client:only="react" />
+                            <ResumeLinks />
                         </div>
                     </div>
                 </div>
                 <nav
-                    class="flex gap-x-5 mt-6 flex-wrap items-center justify-center"
+                    class="profile-socials"
+                    aria-label="Profils et contact"
                 >
                     <Social_icons href={data.user.linkedin}>
                         <Linkedin class="size-4 md:size-6" />
@@ -128,11 +118,7 @@ import data from "../data/data.json";
                 </nav>
             </div>
         </Section>
-        <!-- <Section>
-            <div class="flex justify-center align-middle">
-                <ResumeViewer client:only="react" />
-            </div>
-        </Section> -->
+
         <Section_techno id="technology">
             <Technology technologies={data.technologies} />
         </Section_techno>
@@ -174,15 +160,44 @@ import data from "../data/data.json";
             </div>
             <About about={data.user.about} />
         </Section_about>
-        <div class="flex flex-col items-center">
-            <h2
-                class="text-4xl font-semibold pb-10 flex gap-x-3 items-center text-center mb-4"
-            >
-                <Contact_icon class="w-12 h-12" /> Me contacter
-            </h2>
-        </div>
-        <ContactComponent client:idle />
+        <ContactSection />
 
         <Footer />
     </main>
 </Layout>
+
+<style>
+    .profile-intro { display: flex; flex-direction: column; align-items: center; gap: 2rem; max-width: 1000px; margin: auto; }
+    .profile-name { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; text-align: center; }
+    .profile-content { width: 100%; }
+    .profile-role { text-align: center; font-size: clamp(1.25rem, 3vw, 1.9rem); line-height: 1.5; margin-bottom: .75rem; }
+    .profile-summary { max-width: 65ch; margin: 0 auto 2.5rem; text-align: center; line-height: 1.75; }
+    .profile-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+    .profile-identity { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .profile-portrait { width: 224px; height: 224px; }
+    .profile-details { font-size: 1rem; line-height: 1.8; }
+    .profile-details p + p { margin-top: .35rem; }
+    .profile-details a { text-underline-offset: .2em; overflow-wrap: anywhere; }
+    .profile-cv { min-width: 0; }
+    .profile-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: .65rem; width: 100%; min-width: 0; }
+    @media (min-width: 768px) {
+        .profile-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; }
+        .profile-summary { margin-bottom: 3rem; }
+    }
+</style>
+
+<script>
+    import { getProfileAge } from '../lib/profile-age.mjs';
+
+    const updateProfileAge = () => {
+        const age = document.getElementById('profile-age');
+        if (age) age.textContent = String(getProfileAge());
+    };
+    updateProfileAge();
+    window.addEventListener('pageshow', updateProfileAge);
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) updateProfileAge();
+    });
+    // Also refresh a page kept open through the birthday, without rebuilding it.
+    window.setInterval(updateProfileAge, 60_000);
+</script>

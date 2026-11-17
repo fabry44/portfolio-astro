@@ -6,62 +6,65 @@ import Footer from "../components/Footer.astro";
 ---
 <Layout
   title="Politique de Confidentialité - Portfolio de Fabien Roy"
-  description="Politique de confidentialité du portfolio de Fabien Roy, développeur web. Explication de la collecte, de l'utilisation des données et de l'outil Matomo."
+  description="Informations sur le traitement des demandes de contact et les services du portfolio de Fabien Roy."
 >
   <main class="px-4 md:px-8 lg:px-16 xl:px-32 py-8">    
     <Section>
       <h1 class="text-2xl font-bold mb-4">Politique de Confidentialité</h1>
+      <p>Dernière mise à jour : 17 novembre 2026. Cette politique concerne le portfolio personnel de Fabien Roy et les demandes qui lui sont adressées.</p>
 
       <p>
-        Cette politique de confidentialité décrit les données personnelles collectées et leur traitement dans le cadre du site portfolio de Fabien Roy, développeur web. Le site est hébergé sur Netlify (frontend) et Hostinger (Données/API).
+        Le portfolio est prévu sur Netlify, sans recours à l’ancienne API Symfony. Le formulaire ne peut envoyer de message que si la protection anti-spam et la messagerie sont correctement configurées. Une adresse email reste disponible pour écrire directement à Fabien Roy.
       </p>
 
       <h2 class="text-xl font-semibold mt-6">Responsable du traitement</h2>
       <p>
-        Le responsable du traitement est Fabien Roy, développeur web. Vous pouvez me contacter à l'adresse : <a href="mailto:fabienroy2@gmail.com" class="text-blue-600 underline">fabienroy2@gmail.com</a>.
+        Le responsable du traitement est Fabien Roy, qui édite ce portfolio à titre personnel. Contact pour toute question ou demande relative aux données : <a href="mailto:fabienroy2@gmail.com" class="text-blue-600 underline">fabienroy2@gmail.com</a>.
       </p>
 
       <h2 class="text-xl font-semibold mt-6">Données collectées</h2>
       <ul class="list-disc ml-6">
-        <li>Données transmises via le formulaire de contact (nom, e-mail, message).</li>
-        <li>Données de navigation anonymisées via Matomo Analytics.</li>
+        <li>Prénom, nom, e-mail et message saisis dans le formulaire ; téléphone facultatif.</li>
+        <li>Jeton de vérification anti-spam Turnstile si le formulaire est activé.</li>
+        <li>Données techniques nécessaires à la connexion et à la sécurité : adresse IP et informations du navigateur traitées par les services techniques.</li>
       </ul>
+      <p>Les champs marqués d’un astérisque sont obligatoires pour utiliser le formulaire. Le téléphone est facultatif. Sans les informations obligatoires ou la vérification anti-spam, le formulaire ne peut pas transmettre la demande.</p>
 
       <h2 class="text-xl font-semibold mt-6">Utilisation des données</h2>
       <p>Les données collectées sont utilisées uniquement pour :</p>
       <ul class="list-disc ml-6">
         <li>Répondre aux demandes via le formulaire de contact.</li>
-        <li>Analyser la fréquentation du site (via Matomo) de manière conforme au RGPD en suivant les recommandations de la CNIL.</li>
-        <li>Améliorer le site et l'expérience utilisateur.</li>
+        <li>Vérifier les demandes automatisées avant l’envoi.</li>
       </ul>
 
-      <h2 class="text-xl font-semibold mt-6">Outil de mesure d'audience (Matomo)</h2>
-      <p>Le site utilise <strong>Matomo</strong> configuré selon les recommandations de la CNIL :</p>
+      <h2 class="text-xl font-semibold mt-6">Bases légales</h2>
+      <p>Le traitement du message envoyé par le formulaire repose sur votre consentement, exprimé par la case dédiée et l’envoi de la demande. Vous pouvez retirer ce consentement en écrivant à l’adresse ci-dessus, sans remettre en cause les traitements déjà effectués avant ce retrait.</p>
+      <p>L’hébergement, la sécurité du formulaire et le maintien d’un affichage utilisable répondent à l’intérêt légitime de Fabien Roy à exploiter et protéger son portfolio. Les demandes adressées directement par email sont utilisées pour répondre à leur expéditeur, sans ajout à une liste de prospection.</p>
+
+      <h2 class="text-xl font-semibold mt-6">Services techniques</h2>
+      <p>Le code de cette version prévoit les services suivants :</p>
       <ul class="list-disc ml-6">
-        <li>Adresses IP anonymisées.</li>
-        <li>Pas de recoupement des données.</li>
-        <li>Aucune utilisation à des fins commerciales.</li>
-        <li>Les cookies sont désactivés ou limités selon la configuration.</li>
+        <li>Netlify pour les pages et la fonction de contact.</li>
+        <li>Cloudflare Turnstile pour la vérification anti-spam lorsqu’une clé publique de widget est configurée. La validation serveur transmet le jeton à Cloudflare, pas le contenu du message : <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">informations de confidentialité Turnstile</a>.</li>
+        <li>La demande est destinée à Fabien Roy, dans sa boîte Gmail <a href="mailto:fabienroy2@gmail.com">fabienroy2@gmail.com</a>. Le service d’envoi du formulaire doit être configuré avant activation ; les règles de la messagerie Google sont décrites dans sa <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>.</li>
+        <li>Google Fonts pour certaines polices : les requêtes transmettent notamment l’adresse IP, l’URL demandée et des en-têtes du navigateur. L’API Google Fonts ne dépose pas de cookies : <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">informations Google Fonts</a>.</li>
+        <li>Un choix de thème clair ou sombre enregistré dans le navigateur.</li>
       </ul>
 
-      <p class="mt-4">Vous pouvez choisir de ne pas être suivi :</p>
+      <p>Cette version ne charge pas Matomo. Elle ne stocke pas les demandes dans une base applicative de contacts et n’envoie pas de réponse automatique au visiteur.</p>
 
-      <div class= "flex justify-center p-4 rounded my-4">
-        <iframe
-          style="border: 0; height: auto; width: 80%; position: relative"
-          src="https://analytics.fabien-roy.fr/index.php?module=CoreAdminHome&action=optOut&language=fr"
-        ></iframe>
-      </div>
+      <h2 class="text-xl font-semibold mt-6">Services externes et transferts</h2>
+      <p>Les services Netlify, Cloudflare et Google peuvent traiter certaines données hors de l’Espace économique européen. Leurs documents décrivent les traitements et garanties qu’ils prévoient : <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Netlify</a>, <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile</a> et <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener noreferrer">Google</a>. Aucune localisation exclusivement européenne des données n’est annoncée pour ce portfolio.</p>
 
       <h2 class="text-xl font-semibold mt-6">Durée de conservation</h2>
       <p>
-        Les données de contact sont conservées pendant la durée nécessaire au traitement des demandes.
-        Les données de navigation sont conservées au maximum 13 mois.
+        Les demandes sans suite sont conservées pendant 12 mois après le dernier échange. Fabien Roy assure le tri et la suppression dans sa boîte mail ; le site ne réalise pas de purge automatique de cette messagerie. Si l’échange se poursuit dans un autre cadre, les données nécessaires à cette relation suivent les règles propres à ce cadre.
       </p>
+      <p>Cette durée concerne les demandes conservées par Fabien Roy, pas tous les journaux de ses prestataires techniques, qui suivent leurs propres paramètres et politiques. La préférence de thème reste dans le navigateur jusqu’à sa modification ou à l’effacement du stockage du site.</p>
 
       <h2 class="text-xl font-semibold mt-6">Vos droits</h2>
       <p>
-        Conformément au RGPD, vous pouvez exercer vos droits d'accès, de rectification, d'opposition ou de suppression en contactant : <strong>fabienroy2@gmail.com</strong>.
+        Selon les conditions applicables au traitement, vous pouvez demander l’accès, la rectification, l’effacement ou la limitation de vos données, vous opposer à un traitement fondé sur l’intérêt légitime et, pour les données concernées, demander leur portabilité. Contact : <a href="mailto:fabienroy2@gmail.com">fabienroy2@gmail.com</a>. Vous pouvez également adresser une réclamation à la <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">CNIL</a>.
       </p>
     </Section>
     <Footer />

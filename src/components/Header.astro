@@ -3,14 +3,14 @@ export const prerender = true;
 ---
 
 <header
-    class="flex justify-center items-center align-middle mx-auto py-5 sticky top-0 w-full xl:w-[1120px] z-10"
+    class="flex justify-center items-center mx-auto py-3 sticky top-0 w-full z-10"
 >
     <nav
-        class="flex flex-wrap justify-center items-center px-3 text-sm font-medium rounded-full"
+        class="portfolio-nav"
     >
         <a
             class="hover:bg-white/10 rounded-full px-3 py-1 transition text-base md:text-sm"
-            href="/#top">Acceuil</a
+            href="/#top">Accueil</a
         >
         <a
             class="hover:bg-white/10 rounded-full px-3 py-1 transition text-base md:text-sm"
@@ -22,7 +22,7 @@ export const prerender = true;
         >
         <a
             class="hover:bg-white/10 rounded-full px-3 py-1 transition text-base md:text-sm"
-            href="/#about">A propos</a
+            href="/#about">À propos</a
         >
         <a
             class="hover:bg-white/10 rounded-full px-3 py-1 transition text-base md:text-sm"
@@ -30,8 +30,13 @@ export const prerender = true;
         >
         <button
             id="toggle-dark-mode"
-            class="cta rounded-full transition text-base md:text-sm">🌙</button
-        >
+            type="button"
+            aria-label="Activer le thème sombre"
+            aria-pressed="false"
+            class="cta rounded-full transition text-base md:text-sm">
+            <svg class="theme-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 0 1 11.2 3 9 9 0 1 0 21 12.8Z" /></svg>
+            <svg class="theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
+        </button>
     </nav>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -40,11 +45,13 @@ export const prerender = true;
             ).matches;
 
             const toggleButton = document.getElementById("toggle-dark-mode");
+            if (!toggleButton) return;
             const root = document.documentElement;
 
-            const setTheme = (theme) => {
+            const setTheme = (theme: string) => {
                 root.classList.toggle("dark", theme === "dark");
-                toggleButton.textContent = theme === "dark" ? "☀️" : "🌙";
+                toggleButton.setAttribute('aria-pressed', String(theme === 'dark'));
+                toggleButton.setAttribute('aria-label', theme === 'dark' ? 'Activer le thème clair' : 'Activer le thème sombre');
                 localStorage.setItem("theme", theme);
             };
 
@@ -60,3 +67,13 @@ export const prerender = true;
         });
     </script>
 </header>
+
+<style>
+    .portfolio-nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .2rem .45rem; max-width: 1120px; padding: 0 .75rem; font-size: .95rem; }
+    .portfolio-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: .4rem .65rem; border-radius: 6px; }
+    .portfolio-nav a:hover { background: var(--secondary); color: #050606; }
+    .theme-sun { display: none; }
+    :global(.dark) .theme-sun { display: block; }
+    :global(.dark) .theme-moon { display: none; }
+    @media (max-width: 400px) { .portfolio-nav { gap: 0; } .portfolio-nav a { padding: .4rem .45rem; font-size: .9rem; } }
+</style>

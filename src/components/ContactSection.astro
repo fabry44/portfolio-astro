@@ -1,0 +1,126 @@
+---
+import data from '../data/data.json';
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+---
+<section id="contact" class="contact-section" aria-labelledby="contact-title">
+  <h2 id="contact-title" class="text-4xl font-semibold text-center mb-8">Me contacter</h2>
+  <p class="contact-intro">Vous pouvez m’écrire directement à <a href={`mailto:${data.user.email}`}>{data.user.email}</a>.</p>
+  <div class="contact-grid">
+    <form id="contactForm" action="/api/send-contact" method="post" data-site-key={siteKey} aria-describedby="contact-status">
+      <p id="contact-status" role="status" aria-live="polite" aria-atomic="true">
+        {siteKey ? 'Chargement de la vérification anti-spam…' : 'Le formulaire est temporairement indisponible. Contactez-moi par email.'}
+      </p>
+      <div class="fields">
+        <label>Prénom *<input name="firstName" required maxlength="80" autocomplete="given-name" /></label>
+        <label>Nom *<input name="lastName" required maxlength="80" autocomplete="family-name" /></label>
+        <label>Email *<input name="email" type="email" required maxlength="254" autocomplete="email" /></label>
+        <label>Téléphone (facultatif)<input name="phone" type="tel" maxlength="40" autocomplete="tel" /></label>
+        <label class="wide">Message *<textarea name="message" required maxlength="5000" rows="5"></textarea></label>
+      </div>
+      <div class="trap" aria-hidden="true"><label>Site web<input name="website" tabindex="-1" autocomplete="off" /></label></div>
+      <label class="consent"><input name="rgpd" type="checkbox" required />
+        <span>J’accepte l’utilisation des informations saisies pour répondre à ma demande.
+          <a href="/politique-confidentialite/">Traitement des données</a>.</span>
+      </label>
+      <p class="text-sm">Les informations sont destinées à Fabien Roy pour répondre à votre demande. Les demandes sans suite sont conservées 12 mois après le dernier échange, puis supprimées de sa boîte mail par ses soins. Pour exercer vos droits : <a href={`mailto:${data.user.email}`}>{data.user.email}</a>. <a href="/politique-confidentialite/">Informations sur les données personnelles</a>.</p>
+      <div id="turnstile-widget"></div>
+      <button class="cta py-2 px-4" type="submit" disabled>Envoyer le message</button>
+      <noscript><p>Le formulaire nécessite JavaScript pour la protection anti-spam. Utilisez le lien email ci-contre.</p></noscript>
+    </form>
+    <aside class="contact-details" aria-label="Autres moyens de contact">
+      <h3 class="text-2xl font-bold">Coordonnées</h3>
+      <p><strong>Téléphone :</strong> {data.user.phone}</p>
+      <p><strong>Email :</strong> <a href={`mailto:${data.user.email}`}>{data.user.email}</a></p>
+      <p><strong>Adresse :</strong> {data.user.address}</p>
+      <p>Vous pouvez aussi m’écrire directement si la vérification est indisponible.</p>
+    </aside>
+  </div>
+</section>
+
+<script>
+  interface Turnstile {
+    render: (container: HTMLElement, options: Record<string, unknown>) => string;
+    reset: (id: string) => void;
+  }
+  const form = document.querySelector<HTMLFormElement>('#contactForm');
+  const status = document.querySelector<HTMLElement>('#contact-status');
+  const button = form?.querySelector<HTMLButtonElement>('button[type=submit]');
+  const widget = document.querySelector<HTMLElement>('#turnstile-widget');
+  const siteKey = form?.dataset.siteKey;
+  let token = '';
+  let busy = false;
+  let widgetId: string | undefined;
+  let turnstile: Turnstile | undefined;
+  const announce = (text: string) => { if (status) status.textContent = text; };
+  const setToken = (value: string) => {
+    token = value;
+    if (button) button.disabled = busy || !token;
+  };
+  if (form && status && button && widget && siteKey) {
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.onload = () => {
+      turnstile = (window as Window & { turnstile?: Turnstile }).turnstile;
+      if (!turnstile) { announce('Vérification indisponible. Utilisez le lien email.'); return; }
+      widgetId = turnstile.render(widget, {
+        sitekey: siteKey, action: 'contact', theme: 'auto', size: 'compact',
+        callback: (value: string) => { setToken(value); announce('Vérification effectuée. Vous pouvez envoyer votre message.'); },
+        'expired-callback': () => { setToken(''); announce('Vérification expirée. Renouvelez-la pour envoyer le message.'); },
+        'error-callback': () => { setToken(''); announce('Vérification indisponible. Réessayez ou utilisez le lien email.'); },
+      });
+    };
+    script.onerror = () => announce('Vérification indisponible. Utilisez le lien email.');
+    document.head.append(script);
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (busy || !token || !form.reportValidity()) return;
+      busy = true;
+      button.disabled = true;
+      form.setAttribute('aria-busy', 'true');
+      announce('Envoi en cours…');
+      const values = Object.fromEntries(new FormData(form));
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          signal: AbortSignal.timeout(25000),
+          body: JSON.stringify({ ...values, rgpd: values.rgpd === 'on', turnstileToken: token }),
+        });
+        const result = await response.json().catch(() => null);
+        if (response.ok && result?.ok === true) {
+          form.reset();
+          announce('Votre message a été accepté pour envoi. Merci !');
+        } else {
+          announce(response.status === 429 ? 'Trop de demandes. Patientez une minute ou utilisez le lien email.'
+            : result?.error || 'L’envoi n’a pas été confirmé. Utilisez le lien email.');
+        }
+      } catch {
+        announce('L’envoi n’a pas été confirmé. Votre saisie est conservée. Utilisez le lien email avant de réessayer.');
+      } finally {
+        busy = false;
+        setToken('');
+        form.removeAttribute('aria-busy');
+        if (widgetId !== undefined) turnstile?.reset(widgetId);
+      }
+    });
+  }
+</script>
+
+<style>
+  .contact-section { padding: 3rem 1rem; scroll-margin-top: 7rem; }
+  .contact-intro { text-align: center; max-width: 60ch; margin: -1rem auto 2rem; }
+  .contact-intro a { text-underline-offset: .2em; }
+  .contact-grid { max-width: 1100px; margin: auto; display: grid; gap: 2rem; }
+  form { min-width: 0; color: #050606; }
+  .fields { display: grid; gap: 1rem; }
+  label { display: flex; flex-direction: column; gap: .4rem; }
+  input:not([type=checkbox]), textarea { width: 100%; min-width: 0; padding: .65rem; border: 1px solid #777; border-radius: .35rem; background: #fcfcfc; color: #050606; }
+  .consent { flex-direction: row; align-items: start; margin: 1.3rem 0; font-size: .95rem; }
+  .consent input { margin-top: .3rem; flex-shrink: 0; }
+  a { text-decoration: underline; overflow-wrap: anywhere; }
+  .trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  #contact-status { min-height: 3rem; margin-bottom: 1.25rem; font-size: .95rem; }
+  button:disabled { opacity: .6; cursor: not-allowed; }
+  .contact-details { display: flex; flex-direction: column; gap: 1rem; justify-content: center; min-width: 0; }
+  @media (min-width: 768px) { .contact-grid { grid-template-columns: 3fr 2fr; } .fields { grid-template-columns: 1fr 1fr; } .wide { grid-column: 1 / -1; } }
+</style>

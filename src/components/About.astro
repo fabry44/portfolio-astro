@@ -3,4 +3,4 @@ import SanitizedHTML from "../components/SanitizedHTML.jsx";
 const { about } = Astro.props;
 ---
 
-<SanitizedHTML htmlContent={about} client:only="react" />
+<div class="about-copy"><SanitizedHTML htmlContent={about} client:only="react" /></div>

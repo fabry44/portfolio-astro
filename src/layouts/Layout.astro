@@ -2,7 +2,7 @@
 export const prerender = true;
 import Header from "../components/Header.astro";
 import "@fontsource-variable/source-code-pro";
-import preloadImages from "../data/preload-images.json";
+
 
 interface Props {
     title: string;
@@ -25,17 +25,7 @@ const { description, title } = Astro.props;
         <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&family=Scada:wght@400&display=swap" rel="stylesheet"> -->
-        {
-            preloadImages.map((imgPath) => (
-                <link
-                    rel="preload"
-                    as="image"
-                    href={imgPath}
-                    type="image/avif"
-                    fetchpriority="high"
-                />
-            ))
-        }
+
         <script>
             (function () {
                 const theme = localStorage.getItem("theme");
@@ -85,15 +75,16 @@ const { description, title } = Astro.props;
         font-family: "Scada", sans-serif;
         font-weight: 400;
         /* scroll-behavior: smooth; */
-        scroll-snap-type: y mandatory;
+        scroll-padding-top: 7rem;
     }
 
     body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        min-width: 100vw;
+        width: 100%;
         transition: background 0.3s ease;
+        line-height: 1.65;
     }
 
     @tailwind base;
@@ -107,6 +98,8 @@ const { description, title } = Astro.props;
             --primary: #ebeae5;
             --secondary: #d9d6d3;
             --accent: #847c71;
+            --line: rgba(132, 124, 113, 0.3);
+            --shadow-panel: 0 3px 12px rgba(5, 6, 6, 0.07);
         }
         .dark {
             --text: #f9fafa;
@@ -114,23 +107,21 @@ const { description, title } = Astro.props;
             --primary: #ebeae5;
             --secondary: #d6d3c5;
             --accent: #d6d3c5;
+            --line: rgba(214, 211, 197, 0.25);
+            --shadow-panel: 0 4px 16px rgba(0, 0, 0, 0.18);
         }
     }
 
     header {
         background: var(--background);
-        opacity: 0.8;
-        transition:
-            background 0.3s ease,
-            filter 0.3s ease,
-            height 0.3s ease,
-            border-radius 0.8s ease;
+        border-bottom: 1px solid var(--line);
+        transition: background 0.2s ease;
         z-index: 10;
     }
 
     header.scrolled {
         background: var(--background);
-        filter: drop-shadow(2px 4px 6px black);
+        box-shadow: var(--shadow-panel);
         width: 100%;
         z-index: 10;
         transition:
@@ -142,18 +133,12 @@ const { description, title } = Astro.props;
 
     #toggle-dark-mode {
         background: var(--background);
-        position: fixed;
-        right: 10px;
-        top: 60px;
-        width: 45px;
-        height: 45px;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
         border-radius: 50%;
-        transition:
-            background 0.3s ease,
-            filter 0.3s ease,
-            height 0.3s ease,
-            border-radius 0.8s ease;
-        font-size: 25px;
+        transition: background 0.15s ease, border-color 0.15s ease;
+        font-size: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -163,7 +148,6 @@ const { description, title } = Astro.props;
         header.scrolled {
             background: var(--background);
             /* color: white; */
-            opacity: 0.9;
             transition:
                 background 0.3s ease,
                 filter 0.3s ease,
@@ -175,7 +159,6 @@ const { description, title } = Astro.props;
     @media screen and (min-width: 768px) {
         header.scrolled {
             background: var(--background);
-            opacity: 0.9;
             transition:
                 background 0.3s ease,
                 filter 0.3s ease,
@@ -237,13 +220,41 @@ const { description, title } = Astro.props;
 
     .technoIcon {
         background: var(--secondary);
+        border: 1px solid transparent;
+        border-radius: 8px;
+        color: #050606;
     }
     .ProjectCard {
         background: var(--primary);
-        backdrop-filter: blur(15px);
-        background-position: right top;
-        background-size: 100%;
+        color: #050606;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: var(--shadow-panel);
     }
+
+    .project-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; max-width: 1080px; margin: auto; }
+    .project-card { display: flex; flex-direction: column; min-width: 0; height: 100%; padding: 1.25rem; }
+    .project-image { aspect-ratio: 16 / 10; overflow: hidden; border-radius: 7px; background: var(--secondary); }
+    .project-title { font-size: 1.4rem; line-height: 1.3; margin: 1.25rem 0 1rem; text-wrap: balance; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.1rem; }
+    .project-tag { display: inline-flex; align-items: center; padding: .2rem .55rem; border-radius: 5px; font-size: .75rem; line-height: 1.5; }
+    .project-description { margin-bottom: 1rem; }
+    .project-description summary { cursor: pointer; min-height: 44px; display: list-item; align-content: center; font-weight: 600; }
+    .project-description > div { padding: .75rem 0; font-size: .95rem; line-height: 1.7; }
+    .project-actions { display: flex; flex-wrap: wrap; gap: 1rem; padding-top: .75rem; border-top: 1px solid rgba(132,124,113,.3); margin-top: auto; }
+    .project-actions a { display: inline-flex; align-items: center; min-height: 44px; gap: .4rem; text-decoration: underline; text-underline-offset: .25em; }
+    .project-actions svg { width: 16px; height: 16px; }
+    .social-link { display: inline-flex; align-items: center; justify-content: center; min-width: 0; max-width: 100%; min-height: 44px; gap: .5rem; padding: .45rem .8rem; border: 1px solid var(--line); border-radius: 7px; color: var(--text); font-size: .95rem; transition: background .15s ease; }
+    .social-link:hover { background: var(--secondary); color: #050606; }
+    .social-link svg { width: 20px; height: 20px; flex-shrink: 0; }
+    main { overflow-wrap: anywhere; }
+    .about-copy { max-width: 70ch; margin: auto; font-size: 1.05rem; line-height: 1.8; }
+    .about-copy p + p { margin-top: 1.2rem; }
+    main > section, main > section[id] { scroll-margin-top: 7rem; }
+    main > section { padding-top: clamp(2.5rem, 5vw, 4.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+    main > section > div > h2, main > section > h2 { font-size: clamp(1.9rem, 4vw, 2.5rem); line-height: 1.25; }
+    @media (min-width: 768px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (hover: hover) { .project-actions a:hover { text-decoration-thickness: 2px; } }
 
     /* .contactsection {
         background: var(--secondary);
@@ -254,9 +265,10 @@ const { description, title } = Astro.props;
 
     #contactForm {
         background: var(--secondary);
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 2px 2px 4px black;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: clamp(1.25rem, 3vw, 2rem);
+        box-shadow: var(--shadow-panel);
     }
 
     input::placeholder,
@@ -283,18 +295,33 @@ const { description, title } = Astro.props;
         margin-left: -100%;
         width: 100%;
     }
+
+    @media (max-width: 767px) {
+        .divFormation { margin-left: 0; padding-left: 1.25rem; }
+        .classImpair { align-items: flex-start; text-align: left; padding-right: 0; margin-left: 0; }
+    }
     .sectionFooter {
         background: var(--background);
+        border-top: 1px solid var(--line);
         min-height: 180px;
         display: flex;
         z-index: 10;
     }
 
     @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
         html {
             scroll-behavior: auto;
         }
     }
+
+    :focus-visible { outline: 3px solid #3973ac; outline-offset: 4px; }
+
+    .dark #contactForm { color: #050606; }
 
     .curriculum {
         display: flex;
@@ -329,31 +356,26 @@ const { description, title } = Astro.props;
     }
 
     .cta {
-        position: relative;
-        margin-top: 20px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 44px;
+        line-height: 1.4;
+        text-align: center;
         background: var(--background);
-        border-radius: 10px;
-        border: groove var(--accent);
+        border-radius: 8px;
+        border: 1px solid var(--accent);
         color: var(--text);
+        transition: background 0.15s ease, border-color 0.15s ease;
     }
 
-    .cta:hover {
-        position: relative;
-        margin-top: 20px;
-        background: var(--background);
-        border-radius: 10px;
-        border: groove var(--accent);
-        color: var(--text);
-        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
-    }
-
-    .cta:hover {
+    .cta:hover:not(:disabled) {
         background: var(--primary);
-        box-shadow: 1px 3px 12px var(--primary);
+        color: #050606;
     }
 
     .shadowstyle {
-        box-shadow: 2px 2px 2px black;
+        box-shadow: none;
     }
 
     /* arcticle > div {

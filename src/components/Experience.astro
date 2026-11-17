@@ -1,10 +1,11 @@
 ---
 export const prerender = true;
+interface Props { experiences: { startDate: string; endDate?: string; position: string; name: string; summary: string; responsibilities?: string[]; achievements?: string[]; skills?: string[] }[] }
 const { experiences } = Astro.props; // Récupère les expériences passées en props
 ---
 <section class="container px-5 py-6 mx-auto space-y-12">
     <div class="relative border-l border-gray-800 pl-6">
-        {experiences.map(({ startDate, endDate, position, name, summary, responsibilities, achievements, skills, location, location_type }) => {
+        {experiences.map(({ startDate, endDate, position, name, summary, responsibilities, achievements, skills }) => {
             const startYear = startDate;
             const endYear = endDate ? endDate : "Présent";
             return (
